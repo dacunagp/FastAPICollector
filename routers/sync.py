@@ -1,3 +1,4 @@
+import logging
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from datetime import datetime
@@ -7,14 +8,24 @@ from schemas import SyncPayload, MuestrasPayload
 from auth import verificar_credenciales
 from utils import save_base64_image
 
+logger = logging.getLogger(__name__)
+
 router = APIRouter(prefix="/api", dependencies=[Depends(verificar_credenciales)])
 
 @router.post("/sync/monitoreos")
 def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
     """ Recibe array de monitoreos del dispositivo móvil y los guarda con manejo de errores """
-    contador = 0
+    contador_nuevos = 0
+    contador_editados = 0
+    
+    # Log: Inicio de sincronización (Narrativo)
+    dispositivo = payload.monitoreos[0].device_id if payload.monitoreos else "DESCONOCIDO"
+    logger.info(f"🔄 Iniciando sincronización de registros para el dispositivo: [ {dispositivo} ]")
+    
     try:
         for item in payload.monitoreos:
+            logger.info(f"📍 Procesando registro móvil [ ID Local: {item.id} ]...")
+            
             # 1. Conversión de fechas
             fh = None
             if item.fecha_hora:
@@ -46,8 +57,10 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
             ).first()
 
             if existente:
-                # 3. ACTUALIZAR registro existente
+                # 3. ACTUALIZAR registro existente (Narrativo)
+                logger.info(f"💾 Registro [ ID Local: {item.id} ] - EXISTENTE en la DB. Actualizando datos...")
                 existente.programa_id = item.programa_id
+                # ... [resto de campos] ...
                 existente.estacion_id = item.estacion_id
                 existente.fecha_hora = fh
                 existente.monitoreo_fallido = item.monitoreo_fallido
@@ -78,8 +91,10 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 existente.foto_path = path_principal
                 existente.foto_multiparametro = path_multi
                 existente.foto_turbiedad = path_turb
+                contador_editados += 1
             else:
-                # 4. CREAR nuevo registro
+                # 4. CREAR nuevo registro (Narrativo)
+                logger.info(f"✨ Registro [ ID Local: {item.id} ] - NUEVO. Insertando en la DB...")
                 nuevo_monitoreo = MonitoreoDB(
                     device_id=item.device_id,
                     id_local=item.id, 
@@ -114,23 +129,23 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     foto_turbiedad=path_turb
                 )
                 db.add(nuevo_monitoreo)
-            
-            contador += 1
+                contador_nuevos += 1
             
         # 3. Intento de persistencia en MySQL
         db.commit() 
+        logger.info(f"🚀 Sincronización Finalizada de forma exitosa. Se detectaron {contador_nuevos} nuevos y {contador_editados} editados.")
         
         return {
             "status": "success",
-            "mensaje": f"Se sincronizaron {contador} registros correctamente en la tabla monitoreos."
+            "mensaje": f"Se sincronizaron con éxito {contador_nuevos} nuevos y {contador_editados} ya existentes."
         }
 
     except Exception as e:
         db.rollback() 
-        print(f"🚨 ERROR EN SYNC: {str(e)}") 
+        logger.exception(f"🚨 ERROR CRÍTICO EN SYNC: {str(e)}") 
         raise HTTPException(
             status_code=500, 
-            detail=f"Error interno en el servidor/DB: {str(e)}"
+            detail=f"Error interno en el servidor/DB (Consulta el log de la API)"
         )
 
 @router.post("/muestras")

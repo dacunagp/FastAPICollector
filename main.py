@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from routers import catalogs, sync
+from logging_config import setup_logging
+
+# Inicializar Logs Narrativos y Errores
+setup_logging()
 
 app = FastAPI(title="API GP Consultores")
 

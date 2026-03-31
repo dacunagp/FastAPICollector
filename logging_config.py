@@ -1,0 +1,30 @@
+import logging
+import os
+from logging.handlers import RotatingFileHandler
+
+# --- Configuración de Logs Narrativos ---
+LOG_DIR = "logs"
+LOG_FILE = os.path.join(LOG_DIR, "api.log")
+
+# Asegurarse de que el directorio de logs exista
+os.makedirs(LOG_DIR, exist_ok=True)
+
+def setup_logging():
+    # Configurar el logger raíz
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+
+    # Formato narrativo: Fecha - [ NIVEL ] - Mensaje
+    formatter = logging.Formatter('%(asctime)s - [ %(levelname)s ] - %(name)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+
+    # Handler para Consola
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
+    logger.addHandler(console_handler)
+
+    # Handler para Archivo (con rotación para no llenar el disco)
+    file_handler = RotatingFileHandler(LOG_FILE, maxBytes=10*1024*1024, backupCount=5, encoding='utf-8')
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+
+    logging.info("🚀 Sistema de Logs Narrativos inicializado correctamente.")

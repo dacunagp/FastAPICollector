@@ -1,7 +1,10 @@
 import base64
 import uuid
 import os
+import logging
 from typing import Optional
+
+logger = logging.getLogger(__name__)
 
 # --- Almacenamiento de Imágenes ---
 UPLOAD_DIR = "static/uploads"
@@ -27,7 +30,8 @@ def save_base64_image(base64_string: str, prefix: str) -> Optional[str]:
             f.write(img_data)
 
         # 4. Retornar ruta relativa para la base de datos
+        logger.info(f"📸 Imagen [ {prefix} ] guardada exitosamente: [ {filename} ]")
         return f"uploads/{filename}"
     except Exception as e:
-        print(f"🚨 Error al guardar imagen {prefix}: {str(e)}")
+        logger.exception(f"🚨 Error al decodificar/guardar imagen {prefix}: {str(e)}")
         return None
