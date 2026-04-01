@@ -203,3 +203,59 @@
 2026-04-01 13:09:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
 2026-04-01 13:09:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
 2026-04-01 13:09:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+2026-04-01 15:12:32 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+2026-04-01 15:12:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:12:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:12:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:12:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:12:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:12:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:12:50 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+2026-04-01 15:12:50 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+2026-04-01 15:12:50 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+2026-04-01 15:12:50 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+2026-04-01 15:12:50 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+2026-04-01 15:12:50 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+2026-04-01 15:17:08 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:17:08 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:17:08 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:17:08 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:17:08 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:17:08 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 15:17:08 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+2026-04-01 15:17:08 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+2026-04-01 15:17:08 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+2026-04-01 15:17:08 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+2026-04-01 15:17:08 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+2026-04-01 15:17:08 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+2026-04-01 17:27:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 17:27:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 17:27:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 17:27:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 17:27:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 17:27:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 17:27:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+2026-04-01 17:27:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+2026-04-01 17:27:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+2026-04-01 17:27:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+2026-04-01 17:27:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+2026-04-01 17:27:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+2026-04-01 18:17:44 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+2026-04-01 18:22:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 18:22:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 18:22:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 18:22:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 18:22:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 18:22:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+2026-04-01 18:22:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+2026-04-01 18:22:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+2026-04-01 18:22:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+2026-04-01 18:22:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+2026-04-01 18:22:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+2026-04-01 18:22:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 11608
+====================================================================================================
+
+2026-04-01 18:25:35 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.

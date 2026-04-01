@@ -10,6 +10,15 @@ LOG_FILE = os.path.join(LOG_DIR, "api.log")
 os.makedirs(LOG_DIR, exist_ok=True)
 
 def setup_logging():
+    # Agregar una línea de separación física en el archivo de texto para identificar nuevos arranques
+    try:
+        with open(LOG_FILE, "a", encoding='utf-8') as f:
+            f.write("\n" + "="*100 + "\n")
+            f.write(f"🚀 INICIO DE SESIÓN: {os.path.basename(LOG_FILE)} - {os.getpid()}\n")
+            f.write("="*100 + "\n\n")
+    except Exception:
+        pass
+
     # Configurar el logger raíz
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
