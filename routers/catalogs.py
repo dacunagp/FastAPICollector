@@ -1,6 +1,6 @@
 import logging
 from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from typing import List
 from database import get_db
 from models import CampanaDB, EquipoDB, MatrizDB, MetodoDB, ParametroDB, UsuarioDB
@@ -13,8 +13,10 @@ router = APIRouter(prefix="/api", dependencies=[Depends(verificar_credenciales)]
 
 @router.get("/campanas", response_model=List[Campana])
 def get_campanas(db: Session = Depends(get_db)):
-    logger.info("📋 Consulta de catálogo [ CAMPANAS ] solicitada.")
-    return db.query(CampanaDB).all()
+    logger.info("📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)")
+    # Se eliminó cualquier filtro de 'disabled == 0' para mostrar todo el catálogo
+    # Importante usar joinedload para que las estaciones se incluyan en el JSON de respuesta
+    return db.query(CampanaDB).options(joinedload(CampanaDB.estaciones)).all()
 
 @router.get("/equipos", response_model=List[Equipo])
 def get_equipos(db: Session = Depends(get_db)):

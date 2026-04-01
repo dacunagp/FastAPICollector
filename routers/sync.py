@@ -3,10 +3,10 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from datetime import datetime
 from database import get_db
-from models import MonitoreoDB
+from models import MonitoreoDB, MonitoreoFotoDB
 from schemas import SyncPayload, MuestrasPayload
 from auth import verificar_credenciales
-from utils import save_base64_image
+from utils import save_base64_image, save_dynamic_photo
 
 logger = logging.getLogger(__name__)
 
@@ -44,23 +44,19 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
             # 1.5 Depuración de fotos recibidas
             print(f"📸 [DEBUG API] ID {item.id} - Principal: {bool(item.foto_path)}, Multi: {bool(item.foto_multiparametro)}, Turb: {bool(item.foto_turbiedad)}")
 
-            # 1.6 Procesar Imágenes (Base64 -> Archivos Físicos)
-            # Solo guardamos si el string viene con datos significativos (Base64)
-            path_principal = save_base64_image(item.foto_path, "foto") if item.foto_path and len(item.foto_path) > 100 else item.foto_path
-            path_multi = save_base64_image(item.foto_multiparametro, "multi") if item.foto_multiparametro and len(item.foto_multiparametro) > 100 else item.foto_multiparametro
-            path_turb = save_base64_image(item.foto_turbiedad, "turb") if item.foto_turbiedad and len(item.foto_turbiedad) > 100 else item.foto_turbiedad
-
-            # 2. Verificar si ya existe el registro (Upsert)
+            # 2. Verificar si ya existe el registro (Upsert Robust)
+            # Buscamos por la llave compuesta (id_local + device_id)
             existente = db.query(MonitoreoDB).filter(
-                MonitoreoDB.device_id == item.device_id,
-                MonitoreoDB.id_local == item.id
+                MonitoreoDB.id_local == item.id,
+                MonitoreoDB.device_id == item.device_id
             ).first()
+
+            nuevo_monitoreo = None
 
             if existente:
                 # 3. ACTUALIZAR registro existente (Narrativo)
-                logger.info(f"💾 Registro [ ID Local: {item.id} ] - EXISTENTE en la DB. Actualizando datos...")
+                logger.info(f"💾 Registro [ ID Local: {item.id} ] - EXISTENTE. Actualizando todos los campos...")
                 existente.programa_id = item.programa_id
-                # ... [resto de campos] ...
                 existente.estacion_id = item.estacion_id
                 existente.fecha_hora = fh
                 existente.monitoreo_fallido = item.monitoreo_fallido
@@ -86,11 +82,6 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 existente.nivel = item.nivel
                 existente.latitud = item.latitud
                 existente.longitud = item.longitud
-                
-                # Mapeo Explicito de Fotos (Usa las rutas de archivos generadas)
-                existente.foto_path = path_principal
-                existente.foto_multiparametro = path_multi
-                existente.foto_turbiedad = path_turb
                 contador_editados += 1
             else:
                 # 4. CREAR nuevo registro (Narrativo)
@@ -123,13 +114,46 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     profundidad=item.profundidad,
                     nivel=item.nivel,
                     latitud=item.latitud,
-                    longitud=item.longitud,
-                    foto_path=path_principal,
-                    foto_multiparametro=path_multi,
-                    foto_turbiedad=path_turb
+                    longitud=item.longitud
                 )
                 db.add(nuevo_monitoreo)
                 contador_nuevos += 1
+            
+            # --- NUEVA LÓGICA DE FOTOS (Fase 39) ---
+            db.flush() # Obtenemos el ID real generado en la tabla principal
+            db_monitoreo_id = existente.id if existente else nuevo_monitoreo.id
+            
+            # Fecha base para las carpetas
+            fecha_base = fh if fh else datetime.now()
+
+            # Diccionario para mapear los campos del JSON a los "tipos" de la BD
+            fotos_a_procesar = {
+                'general': item.foto_path,
+                'multiparametro': item.foto_multiparametro,
+                'turbiedad': item.foto_turbiedad
+            }
+
+            for tipo, b64_data in fotos_a_procesar.items():
+                if b64_data and len(b64_data) > 100: # Solo si hay datos significativos
+                    # Verificar si ya existe en la BD
+                    foto_existente = db.query(MonitoreoFotoDB).filter(
+                        MonitoreoFotoDB.monitoreo_id == db_monitoreo_id,
+                        MonitoreoFotoDB.tipo == tipo
+                    ).first()
+
+                    # Guardar el archivo en el disco y obtener la ruta formateada
+                    ruta_guardada = save_dynamic_photo(b64_data, item.device_id, fecha_base, db_monitoreo_id, tipo)
+
+                    if ruta_guardada:
+                        if foto_existente:
+                            foto_existente.ruta = ruta_guardada
+                        else:
+                            nueva_foto = MonitoreoFotoDB(
+                                monitoreo_id=db_monitoreo_id,
+                                tipo=tipo,
+                                ruta=ruta_guardada
+                            )
+                            db.add(nueva_foto)
             
         # 3. Intento de persistencia en MySQL
         db.commit() 

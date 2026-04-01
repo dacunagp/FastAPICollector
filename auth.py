@@ -8,9 +8,11 @@ logger = logging.getLogger(__name__)
 security = HTTPBasic()
 
 def verificar_credenciales(credentials: HTTPBasicCredentials = Depends(security)):
-    usuario_correcto = secrets.compare_digest(credentials.username, "collector")
+    # Soporta ambos usuarios para mayor flexibilidad en las pruebas y despliegue
+    usuario_valido = credentials.username in ["gpconsul", "collector"]
     password_correcto = secrets.compare_digest(credentials.password, "gp2026")
-    if not (usuario_correcto and password_correcto):
+    
+    if not (usuario_valido and password_correcto):
         logger.warning(f"❌ Intento de acceso fallido para el usuario: [{credentials.username}]")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

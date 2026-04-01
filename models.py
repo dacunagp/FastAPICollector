@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Float, Text, DateTime
+from sqlalchemy import Column, Integer, String, Float, Text, DateTime, func, ForeignKey
+from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.mysql import LONGTEXT
 from database import Base
 
@@ -9,6 +10,9 @@ class CampanaDB(Base):
     datawarehouse = Column(Integer)
     collector = Column(Integer)
     disabled = Column(Integer)
+    
+    # Relación con estaciones a través de campana_estacion
+    estaciones = relationship("EstacionDB", secondary="campana_estacion", back_populates="campanas")
 
 class EquipoDB(Base):
     __tablename__ = "equipos"
@@ -81,3 +85,27 @@ class MonitoreoDB(Base):
     foto_path = Column(LONGTEXT)
     foto_multiparametro = Column(LONGTEXT)
     foto_turbiedad = Column(LONGTEXT)
+
+class MonitoreoFotoDB(Base):
+    __tablename__ = "monitoreo_fotos"
+    id = Column(Integer, primary_key=True, index=True)
+    monitoreo_id = Column(Integer, index=True)
+    tipo = Column(String(50)) # 'general', 'multiparametro', 'turbiedad'
+    ruta = Column(String(255))
+    created_at = Column(DateTime, default=func.now())
+    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+
+class EstacionDB(Base):
+    __tablename__ = "estaciones"
+    id_estacion = Column(Integer, primary_key=True, index=True)
+    estacion = Column(String(50))
+    utm_este = Column(Float)
+    utm_norte = Column(Float)
+    
+    campanas = relationship("CampanaDB", secondary="campana_estacion", back_populates="estaciones")
+
+class CampanaEstacionDB(Base):
+    __tablename__ = "campana_estacion"
+    id_camp_est = Column(Integer, primary_key=True, index=True)
+    id_campana = Column(Integer, ForeignKey("campanas.id_campana"))
+    id_estacion = Column(Integer, ForeignKey("estaciones.id_estacion"))

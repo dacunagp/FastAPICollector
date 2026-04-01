@@ -1,5 +1,5 @@
-from pydantic import BaseModel
-from typing import List, Optional
+from pydantic import BaseModel, model_validator
+from typing import List, Optional, Any
 
 class Campana(BaseModel):
     id_campana: int
@@ -7,6 +7,7 @@ class Campana(BaseModel):
     datawarehouse: Optional[int] = None
     collector: Optional[int] = None
     disabled: Optional[int] = None
+    estaciones: List['Estacion'] = [] # Soporte para estaciones anidadas
     class Config: from_attributes = True
 
 class Equipo(BaseModel):
@@ -44,6 +45,24 @@ class Usuario(BaseModel):
     clave_app: Optional[str] = None
     email: Optional[str] = None
     habilitado: Optional[int] = None
+    class Config: from_attributes = True
+
+class Estacion(BaseModel):
+    id_estacion: int
+    estacion: Optional[str] = None
+    utm_este: Optional[float] = None
+    utm_norte: Optional[float] = None
+    
+    # Campos de compatibilidad para la App Móvil
+    latitud: Optional[float] = None
+    longitud: Optional[float] = None
+
+    @model_validator(mode='after')
+    def set_compat_coords(self) -> 'Estacion':
+        if self.latitud is None: self.latitud = self.utm_norte
+        if self.longitud is None: self.longitud = self.utm_este
+        return self
+
     class Config: from_attributes = True
 
 # --- Esquemas para POST ---
