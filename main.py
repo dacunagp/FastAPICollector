@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from routers import catalogs, sync
+from database import engine, Base
 from logging_config import setup_logging
+
+# --- Fase 86: Asegurar que las nuevas tablas (detalles) existan en la DB ---
+Base.metadata.create_all(bind=engine)
 
 # Inicializar Logs Narrativos y Errores
 setup_logging()

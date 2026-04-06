@@ -1,12 +1,13 @@
 import logging
-from fastapi import APIRouter, Depends, HTTPException
+import requests as req
+from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.orm import Session
 from datetime import datetime
 from database import get_db
-from models import MonitoreoDB, MonitoreoFotoDB
+from models import MonitoreoDB, MonitoreoFotoDB, EstacionDB, MonitoreoDetalleDB
 from schemas import SyncPayload, MuestrasPayload
 from auth import verificar_credenciales
-from utils import save_base64_image, save_dynamic_photo
+from utils import save_base64_image, save_dynamic_photo, convert_utm_to_wgs84
 
 logger = logging.getLogger(__name__)
 
@@ -82,6 +83,12 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 existente.nivel = item.nivel
                 existente.latitud = item.latitud
                 existente.longitud = item.longitud
+                
+                # --- Fase 86: Limpiar Base64 original para prepararlo para la ruta ---
+                existente.foto_path = None
+                existente.foto_multiparametro = None
+                existente.foto_turbiedad = None
+                
                 contador_editados += 1
             else:
                 # 4. CREAR nuevo registro (Narrativo)
@@ -114,7 +121,11 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     profundidad=item.profundidad,
                     nivel=item.nivel,
                     latitud=item.latitud,
-                    longitud=item.longitud
+                    longitud=item.longitud,
+                    # --- Fase 86: Iniciamos en None para guardar la ruta después ---
+                    foto_path=None,
+                    foto_multiparametro=None,
+                    foto_turbiedad=None
                 )
                 db.add(nuevo_monitoreo)
                 contador_nuevos += 1
@@ -145,6 +156,7 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     ruta_guardada = save_dynamic_photo(b64_data, item.device_id, fecha_base, db_monitoreo_id, tipo)
 
                     if ruta_guardada:
+                        # 1. Guardar en la tabla de fotos (Legacy support)
                         if foto_existente:
                             foto_existente.ruta = ruta_guardada
                         else:
@@ -154,6 +166,28 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                                 ruta=ruta_guardada
                             )
                             db.add(nueva_foto)
+                        
+                        # 2. Sincronizar en el registro principal (Fase 86)
+                        monitoreo_obj = existente if existente else nuevo_monitoreo
+                        if tipo == 'general': monitoreo_obj.foto_path = ruta_guardada
+                        elif tipo == 'multiparametro': monitoreo_obj.foto_multiparametro = ruta_guardada
+                        elif tipo == 'turbiedad': monitoreo_obj.foto_turbiedad = ruta_guardada
+            
+            # --- NUEVA LÓGICA DE DETALLES/PARÁMETROS EXTRA (Fase 86) ---
+            if item.detalles:
+                logger.info(f"💾 Guardando {len(item.detalles)} parámetros extra (detalles) para el monitoreo...")
+                # Si es un edit, limpiamos los detalles previos (Full Sync)
+                if existente:
+                    db.query(MonitoreoDetalleDB).filter(MonitoreoDetalleDB.monitoreo_id == db_monitoreo_id).delete()
+                
+                for det in item.detalles:
+                    db_detalle = MonitoreoDetalleDB(
+                        monitoreo_id=db_monitoreo_id,
+                        parametro=det.parametro,
+                        valor=det.valor,           # Fase 88: ahora es String
+                        tipo_dato=det.tipo_dato     # Fase 88: "number", "text", "boolean"
+                    )
+                    db.add(db_detalle)
             
         # 3. Intento de persistencia en MySQL
         db.commit() 
@@ -173,11 +207,75 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
         )
 
 @router.post("/muestras")
-def exponer_muestras(payload: MuestrasPayload, db: Session = Depends(get_db)):
-    """ Recibe un programa y un array de estaciones """
-    return {
-        "status": "success",
-        "mensaje": "Búsqueda procesada",
-        "programa_solicitado": payload.programa,
-        "estaciones_solicitadas": payload.estaciones
+def exponer_muestras(payload: MuestrasPayload, request: Request):
+    """ Proxy hacia la API externa: reenvía la consulta de historial de muestras con autenticación """
+    URL_EXTERNA = "http://apicollector.gpconsultores.cl/api/muestras"
+
+    cuerpo = {
+        "programa": payload.programa,
+        "estaciones": payload.estaciones
     }
+
+    # Reenviar el header Authorization que envía Flutter (Basic o Bearer)
+    headers = {"Content-Type": "application/json"}
+    auth_header = request.headers.get("Authorization")
+    if auth_header:
+        headers["Authorization"] = auth_header
+
+    logger.info(f"📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ {payload.programa} ] | Estaciones: {payload.estaciones}")
+
+    try:
+        respuesta = req.post(URL_EXTERNA, json=cuerpo, headers=headers, timeout=30)
+
+        if respuesta.status_code == 401:
+            logger.error("🚨 API externa rechazó las credenciales (401 Unauthorized).")
+            raise HTTPException(status_code=502, detail="La API externa rechazó las credenciales (401 Unauthorized).")
+
+        respuesta.raise_for_status()
+        datos = respuesta.json()
+
+        # --- Normalización: siempre retornar una lista a Flutter ---
+        if isinstance(datos, dict):
+            logger.info(f"🔍 Respuesta externa es un dict. Llaves detectadas: {list(datos.keys())}")
+
+        lista_muestras = []
+        if isinstance(datos, list):
+            lista_muestras = datos
+        elif isinstance(datos, dict):
+            # Buscar por llaves conocidas primero
+            llaves_comunes = ["data", "muestras", "registros", "historico", "result", "items", "results"]
+            for key in llaves_comunes:
+                if key in datos and isinstance(datos[key], list):
+                    lista_muestras = datos[key]
+                    logger.info(f"✅ Lista extraída desde la llave: '{key}'")
+                    break
+
+            # Fallback agresivo: cualquier valor que sea lista
+            if not lista_muestras:
+                logger.warning(f"⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...")
+                for val in datos.values():
+                    if isinstance(val, list):
+                        lista_muestras = val
+                        break
+
+            if not lista_muestras:
+                logger.warning(f"⚠️ No se pudo extraer una lista del dict externo. Llaves: {list(datos.keys())}")
+
+        # Phase 72: Conversión UTM a WGS84 para el historial de muestras antes del dispatch
+        for m in lista_muestras:
+            if isinstance(m, dict) and m.get("latitud") and m.get("longitud"):
+                # convert_utm_to_wgs84 detecta si ya son decimales y no los altera
+                lat, lon = convert_utm_to_wgs84(easting=m["longitud"], northing=m["latitud"])
+                m["latitud"] = lat
+                m["longitud"] = lon
+        
+        logger.info(f"✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: {len(lista_muestras)}")
+        return lista_muestras
+
+    except req.exceptions.Timeout:
+        logger.error("🚨 Timeout al conectarse a la API externa de muestras.")
+        raise HTTPException(status_code=504, detail="La API externa no respondió a tiempo.")
+
+    except req.exceptions.RequestException as e:
+        logger.error(f"🚨 Error de conexión con la API externa: {str(e)}")
+        raise HTTPException(status_code=502, detail=f"Error al conectar con la API externa: {str(e)}")

@@ -41,6 +41,7 @@ class ParametroDB(Base):
     enable = Column(Integer)
     min = Column(Float)
     max = Column(Float)
+    categoria = Column(String(50), server_default='adicional')
 
 class UsuarioDB(Base):
     __tablename__ = "usuarios"
@@ -85,6 +86,9 @@ class MonitoreoDB(Base):
     foto_path = Column(LONGTEXT)
     foto_multiparametro = Column(LONGTEXT)
     foto_turbiedad = Column(LONGTEXT)
+    
+    # Relación con parámetros dinámicos (Fase 86)
+    detalles = relationship("MonitoreoDetalleDB", back_populates="monitoreo", cascade="all, delete-orphan")
 
 class MonitoreoFotoDB(Base):
     __tablename__ = "monitoreo_fotos"
@@ -109,3 +113,14 @@ class CampanaEstacionDB(Base):
     id_camp_est = Column(Integer, primary_key=True, index=True)
     id_campana = Column(Integer, ForeignKey("campanas.id_campana"))
     id_estacion = Column(Integer, ForeignKey("estaciones.id_estacion"))
+
+class MonitoreoDetalleDB(Base):
+    """ Almacena parámetros dinámicos extra enviados en el array 'detalles' (Fase 86 → Fase 88: valor dinámico) """
+    __tablename__ = "monitoreo_detalles"
+    id = Column(Integer, primary_key=True, index=True)
+    monitoreo_id = Column(Integer, ForeignKey("monitoreos.id"))
+    parametro = Column(String(255))
+    valor = Column(String(255))       # Fase 88: era Float, ahora String para soportar texto/boolean/etc.
+    tipo_dato = Column(String(50))    # Fase 88: "number", "text", "boolean" — indica al frontend cómo parsear
+    
+    monitoreo = relationship("MonitoreoDB", back_populates="detalles")

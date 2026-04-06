@@ -6,6 +6,7 @@ from database import get_db
 from models import CampanaDB, EquipoDB, MatrizDB, MetodoDB, ParametroDB, UsuarioDB
 from schemas import Campana, Equipo, Matriz, Metodo, Parametro, Usuario
 from auth import verificar_credenciales
+from utils import convert_utm_to_wgs84
 
 logger = logging.getLogger(__name__)
 
@@ -16,7 +17,17 @@ def get_campanas(db: Session = Depends(get_db)):
     logger.info("📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)")
     # Se eliminó cualquier filtro de 'disabled == 0' para mostrar todo el catálogo
     # Importante usar joinedload para que las estaciones se incluyan en el JSON de respuesta
-    return db.query(CampanaDB).options(joinedload(CampanaDB.estaciones)).all()
+    campanas = db.query(CampanaDB).options(joinedload(CampanaDB.estaciones)).all()
+    
+    # Phase 72: Refactorización para conversión explícita en el router
+    for campana in campanas:
+        for estacion in campana.estaciones:
+            # Convertimos las coordenadas UTM (Este/Norte) a WGS84 (Lon/Lat) para la App Móvil
+            lat, lon = convert_utm_to_wgs84(easting=estacion.utm_este, northing=estacion.utm_norte)
+            estacion.latitud = lat
+            estacion.longitud = lon
+            
+    return campanas
 
 @router.get("/equipos", response_model=List[Equipo])
 def get_equipos(db: Session = Depends(get_db)):

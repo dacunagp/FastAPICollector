@@ -14,7 +14,7 @@ from datetime import datetime
 def setup_logging():
     # Agregar una línea de separación física en el archivo de texto para identificar nuevos arranques
     try:
-        ahora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        ahora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         with open(LOG_FILE, "a", encoding='utf-8') as f:
             f.write("\n" + "="*100 + "\n")
             f.write(f"🚀 INICIO DE SESIÓN: {os.path.basename(LOG_FILE)} - {ahora} - PID: {os.getpid()}\n")
@@ -27,7 +27,7 @@ def setup_logging():
     logger.setLevel(logging.INFO)
 
     # Formato narrativo: Fecha - [ NIVEL ] - Mensaje
-    formatter = logging.Formatter('%(asctime)s - [ %(levelname)s ] - %(name)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+    formatter = logging.Formatter('%(asctime)s - [ %(levelname)s ] - %(name)s - %(message)s', datefmt='%d/%m/%Y %H:%M:%S')
 
     # Handler para Consola
     console_handler = logging.StreamHandler()

@@ -265,3 +265,1795 @@
 ====================================================================================================
 
 2026-04-01 18:27:33 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 2026-04-02 10:25:10 - PID: 3004
+====================================================================================================
+
+2026-04-02 10:25:10 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 10:26:55 - PID: 16252
+====================================================================================================
+
+02/04/2026 10:26:55 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+02/04/2026 10:26:55 - [ INFO ] - root - 🚀 Test de formato de fecha exitoso.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 10:41:46 - PID: 27764
+====================================================================================================
+
+02/04/2026 10:41:46 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+02/04/2026 10:41:57 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:41:57 - [ INFO ] - routers.sync - 📋 Consulta de catálogo [ HISTORIAL MUESTRAS ] solicitada para programa: [ 12 ]
+02/04/2026 10:41:57 - [ INFO ] - routers.sync - ✅ Consulta finalizada. Se enviaron 4 registros históricos.
+02/04/2026 10:42:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:42:17 - [ INFO ] - routers.sync - 📋 Consulta de catálogo [ HISTORIAL MUESTRAS ] solicitada para programa: [ 12 ]
+02/04/2026 10:42:17 - [ INFO ] - routers.sync - ✅ Consulta finalizada. Se enviaron 4 registros históricos.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 10:44:11 - PID: 3544
+====================================================================================================
+
+02/04/2026 10:44:11 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 10:45:30 - PID: 26772
+====================================================================================================
+
+02/04/2026 10:45:30 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 10:47:54 - PID: 5180
+====================================================================================================
+
+02/04/2026 10:47:54 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 10:48:27 - PID: 10760
+====================================================================================================
+
+02/04/2026 10:48:27 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+02/04/2026 10:50:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:50:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:50:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:50:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:50:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:50:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:50:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 10:50:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 10:50:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 10:50:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 10:50:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 10:50:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 10:50:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 10:50:30 - [ INFO ] - routers.sync - 📋 Consulta de catálogo [ HISTORIAL MUESTRAS ] solicitada para programa: [ 12 ]
+02/04/2026 10:50:30 - [ INFO ] - routers.sync - ✅ Consulta finalizada. Se enviaron 4 registros históricos.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 10:59:51 - PID: 1424
+====================================================================================================
+
+02/04/2026 10:59:51 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+02/04/2026 11:01:18 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:01:18 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:01:18 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:01:18 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:01:18 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:01:18 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:01:18 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 11:01:18 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 11:01:18 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 11:01:18 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 11:01:18 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 11:01:18 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 11:01:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:01:31 - [ INFO ] - routers.sync - 📋 Consulta de catálogo [ HISTORIAL MUESTRAS ] solicitada para programa: [ 12 ]
+02/04/2026 11:01:31 - [ INFO ] - routers.sync - ✅ Consulta finalizada. Se enviaron 4 registros históricos.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 11:39:12 - PID: 3384
+====================================================================================================
+
+02/04/2026 11:39:12 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+02/04/2026 11:39:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:39:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:39:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:39:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:39:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:39:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:39:23 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 11:39:23 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 11:39:23 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 11:39:23 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 11:39:23 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 11:39:23 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 11:39:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 11:44:55 - PID: 28056
+====================================================================================================
+
+02/04/2026 11:44:55 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+02/04/2026 11:45:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:45:05 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando consulta a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 11:45:05 - [ ERROR ] - routers.sync - 🚨 Error de conexión con la API externa: 401 Client Error: Unauthorized for url: http://apicollector.gpconsultores.cl/api/muestras
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 11:51:37 - PID: 15924
+====================================================================================================
+
+02/04/2026 11:51:37 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+02/04/2026 11:51:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 11:51:56 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 11:51:58 - [ INFO ] - routers.sync - ✅ Respuesta recibida desde API externa. Registros obtenidos: N/A
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 02/04/2026 12:03:20 - PID: 8940
+====================================================================================================
+
+02/04/2026 12:03:20 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+02/04/2026 12:03:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:03:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:03:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:03:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:03:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:03:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:03:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 12:03:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 12:03:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 12:03:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 12:03:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 12:03:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 12:03:57 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:03:57 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+02/04/2026 12:03:59 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 12:03:59 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 12:03:59 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 12:04:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:04:43 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['GPLB-5']
+02/04/2026 12:04:44 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 12:04:44 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 12:04:44 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 10
+02/04/2026 12:04:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:04:56 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+02/04/2026 12:04:56 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 12:04:56 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 12:04:56 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 12:05:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:05:43 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+02/04/2026 12:05:44 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 12:05:44 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 12:05:44 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 12:05:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:05:59 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['GPLB-5']
+02/04/2026 12:05:59 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 12:05:59 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 12:05:59 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 10
+02/04/2026 12:14:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:14:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:14:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:14:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:14:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:14:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:14:47 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 12:14:47 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 12:14:47 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 12:14:47 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 12:14:47 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 12:14:47 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 12:15:00 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:15:00 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 12:15:01 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 12:15:01 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 12:15:01 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 12:29:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:29:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:29:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:29:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:29:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 12:29:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 12:29:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:29:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:29:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 12:29:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 12:29:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 12:29:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 12:29:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:29:23 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 12:29:25 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 12:29:25 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 12:29:25 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 12:38:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:38:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:38:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:38:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:38:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:38:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:38:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 12:38:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 12:38:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 12:38:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 12:38:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 12:38:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 12:38:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 12:38:56 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-31']
+02/04/2026 12:38:57 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 12:38:57 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 12:38:57 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 208
+02/04/2026 14:42:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:42:52 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-49']
+02/04/2026 14:42:52 - [ ERROR ] - routers.sync - 🚨 Error de conexión con la API externa: HTTPConnectionPool(host='apicollector.gpconsultores.cl', port=80): Max retries exceeded with url: /api/muestras (Caused by NameResolutionError("HTTPConnection(host='apicollector.gpconsultores.cl', port=80): Failed to resolve 'apicollector.gpconsultores.cl' ([Errno 11001] getaddrinfo failed)"))
+02/04/2026 14:44:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:11 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 14:44:21 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:21 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:21 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 14:44:22 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:22 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+02/04/2026 14:44:23 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:23 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:23 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 14:44:25 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:25 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['GPLB-5']
+02/04/2026 14:44:25 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:25 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:25 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 10
+02/04/2026 14:44:26 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:26 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-31']
+02/04/2026 14:44:27 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:27 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:27 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 208
+02/04/2026 14:44:28 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:28 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-49']
+02/04/2026 14:44:29 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:29 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:29 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 146
+02/04/2026 14:44:29 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:29 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-49A']
+02/04/2026 14:44:30 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:30 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:30 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 88
+02/04/2026 14:44:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:31 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-56']
+02/04/2026 14:44:32 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:32 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:32 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 237
+02/04/2026 14:44:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:33 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNB-4A']
+02/04/2026 14:44:34 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:34 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:34 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 244
+02/04/2026 14:44:35 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:35 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNB-4B']
+02/04/2026 14:44:36 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:36 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:36 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 242
+02/04/2026 14:44:37 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:37 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNB-4C']
+02/04/2026 14:44:38 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:38 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:38 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 228
+02/04/2026 14:44:39 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:39 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PBB-01']
+02/04/2026 14:44:40 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:40 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:40 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 292
+02/04/2026 14:44:41 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:41 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['POB-07A']
+02/04/2026 14:44:42 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:42 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:42 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 290
+02/04/2026 14:44:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:44 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['POB-08B']
+02/04/2026 14:44:45 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:45 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:45 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 275
+02/04/2026 14:44:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:46 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-01']
+02/04/2026 14:44:47 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:47 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:47 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 243
+02/04/2026 14:44:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:48 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-02']
+02/04/2026 14:44:49 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:49 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:49 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 240
+02/04/2026 14:44:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:50 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-03']
+02/04/2026 14:44:50 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:50 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:50 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 52
+02/04/2026 14:44:53 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:53 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-04']
+02/04/2026 14:44:54 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:54 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:54 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 228
+02/04/2026 14:44:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:56 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-05']
+02/04/2026 14:44:57 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:57 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:57 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 231
+02/04/2026 14:44:58 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:58 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-06']
+02/04/2026 14:44:59 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:44:59 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:44:59 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 43
+02/04/2026 14:44:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:44:59 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-07']
+02/04/2026 14:45:00 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:00 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:00 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 230
+02/04/2026 14:45:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:01 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-08']
+02/04/2026 14:45:02 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:02 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:02 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 225
+02/04/2026 14:45:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:03 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-09']
+02/04/2026 14:45:04 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:04 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:04 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 226
+02/04/2026 14:45:05 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:05 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-11']
+02/04/2026 14:45:06 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:06 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:06 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 164
+02/04/2026 14:45:07 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:07 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-12']
+02/04/2026 14:45:08 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:08 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:08 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 162
+02/04/2026 14:45:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:09 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-13']
+02/04/2026 14:45:09 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:09 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:09 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 163
+02/04/2026 14:45:10 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:10 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-14']
+02/04/2026 14:45:11 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:11 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:11 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 204
+02/04/2026 14:45:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:12 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-15']
+02/04/2026 14:45:13 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:13 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:13 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 89
+02/04/2026 14:45:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:14 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-16']
+02/04/2026 14:45:14 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:14 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:14 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 72
+02/04/2026 14:45:15 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:15 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-18']
+02/04/2026 14:45:16 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:16 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:16 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 89
+02/04/2026 14:45:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:16 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-19']
+02/04/2026 14:45:17 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:17 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:17 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 104
+02/04/2026 14:45:18 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:18 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-20']
+02/04/2026 14:45:18 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:18 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:18 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 51
+02/04/2026 14:45:19 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:19 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-21']
+02/04/2026 14:45:19 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:19 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:19 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 51
+02/04/2026 14:45:20 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:20 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-22']
+02/04/2026 14:45:21 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:21 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:21 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 50
+02/04/2026 14:45:21 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:21 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-23']
+02/04/2026 14:45:22 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:22 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:22 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 51
+02/04/2026 14:45:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:23 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-24']
+02/04/2026 14:45:23 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:23 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:23 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 49
+02/04/2026 14:45:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:24 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PRLB-25']
+02/04/2026 14:45:25 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:25 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:25 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 50
+02/04/2026 14:45:25 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:25 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['WP-01']
+02/04/2026 14:45:26 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:26 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:26 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 145
+02/04/2026 14:45:27 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:27 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-10']
+02/04/2026 14:45:28 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:28 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:28 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 627
+02/04/2026 14:45:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:30 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-27']
+02/04/2026 14:45:31 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:31 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:31 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 562
+02/04/2026 14:45:32 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:32 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-36']
+02/04/2026 14:45:33 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:33 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:33 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 214
+02/04/2026 14:45:34 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:34 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNB-5A']
+02/04/2026 14:45:35 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:35 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:35 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 264
+02/04/2026 14:45:36 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:36 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNB-5B']
+02/04/2026 14:45:37 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:37 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:37 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 215
+02/04/2026 14:45:38 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:38 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNB-6A']
+02/04/2026 14:45:39 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:39 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:39 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 263
+02/04/2026 14:45:40 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:40 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNB-6B']
+02/04/2026 14:45:41 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:41 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:41 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 115
+02/04/2026 14:45:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:42 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNB-6C']
+02/04/2026 14:45:42 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:42 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:42 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 259
+02/04/2026 14:45:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:44 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['MNL-3A']
+02/04/2026 14:45:45 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:45 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:45 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 228
+02/04/2026 14:45:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:46 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PBB-07']
+02/04/2026 14:45:47 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:47 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:47 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 289
+02/04/2026 14:45:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:48 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['POB-06B']
+02/04/2026 14:45:49 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:49 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:49 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 330
+02/04/2026 14:45:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:50 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['POR-5A']
+02/04/2026 14:45:51 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:51 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:51 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+02/04/2026 14:45:51 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+02/04/2026 14:45:51 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 0
+02/04/2026 14:45:51 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:51 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['POR-5B']
+02/04/2026 14:45:52 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:52 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:52 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+02/04/2026 14:45:52 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+02/04/2026 14:45:52 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 0
+02/04/2026 14:45:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:52 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-42']
+02/04/2026 14:45:53 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:53 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:53 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 175
+02/04/2026 14:45:54 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:54 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-51']
+02/04/2026 14:45:55 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:55 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:55 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 247
+02/04/2026 14:45:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:56 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['PZL-1']
+02/04/2026 14:45:57 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:57 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:57 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 241
+02/04/2026 14:45:58 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:58 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['Descarga Sur']
+02/04/2026 14:45:58 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:45:58 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:45:58 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 58
+02/04/2026 14:45:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:45:59 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['LM-30']
+02/04/2026 14:46:00 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 14:46:00 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 14:46:00 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 86
+02/04/2026 14:49:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:49:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:49:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 14:49:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:49:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:49:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:49:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:49:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 14:49:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 14:49:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 14:49:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 14:49:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 14:51:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 14:51:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 14:51:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 14:51:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 14:51:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 14:51:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 14:51:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 14:51:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 14:51:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 14:51:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:51:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 14:51:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 14:51:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 14:53:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:53:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 14:53:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:53:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 14:53:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:53:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:53:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:53:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 14:53:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 14:53:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:53:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 14:53:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 14:54:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 14:54:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 14:54:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 14:54:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 14:54:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 14:54:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 14:54:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 14:54:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 14:54:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 14:54:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 14:54:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 14:54:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 14:54:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 15:02:10 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 15:02:10 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+02/04/2026 15:02:10 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+02/04/2026 15:02:10 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 1 ] - NUEVO. Insertando en la DB...
+02/04/2026 15:02:10 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_8105b2ef.jpg
+02/04/2026 15:02:10 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/multiparametro_06ca0b8d.jpg
+02/04/2026 15:02:10 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_86e8296c.jpg
+02/04/2026 15:02:10 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.
+02/04/2026 16:46:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:46:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:46:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:46:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:46:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:46:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:46:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 16:46:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 16:46:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 16:46:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 16:46:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 16:46:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 16:46:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:46:31 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 16:46:41 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 16:46:41 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 16:46:41 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 16:46:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:46:44 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 16:46:45 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 16:46:45 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 16:46:45 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 16:47:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:47:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 16:47:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:47:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 16:47:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:47:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 16:47:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:47:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:47:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 16:47:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 16:47:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:47:49 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 16:48:07 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:48:07 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 16:48:08 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 16:48:08 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 16:48:08 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 16:57:20 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 16:57:20 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 16:57:21 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 16:57:21 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 16:57:21 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 17:03:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:03:52 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 17:03:53 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 17:03:53 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 17:03:53 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 17:44:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:44:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:44:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:44:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:44:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:44:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:44:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 17:44:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 17:44:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 17:44:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 17:44:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 17:44:14 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 17:44:26 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:44:26 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 17:44:35 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 17:44:35 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 17:44:35 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 17:45:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:45:03 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 17:45:04 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 17:45:04 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 17:45:04 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 17:45:13 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:45:13 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 17:45:14 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 17:45:14 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 17:45:14 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 17:55:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:55:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:55:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:55:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:55:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:55:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:55:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 17:55:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 17:55:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 17:55:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 17:55:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 17:55:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 17:55:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:55:48 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 17:55:49 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 17:55:49 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 17:55:49 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 17:56:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:56:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+02/04/2026 17:56:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:56:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+02/04/2026 17:56:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:56:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+02/04/2026 17:56:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:56:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:56:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 17:56:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+02/04/2026 17:56:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+02/04/2026 17:56:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+02/04/2026 18:02:07 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 18:02:07 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 18:02:07 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 18:02:07 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 18:02:07 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+02/04/2026 18:02:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+02/04/2026 18:02:17 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+02/04/2026 18:02:18 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+02/04/2026 18:02:18 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+02/04/2026 18:02:18 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 09:15:48 - PID: 11948
+====================================================================================================
+
+06/04/2026 09:15:48 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 09:17:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 09:17:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 09:17:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 09:17:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 09:17:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 09:17:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 09:17:17 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+06/04/2026 09:17:17 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+06/04/2026 09:17:17 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+06/04/2026 09:17:17 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+06/04/2026 09:17:17 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+06/04/2026 09:17:17 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+06/04/2026 09:17:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 09:17:30 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+06/04/2026 09:17:40 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+06/04/2026 09:17:40 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+06/04/2026 09:17:40 - [ INFO ] - routers.sync - ✅ Normalización completada. Registros enviados a Flutter: 322
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 09:32:39 - PID: 22760
+====================================================================================================
+
+06/04/2026 09:32:39 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 09:50:55 - PID: 7784
+====================================================================================================
+
+06/04/2026 09:50:55 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 10:03:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 10:03:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 10:03:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 10:03:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 10:03:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 10:03:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 10:03:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+06/04/2026 10:03:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+06/04/2026 10:03:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+06/04/2026 10:03:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+06/04/2026 10:03:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+06/04/2026 10:03:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+06/04/2026 12:43:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 12:43:11 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+06/04/2026 12:43:11 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 2 ]...
+06/04/2026 12:43:11 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 2 ] - NUEVO. Insertando en la DB...
+06/04/2026 12:43:11 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_61/general_acd9f9ef.jpg
+06/04/2026 12:43:11 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_61/multiparametro_1277c682.jpg
+06/04/2026 12:43:11 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_61/turbiedad_90ebcf78.jpg
+06/04/2026 12:43:11 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.
+06/04/2026 12:58:55 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [gpconsul]
+06/04/2026 12:58:55 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ SIM_DEVICE_86 ]
+06/04/2026 12:58:55 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 9999 ]...
+06/04/2026 12:58:55 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 9999 ] - NUEVO. Insertando en la DB...
+06/04/2026 12:58:55 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 13:16:49 - PID: 1708
+====================================================================================================
+
+06/04/2026 13:16:49 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 13:24:15 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 13:24:15 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+06/04/2026 13:24:15 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+06/04/2026 13:24:16 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 1 ] - EXISTENTE. Actualizando todos los campos...
+06/04/2026 13:24:16 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_021e7990.jpg
+06/04/2026 13:24:16 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/multiparametro_2507caf2.jpg
+06/04/2026 13:24:16 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_443112c4.jpg
+06/04/2026 13:24:16 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+06/04/2026 13:24:16 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1054, "Unknown column 'parametro' in 'field list'")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s)]
+[parameters: {'monitoreo_id': 60, 'parametro': 'caudal', 'valor': 7.0}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'parametro' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 192, in sync_monitoreos
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'parametro' in 'field list'")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s)]
+[parameters: {'monitoreo_id': 60, 'parametro': 'caudal', 'valor': 7.0}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 13:35:26 - PID: 13040
+====================================================================================================
+
+06/04/2026 13:35:26 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 14:17:30 - PID: 5672
+====================================================================================================
+
+06/04/2026 14:17:30 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 14:18:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 14:18:23 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+06/04/2026 14:18:23 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+06/04/2026 14:18:23 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 1 ] - EXISTENTE. Actualizando todos los campos...
+06/04/2026 14:18:23 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_58dc230b.jpg
+06/04/2026 14:18:23 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/multiparametro_81da03b5.jpg
+06/04/2026 14:18:23 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_e8f67566.jpg
+06/04/2026 14:18:23 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+06/04/2026 14:18:23 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1054, "Unknown column 'valor' in 'field list'")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s)]
+[parameters: {'monitoreo_id': 60, 'parametro': 'caudal', 'valor': 7.0}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'valor' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 192, in sync_monitoreos
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'valor' in 'field list'")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s)]
+[parameters: {'monitoreo_id': 60, 'parametro': 'caudal', 'valor': 7.0}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+06/04/2026 14:21:27 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [gpconsul]
+06/04/2026 14:21:27 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ FIX-VERIFY-86 ]
+06/04/2026 14:21:27 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 8686 ]...
+06/04/2026 14:21:27 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 8686 ] - NUEVO. Insertando en la DB...
+06/04/2026 14:21:27 - [ INFO ] - routers.sync - 💾 Guardando 2 parámetros extra (detalles) para el monitoreo...
+06/04/2026 14:21:27 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1364, "Field 'parameter_id' doesn't have a default value")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s)]
+[parameters: {'monitoreo_id': 63, 'parametro': 'Caudal (Fix)', 'valor': 7.0}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'parameter_id' doesn't have a default value")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 192, in sync_monitoreos
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1364, "Field 'parameter_id' doesn't have a default value")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s)]
+[parameters: {'monitoreo_id': 63, 'parametro': 'Caudal (Fix)', 'valor': 7.0}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 14:23:27 - PID: 30048
+====================================================================================================
+
+06/04/2026 14:23:27 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 14:57:00 - PID: 27352
+====================================================================================================
+
+06/04/2026 14:57:00 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 14:58:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 14:58:52 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+06/04/2026 14:58:52 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+06/04/2026 14:58:52 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 1 ] - EXISTENTE. Actualizando todos los campos...
+06/04/2026 14:58:53 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_a163a015.jpg
+06/04/2026 14:58:53 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/multiparametro_cef69d96.jpg
+06/04/2026 14:58:53 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_9fffb490.jpg
+06/04/2026 14:58:53 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+06/04/2026 14:58:53 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1054, "Unknown column 'tipo_dato' in 'field list'")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor, tipo_dato) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s, %(tipo_dato)s)]
+[parameters: {'monitoreo_id': 60, 'parametro': 'caudal', 'valor': '7.0', 'tipo_dato': 'number'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'tipo_dato' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 193, in sync_monitoreos
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'tipo_dato' in 'field list'")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor, tipo_dato) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s, %(tipo_dato)s)]
+[parameters: {'monitoreo_id': 60, 'parametro': 'caudal', 'valor': '7.0', 'tipo_dato': 'number'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 14:59:39 - PID: 15276
+====================================================================================================
+
+06/04/2026 14:59:39 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 15:01:05 - PID: 23376
+====================================================================================================
+
+06/04/2026 15:01:05 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 15:03:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:03:50 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+06/04/2026 15:03:50 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+06/04/2026 15:03:50 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 1 ] - EXISTENTE. Actualizando todos los campos...
+06/04/2026 15:03:50 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_1a58d6e7.jpg
+06/04/2026 15:03:50 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/multiparametro_4f3f35ea.jpg
+06/04/2026 15:03:50 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_2f28884c.jpg
+06/04/2026 15:03:50 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+06/04/2026 15:03:50 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1364, "Field 'parameter_id' doesn't have a default value")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor, tipo_dato) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s, %(tipo_dato)s)]
+[parameters: {'monitoreo_id': 60, 'parametro': 'caudal', 'valor': '7.0', 'tipo_dato': 'number'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'parameter_id' doesn't have a default value")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 193, in sync_monitoreos
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1364, "Field 'parameter_id' doesn't have a default value")
+[SQL: INSERT INTO monitoreo_detalles (monitoreo_id, parametro, valor, tipo_dato) VALUES (%(monitoreo_id)s, %(parametro)s, %(valor)s, %(tipo_dato)s)]
+[parameters: {'monitoreo_id': 60, 'parametro': 'caudal', 'valor': '7.0', 'tipo_dato': 'number'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 15:08:20 - PID: 5296
+====================================================================================================
+
+06/04/2026 15:08:20 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 15:10:10 - PID: 32332
+====================================================================================================
+
+06/04/2026 15:10:10 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 15:13:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:13:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:13:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:13:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:13:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:13:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:13:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+06/04/2026 15:13:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+06/04/2026 15:13:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+06/04/2026 15:13:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+06/04/2026 15:13:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+06/04/2026 15:13:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+06/04/2026 15:13:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:13:56 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+06/04/2026 15:13:57 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+06/04/2026 15:13:57 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+06/04/2026 15:13:57 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+06/04/2026 15:13:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:13:59 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+06/04/2026 15:14:00 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+06/04/2026 15:14:00 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+06/04/2026 15:14:00 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+06/04/2026 15:18:13 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:18:13 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+06/04/2026 15:18:13 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+06/04/2026 15:18:13 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 1 ] - EXISTENTE. Actualizando todos los campos...
+06/04/2026 15:18:13 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_6379f498.jpg
+06/04/2026 15:18:13 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/multiparametro_3650a5f0.jpg
+06/04/2026 15:18:13 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_c05b104d.jpg
+06/04/2026 15:18:13 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+06/04/2026 15:18:13 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 0 nuevos y 1 editados.
+06/04/2026 15:47:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:47:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:47:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:47:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:47:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:47:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:47:56 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+06/04/2026 15:47:56 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+06/04/2026 15:47:56 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+06/04/2026 15:47:56 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+06/04/2026 15:47:56 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+06/04/2026 15:47:56 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+06/04/2026 15:50:32 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 15:50:32 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+06/04/2026 15:50:39 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+06/04/2026 15:50:39 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+06/04/2026 15:50:39 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 16:00:18 - PID: 30680
+====================================================================================================
+
+06/04/2026 16:00:18 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 16:00:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 16:00:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 16:00:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 16:00:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 16:00:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 16:00:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 16:00:31 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+06/04/2026 16:00:31 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+06/04/2026 16:00:31 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+06/04/2026 16:00:31 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+06/04/2026 16:00:31 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+06/04/2026 16:00:31 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+06/04/2026 16:00:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 16:00:47 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+06/04/2026 16:00:47 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+06/04/2026 16:00:47 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 1 ] - EXISTENTE. Actualizando todos los campos...
+06/04/2026 16:00:47 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_5cb4853f.jpg
+06/04/2026 16:00:47 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_f635f3c6.jpg
+06/04/2026 16:00:47 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+06/04/2026 16:00:47 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 0 nuevos y 1 editados.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 16:33:47 - PID: 1520
+====================================================================================================
+
+06/04/2026 16:33:47 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+06/04/2026 17:07:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 17:07:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 17:07:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 17:07:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 17:07:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 17:07:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+06/04/2026 17:07:24 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+06/04/2026 17:07:24 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+06/04/2026 17:07:24 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+06/04/2026 17:07:24 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+06/04/2026 17:07:24 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+06/04/2026 17:07:24 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 06/04/2026 18:03:09 - PID: 27612
+====================================================================================================
+
+06/04/2026 18:03:09 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.

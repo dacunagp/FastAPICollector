@@ -1,5 +1,6 @@
 from pydantic import BaseModel, model_validator
 from typing import List, Optional, Any
+from utils import convert_utm_to_wgs84
 
 class Campana(BaseModel):
     id_campana: int
@@ -36,6 +37,7 @@ class Parametro(BaseModel):
     enable: Optional[int] = None
     min: Optional[float] = None
     max: Optional[float] = None
+    categoria: Optional[str] = 'adicional'
     class Config: from_attributes = True
 
 class Usuario(BaseModel):
@@ -59,8 +61,15 @@ class Estacion(BaseModel):
 
     @model_validator(mode='after')
     def set_compat_coords(self) -> 'Estacion':
-        if self.latitud is None: self.latitud = self.utm_norte
-        if self.longitud is None: self.longitud = self.utm_este
+        # Si tenemos coordenadas UTM, las convertimos a WGS84 para la App Móvil
+        if self.utm_norte and self.utm_este:
+            lat, lon = convert_utm_to_wgs84(easting=self.utm_este, northing=self.utm_norte)
+            self.latitud = lat
+            self.longitud = lon
+        else:
+            # Fallback por si no hay UTM pero hay campos de latitud/longitud
+            if self.latitud is None: self.latitud = self.utm_norte
+            if self.longitud is None: self.longitud = self.utm_este
         return self
 
     class Config: from_attributes = True
@@ -98,9 +107,34 @@ class MonitoreoItem(BaseModel):
     foto_path: Optional[str] = None
     foto_multiparametro: Optional[str] = None
     foto_turbiedad: Optional[str] = None
+    
+    # Campo para parámetros dinámicos (Fase 86)
+    detalles: List['DetalleSync'] = []
 
 class SyncPayload(BaseModel):
     monitoreos: List[MonitoreoItem]
+
+class DetalleSync(BaseModel):
+    """ Esquema para los parámetros dinámicos extra (Fase 86 → Fase 88: valor dinámico) """
+    parametro: str
+    valor: Any                           # Fase 88: acepta number, string, boolean desde el móvil
+    tipo_dato: Optional[str] = None      # Fase 88: "number", "text", "boolean" — autodetectado si no se envía
+
+    @model_validator(mode='after')
+    def coerce_valor_and_detect_type(self) -> 'DetalleSync':
+        """ Convierte valor a string y auto-detecta tipo_dato si el móvil no lo envió """
+        raw = self.valor
+        if self.tipo_dato is None:
+            if isinstance(raw, bool):
+                self.tipo_dato = "boolean"
+            elif isinstance(raw, (int, float)):
+                self.tipo_dato = "number"
+            else:
+                self.tipo_dato = "text"
+        self.valor = str(raw)
+        return self
+
+    class Config: from_attributes = True
 
 class MuestrasPayload(BaseModel):
     programa: str

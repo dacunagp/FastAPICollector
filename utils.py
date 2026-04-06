@@ -2,10 +2,33 @@ import base64
 import uuid
 import os
 import logging
-from typing import Optional
+from typing import Optional, Tuple
 from datetime import datetime
+from pyproj import Transformer
 
 logger = logging.getLogger(__name__)
+
+# --- Configuración de Proyección (UTM 19S -> WGS84) ---
+# EPSG:32719 es UTM Zona 19S (WGS84). EPSG:4326 es el estándar WGS84 Lat/Lon (decimal degrees)
+# always_xy=True asegura el orden (Este/Longitud, Norte/Latitud)
+transformer = Transformer.from_crs("EPSG:32719", "EPSG:4326", always_xy=True)
+
+def convert_utm_to_wgs84(easting: float, northing: float) -> Tuple[float, float]:
+    """ 
+    Convierte coordenadas UTM (Chile Central, Zona 19S) a WGS84 Decimal Degrees.
+    Retorna: (latitud, longitud)
+    """
+    # Validación básica para prevenir doble conversión (si ya está en rango decimal)
+    if -90 <= northing <= 90 and -180 <= easting <= 180:
+        return northing, easting
+        
+    try:
+        # transform(x, y) -> (lon, lat) con always_xy=True
+        lon, lat = transformer.transform(easting, northing)
+        return lat, lon
+    except Exception as e:
+        logger.error(f"🚨 Error crítico en conversión de coordenadas UTM ({easting}, {northing}): {str(e)}")
+        return 0.0, 0.0
 
 # --- Almacenamiento de Imágenes ---
 UPLOAD_DIR = "static/uploads"
