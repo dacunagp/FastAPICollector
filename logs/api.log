@@ -2057,3 +2057,196 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1364, "Field 'p
 ====================================================================================================
 
 06/04/2026 18:03:09 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 07/04/2026 10:14:44 - PID: 13076
+====================================================================================================
+
+07/04/2026 10:14:44 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 07/04/2026 10:20:52 - PID: 25464
+====================================================================================================
+
+07/04/2026 10:20:52 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 07/04/2026 12:08:21 - PID: 25136
+====================================================================================================
+
+07/04/2026 12:08:21 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+07/04/2026 12:11:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:11:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:11:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:11:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:11:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:11:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:11:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+07/04/2026 12:11:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+07/04/2026 12:11:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+07/04/2026 12:11:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+07/04/2026 12:11:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+07/04/2026 12:11:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+07/04/2026 12:11:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:11:46 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+07/04/2026 12:11:58 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+07/04/2026 12:11:58 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+07/04/2026 12:11:58 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+07/04/2026 12:11:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:11:59 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+07/04/2026 12:12:01 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+07/04/2026 12:12:01 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+07/04/2026 12:12:01 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+07/04/2026 12:17:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:17:23 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+07/04/2026 12:17:23 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+07/04/2026 12:17:23 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 1 ] - EXISTENTE. Actualizando todos los campos...
+07/04/2026 12:17:23 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_233edf81.jpg
+07/04/2026 12:17:23 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/multiparametro_28a44519.jpg
+07/04/2026 12:17:23 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_23fcd008.jpg
+07/04/2026 12:17:23 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+07/04/2026 12:17:23 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 0 nuevos y 1 editados.
+07/04/2026 12:31:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:31:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:31:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:31:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+07/04/2026 12:31:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:31:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:31:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+07/04/2026 12:31:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+07/04/2026 12:31:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+07/04/2026 12:31:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+07/04/2026 12:31:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:31:09 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+07/04/2026 12:37:05 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:37:05 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+07/04/2026 12:37:08 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+07/04/2026 12:37:08 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+07/04/2026 12:37:08 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+07/04/2026 12:37:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 12:37:09 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+07/04/2026 12:37:10 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+07/04/2026 12:37:10 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+07/04/2026 12:37:10 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+07/04/2026 13:03:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:03:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:03:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:03:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:03:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:03:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:03:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+07/04/2026 13:03:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+07/04/2026 13:03:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+07/04/2026 13:03:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+07/04/2026 13:03:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+07/04/2026 13:03:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+07/04/2026 13:22:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:22:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:22:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:22:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:22:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:22:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:22:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+07/04/2026 13:22:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+07/04/2026 13:22:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+07/04/2026 13:22:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+07/04/2026 13:22:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+07/04/2026 13:22:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+07/04/2026 13:41:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:41:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:41:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:41:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:41:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:41:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 13:41:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+07/04/2026 13:41:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+07/04/2026 13:41:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+07/04/2026 13:41:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+07/04/2026 13:41:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+07/04/2026 13:41:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+07/04/2026 14:14:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:14:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+07/04/2026 14:14:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:14:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:14:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+07/04/2026 14:14:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:14:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+07/04/2026 14:14:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:14:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:14:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+07/04/2026 14:14:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+07/04/2026 14:14:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+07/04/2026 14:17:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:17:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+07/04/2026 14:17:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:17:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:17:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:17:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+07/04/2026 14:17:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+07/04/2026 14:17:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:17:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:17:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+07/04/2026 14:17:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+07/04/2026 14:17:16 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+07/04/2026 14:17:25 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:17:25 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+07/04/2026 14:17:36 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+07/04/2026 14:17:36 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+07/04/2026 14:17:36 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+07/04/2026 14:17:36 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 14:17:36 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+07/04/2026 14:17:38 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+07/04/2026 14:17:38 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+07/04/2026 14:17:38 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 07/04/2026 15:00:46 - PID: 23344
+====================================================================================================
+
+07/04/2026 15:00:46 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 07/04/2026 15:06:09 - PID: 25040
+====================================================================================================
+
+07/04/2026 15:06:09 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+07/04/2026 15:24:34 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:24:34 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:24:34 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:24:34 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:24:34 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:24:34 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:24:34 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+07/04/2026 15:24:34 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+07/04/2026 15:24:34 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+07/04/2026 15:24:34 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+07/04/2026 15:24:34 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+07/04/2026 15:24:34 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+07/04/2026 15:24:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:24:46 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+07/04/2026 15:24:56 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+07/04/2026 15:24:56 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+07/04/2026 15:24:56 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+07/04/2026 15:24:57 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:24:57 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+07/04/2026 15:24:58 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+07/04/2026 15:24:58 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+07/04/2026 15:24:58 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+07/04/2026 15:58:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 15:58:42 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+07/04/2026 15:58:42 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+07/04/2026 15:58:42 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 1 ] - EXISTENTE. Actualizando todos los campos...
+07/04/2026 15:58:43 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/general_f06b38b9.jpg
+07/04/2026 15:58:43 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/multiparametro_6e8345b4.jpg
+07/04/2026 15:58:43 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_60/turbiedad_24d81d22.jpg
+07/04/2026 15:58:43 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+07/04/2026 15:58:43 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 0 nuevos y 1 editados.
+07/04/2026 16:17:29 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+07/04/2026 16:17:29 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+07/04/2026 16:17:29 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 2 ]...
+07/04/2026 16:17:29 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 2 ] - NUEVO. Insertando en la DB...
+07/04/2026 16:17:29 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_64/general_b8334cd1.jpg
+07/04/2026 16:17:29 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_64/multiparametro_63512c74.jpg
+07/04/2026 16:17:29 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_64/turbiedad_e31e9522.jpg
+07/04/2026 16:17:29 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
+07/04/2026 16:17:29 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.

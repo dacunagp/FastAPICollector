@@ -139,3 +139,20 @@ class DetalleSync(BaseModel):
 class MuestrasPayload(BaseModel):
     programa: str
     estaciones: List[str]
+
+# --- Fase 97: Esquemas para Analítica ---
+class AnalyticsPoint(BaseModel):
+    valor: float
+    fecha: Optional[str] = None
+    estacion: Optional[str] = None
+    is_outlier: bool = False
+    is_test: bool = False
+
+class AnalyticsResponse(BaseModel):
+    parametro: str
+    media: float
+    desviacion_estandar: float
+    puntos: List[AnalyticsPoint]
+    count_total: int
+    count_clean: int
+    count_outliers: int
