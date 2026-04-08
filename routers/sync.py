@@ -1,4 +1,5 @@
 import logging
+import json
 import requests as req
 from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.orm import Session
@@ -22,6 +23,7 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
     # Log: Inicio de sincronización (Narrativo)
     dispositivo = payload.monitoreos[0].device_id if payload.monitoreos else "DESCONOCIDO"
     logger.info(f"🔄 Iniciando sincronización de registros para el dispositivo: [ {dispositivo} ]")
+    logger.debug(f"📦 Payload completo recibido: {payload.model_dump_json()}")
     
     try:
         for item in payload.monitoreos:
@@ -84,6 +86,15 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 existente.latitud = item.latitud
                 existente.longitud = item.longitud
                 
+                # Fase 108: Pivot a JSON Document
+                if item.detalles_json is not None:
+                    existente.detalles_json = json.dumps(item.detalles_json) if not isinstance(item.detalles_json, str) else item.detalles_json
+                
+                # Fase 113: Backend Support for Dual JSON Architecture
+                existente.multiparametros_json = json.dumps(item.multiparametros_json) if isinstance(item.multiparametros_json, (list, dict)) else item.multiparametros_json
+                
+                logger.debug(f"📝 [UPDATE] ID {item.id} - detalles_json: {existente.detalles_json[:100]}... | multiparametros_json: {existente.multiparametros_json[:100]}...")
+                
                 # --- Fase 86: Limpiar Base64 original para prepararlo para la ruta ---
                 existente.foto_path = None
                 existente.foto_multiparametro = None
@@ -122,12 +133,17 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     nivel=item.nivel,
                     latitud=item.latitud,
                     longitud=item.longitud,
+                    # Fase 108: Pivot a JSON Document
+                    detalles_json=json.dumps(item.detalles_json) if not isinstance(item.detalles_json, str) else item.detalles_json,
+                    # Fase 113: Backend Support for Dual JSON Architecture
+                    multiparametros_json=json.dumps(item.multiparametros_json) if isinstance(item.multiparametros_json, (list, dict)) else item.multiparametros_json,
                     # --- Fase 86: Iniciamos en None para guardar la ruta después ---
                     foto_path=None,
                     foto_multiparametro=None,
                     foto_turbiedad=None
                 )
                 db.add(nuevo_monitoreo)
+                logger.debug(f"📝 [INSERT] ID {item.id} - detalles_json: {nuevo_monitoreo.detalles_json[:100]}... | multiparametros_json: {nuevo_monitoreo.multiparametros_json[:100]}...")
                 contador_nuevos += 1
             
             # --- NUEVA LÓGICA DE FOTOS (Fase 39) ---

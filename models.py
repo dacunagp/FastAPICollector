@@ -87,7 +87,13 @@ class MonitoreoDB(Base):
     foto_multiparametro = Column(LONGTEXT)
     foto_turbiedad = Column(LONGTEXT)
     
-    # Relación con parámetros dinámicos (Fase 86)
+    # Fase 108: Pivot a Document Pattern (JSON) para capturas
+    detalles_json = Column(Text)
+    
+    # Fase 113: Backend Support for Dual JSON Architecture
+    multiparametros_json = Column(Text, nullable=True)
+    
+    # Relación con parámetros dinámicos (Fase 86 - Legacy support)
     detalles = relationship("MonitoreoDetalleDB", back_populates="monitoreo", cascade="all, delete-orphan")
 
 class MonitoreoFotoDB(Base):

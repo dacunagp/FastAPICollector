@@ -2250,3 +2250,925 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1364, "Field 'p
 07/04/2026 16:17:29 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_64/turbiedad_e31e9522.jpg
 07/04/2026 16:17:29 - [ INFO ] - routers.sync - 💾 Guardando 3 parámetros extra (detalles) para el monitoreo...
 07/04/2026 16:17:29 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 08/04/2026 10:38:18 - PID: 21188
+====================================================================================================
+
+08/04/2026 10:38:18 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+08/04/2026 10:41:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:41:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:41:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:41:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:41:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:41:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:41:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+08/04/2026 10:41:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+08/04/2026 10:41:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+08/04/2026 10:41:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+08/04/2026 10:41:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+08/04/2026 10:41:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+08/04/2026 10:42:10 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:42:10 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+08/04/2026 10:42:20 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+08/04/2026 10:42:20 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+08/04/2026 10:42:20 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+08/04/2026 10:42:21 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:42:21 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+08/04/2026 10:42:21 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+08/04/2026 10:42:21 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+08/04/2026 10:42:21 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+08/04/2026 10:46:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:46:31 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 10:46:31 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 4 ]...
+08/04/2026 10:46:31 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+[SQL: SELECT monitoreos.id AS monitoreos_id, monitoreos.device_id AS monitoreos_device_id, monitoreos.id_local AS monitoreos_id_local, monitoreos.programa_id AS monitoreos_programa_id, monitoreos.estacion_id AS monitoreos_estacion_id, monitoreos.fecha_hora AS monitoreos_fecha_hora, monitoreos.monitoreo_fallido AS monitoreos_monitoreo_fallido, monitoreos.observacion AS monitoreos_observacion, monitoreos.matriz_id AS monitoreos_matriz_id, monitoreos.equipo_multi_id AS monitoreos_equipo_multi_id, monitoreos.turbidimetro_id AS monitoreos_turbidimetro_id, monitoreos.metodo_id AS monitoreos_metodo_id, monitoreos.hidroquimico AS monitoreos_hidroquimico, monitoreos.isotopico AS monitoreos_isotopico, monitoreos.cod_laboratorio AS monitoreos_cod_laboratorio, monitoreos.usuario_id AS monitoreos_usuario_id, monitoreos.is_draft AS monitoreos_is_draft, monitoreos.equipo_nivel_id AS monitoreos_equipo_nivel_id, monitoreos.tipo_pozo AS monitoreos_tipo_pozo, monitoreos.fecha_hora_nivel AS monitoreos_fecha_hora_nivel, monitoreos.temperatura AS monitoreos_temperatura, monitoreos.ph AS monitoreos_ph, monitoreos.conductividad AS monitoreos_conductividad, monitoreos.oxigeno AS monitoreos_oxigeno, monitoreos.turbiedad AS monitoreos_turbiedad, monitoreos.profundidad AS monitoreos_profundidad, monitoreos.nivel AS monitoreos_nivel, monitoreos.latitud AS monitoreos_latitud, monitoreos.longitud AS monitoreos_longitud, monitoreos.foto_path AS monitoreos_foto_path, monitoreos.foto_multiparametro AS monitoreos_foto_multiparametro, monitoreos.foto_turbiedad AS monitoreos_foto_turbiedad, monitoreos.detalles_json AS monitoreos_detalles_json 
+FROM monitoreos 
+WHERE monitoreos.id_local = %(id_local_1)s AND monitoreos.device_id = %(device_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_local_1': 4, 'device_id_1': 'MOBILE-DATA', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 54, in sync_monitoreos
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+[SQL: SELECT monitoreos.id AS monitoreos_id, monitoreos.device_id AS monitoreos_device_id, monitoreos.id_local AS monitoreos_id_local, monitoreos.programa_id AS monitoreos_programa_id, monitoreos.estacion_id AS monitoreos_estacion_id, monitoreos.fecha_hora AS monitoreos_fecha_hora, monitoreos.monitoreo_fallido AS monitoreos_monitoreo_fallido, monitoreos.observacion AS monitoreos_observacion, monitoreos.matriz_id AS monitoreos_matriz_id, monitoreos.equipo_multi_id AS monitoreos_equipo_multi_id, monitoreos.turbidimetro_id AS monitoreos_turbidimetro_id, monitoreos.metodo_id AS monitoreos_metodo_id, monitoreos.hidroquimico AS monitoreos_hidroquimico, monitoreos.isotopico AS monitoreos_isotopico, monitoreos.cod_laboratorio AS monitoreos_cod_laboratorio, monitoreos.usuario_id AS monitoreos_usuario_id, monitoreos.is_draft AS monitoreos_is_draft, monitoreos.equipo_nivel_id AS monitoreos_equipo_nivel_id, monitoreos.tipo_pozo AS monitoreos_tipo_pozo, monitoreos.fecha_hora_nivel AS monitoreos_fecha_hora_nivel, monitoreos.temperatura AS monitoreos_temperatura, monitoreos.ph AS monitoreos_ph, monitoreos.conductividad AS monitoreos_conductividad, monitoreos.oxigeno AS monitoreos_oxigeno, monitoreos.turbiedad AS monitoreos_turbiedad, monitoreos.profundidad AS monitoreos_profundidad, monitoreos.nivel AS monitoreos_nivel, monitoreos.latitud AS monitoreos_latitud, monitoreos.longitud AS monitoreos_longitud, monitoreos.foto_path AS monitoreos_foto_path, monitoreos.foto_multiparametro AS monitoreos_foto_multiparametro, monitoreos.foto_turbiedad AS monitoreos_foto_turbiedad, monitoreos.detalles_json AS monitoreos_detalles_json 
+FROM monitoreos 
+WHERE monitoreos.id_local = %(id_local_1)s AND monitoreos.device_id = %(device_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_local_1': 4, 'device_id_1': 'MOBILE-DATA', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+08/04/2026 10:49:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:49:42 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 10:49:42 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 4 ]...
+08/04/2026 10:49:42 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+[SQL: SELECT monitoreos.id AS monitoreos_id, monitoreos.device_id AS monitoreos_device_id, monitoreos.id_local AS monitoreos_id_local, monitoreos.programa_id AS monitoreos_programa_id, monitoreos.estacion_id AS monitoreos_estacion_id, monitoreos.fecha_hora AS monitoreos_fecha_hora, monitoreos.monitoreo_fallido AS monitoreos_monitoreo_fallido, monitoreos.observacion AS monitoreos_observacion, monitoreos.matriz_id AS monitoreos_matriz_id, monitoreos.equipo_multi_id AS monitoreos_equipo_multi_id, monitoreos.turbidimetro_id AS monitoreos_turbidimetro_id, monitoreos.metodo_id AS monitoreos_metodo_id, monitoreos.hidroquimico AS monitoreos_hidroquimico, monitoreos.isotopico AS monitoreos_isotopico, monitoreos.cod_laboratorio AS monitoreos_cod_laboratorio, monitoreos.usuario_id AS monitoreos_usuario_id, monitoreos.is_draft AS monitoreos_is_draft, monitoreos.equipo_nivel_id AS monitoreos_equipo_nivel_id, monitoreos.tipo_pozo AS monitoreos_tipo_pozo, monitoreos.fecha_hora_nivel AS monitoreos_fecha_hora_nivel, monitoreos.temperatura AS monitoreos_temperatura, monitoreos.ph AS monitoreos_ph, monitoreos.conductividad AS monitoreos_conductividad, monitoreos.oxigeno AS monitoreos_oxigeno, monitoreos.turbiedad AS monitoreos_turbiedad, monitoreos.profundidad AS monitoreos_profundidad, monitoreos.nivel AS monitoreos_nivel, monitoreos.latitud AS monitoreos_latitud, monitoreos.longitud AS monitoreos_longitud, monitoreos.foto_path AS monitoreos_foto_path, monitoreos.foto_multiparametro AS monitoreos_foto_multiparametro, monitoreos.foto_turbiedad AS monitoreos_foto_turbiedad, monitoreos.detalles_json AS monitoreos_detalles_json 
+FROM monitoreos 
+WHERE monitoreos.id_local = %(id_local_1)s AND monitoreos.device_id = %(device_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_local_1': 4, 'device_id_1': 'MOBILE-DATA', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 54, in sync_monitoreos
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+[SQL: SELECT monitoreos.id AS monitoreos_id, monitoreos.device_id AS monitoreos_device_id, monitoreos.id_local AS monitoreos_id_local, monitoreos.programa_id AS monitoreos_programa_id, monitoreos.estacion_id AS monitoreos_estacion_id, monitoreos.fecha_hora AS monitoreos_fecha_hora, monitoreos.monitoreo_fallido AS monitoreos_monitoreo_fallido, monitoreos.observacion AS monitoreos_observacion, monitoreos.matriz_id AS monitoreos_matriz_id, monitoreos.equipo_multi_id AS monitoreos_equipo_multi_id, monitoreos.turbidimetro_id AS monitoreos_turbidimetro_id, monitoreos.metodo_id AS monitoreos_metodo_id, monitoreos.hidroquimico AS monitoreos_hidroquimico, monitoreos.isotopico AS monitoreos_isotopico, monitoreos.cod_laboratorio AS monitoreos_cod_laboratorio, monitoreos.usuario_id AS monitoreos_usuario_id, monitoreos.is_draft AS monitoreos_is_draft, monitoreos.equipo_nivel_id AS monitoreos_equipo_nivel_id, monitoreos.tipo_pozo AS monitoreos_tipo_pozo, monitoreos.fecha_hora_nivel AS monitoreos_fecha_hora_nivel, monitoreos.temperatura AS monitoreos_temperatura, monitoreos.ph AS monitoreos_ph, monitoreos.conductividad AS monitoreos_conductividad, monitoreos.oxigeno AS monitoreos_oxigeno, monitoreos.turbiedad AS monitoreos_turbiedad, monitoreos.profundidad AS monitoreos_profundidad, monitoreos.nivel AS monitoreos_nivel, monitoreos.latitud AS monitoreos_latitud, monitoreos.longitud AS monitoreos_longitud, monitoreos.foto_path AS monitoreos_foto_path, monitoreos.foto_multiparametro AS monitoreos_foto_multiparametro, monitoreos.foto_turbiedad AS monitoreos_foto_turbiedad, monitoreos.detalles_json AS monitoreos_detalles_json 
+FROM monitoreos 
+WHERE monitoreos.id_local = %(id_local_1)s AND monitoreos.device_id = %(device_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_local_1': 4, 'device_id_1': 'MOBILE-DATA', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+08/04/2026 10:51:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:51:12 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 10:51:12 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 4 ]...
+08/04/2026 10:51:12 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+[SQL: SELECT monitoreos.id AS monitoreos_id, monitoreos.device_id AS monitoreos_device_id, monitoreos.id_local AS monitoreos_id_local, monitoreos.programa_id AS monitoreos_programa_id, monitoreos.estacion_id AS monitoreos_estacion_id, monitoreos.fecha_hora AS monitoreos_fecha_hora, monitoreos.monitoreo_fallido AS monitoreos_monitoreo_fallido, monitoreos.observacion AS monitoreos_observacion, monitoreos.matriz_id AS monitoreos_matriz_id, monitoreos.equipo_multi_id AS monitoreos_equipo_multi_id, monitoreos.turbidimetro_id AS monitoreos_turbidimetro_id, monitoreos.metodo_id AS monitoreos_metodo_id, monitoreos.hidroquimico AS monitoreos_hidroquimico, monitoreos.isotopico AS monitoreos_isotopico, monitoreos.cod_laboratorio AS monitoreos_cod_laboratorio, monitoreos.usuario_id AS monitoreos_usuario_id, monitoreos.is_draft AS monitoreos_is_draft, monitoreos.equipo_nivel_id AS monitoreos_equipo_nivel_id, monitoreos.tipo_pozo AS monitoreos_tipo_pozo, monitoreos.fecha_hora_nivel AS monitoreos_fecha_hora_nivel, monitoreos.temperatura AS monitoreos_temperatura, monitoreos.ph AS monitoreos_ph, monitoreos.conductividad AS monitoreos_conductividad, monitoreos.oxigeno AS monitoreos_oxigeno, monitoreos.turbiedad AS monitoreos_turbiedad, monitoreos.profundidad AS monitoreos_profundidad, monitoreos.nivel AS monitoreos_nivel, monitoreos.latitud AS monitoreos_latitud, monitoreos.longitud AS monitoreos_longitud, monitoreos.foto_path AS monitoreos_foto_path, monitoreos.foto_multiparametro AS monitoreos_foto_multiparametro, monitoreos.foto_turbiedad AS monitoreos_foto_turbiedad, monitoreos.detalles_json AS monitoreos_detalles_json 
+FROM monitoreos 
+WHERE monitoreos.id_local = %(id_local_1)s AND monitoreos.device_id = %(device_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_local_1': 4, 'device_id_1': 'MOBILE-DATA', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 54, in sync_monitoreos
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+[SQL: SELECT monitoreos.id AS monitoreos_id, monitoreos.device_id AS monitoreos_device_id, monitoreos.id_local AS monitoreos_id_local, monitoreos.programa_id AS monitoreos_programa_id, monitoreos.estacion_id AS monitoreos_estacion_id, monitoreos.fecha_hora AS monitoreos_fecha_hora, monitoreos.monitoreo_fallido AS monitoreos_monitoreo_fallido, monitoreos.observacion AS monitoreos_observacion, monitoreos.matriz_id AS monitoreos_matriz_id, monitoreos.equipo_multi_id AS monitoreos_equipo_multi_id, monitoreos.turbidimetro_id AS monitoreos_turbidimetro_id, monitoreos.metodo_id AS monitoreos_metodo_id, monitoreos.hidroquimico AS monitoreos_hidroquimico, monitoreos.isotopico AS monitoreos_isotopico, monitoreos.cod_laboratorio AS monitoreos_cod_laboratorio, monitoreos.usuario_id AS monitoreos_usuario_id, monitoreos.is_draft AS monitoreos_is_draft, monitoreos.equipo_nivel_id AS monitoreos_equipo_nivel_id, monitoreos.tipo_pozo AS monitoreos_tipo_pozo, monitoreos.fecha_hora_nivel AS monitoreos_fecha_hora_nivel, monitoreos.temperatura AS monitoreos_temperatura, monitoreos.ph AS monitoreos_ph, monitoreos.conductividad AS monitoreos_conductividad, monitoreos.oxigeno AS monitoreos_oxigeno, monitoreos.turbiedad AS monitoreos_turbiedad, monitoreos.profundidad AS monitoreos_profundidad, monitoreos.nivel AS monitoreos_nivel, monitoreos.latitud AS monitoreos_latitud, monitoreos.longitud AS monitoreos_longitud, monitoreos.foto_path AS monitoreos_foto_path, monitoreos.foto_multiparametro AS monitoreos_foto_multiparametro, monitoreos.foto_turbiedad AS monitoreos_foto_turbiedad, monitoreos.detalles_json AS monitoreos_detalles_json 
+FROM monitoreos 
+WHERE monitoreos.id_local = %(id_local_1)s AND monitoreos.device_id = %(device_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_local_1': 4, 'device_id_1': 'MOBILE-DATA', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 08/04/2026 10:52:11 - PID: 26368
+====================================================================================================
+
+08/04/2026 10:52:11 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+08/04/2026 10:52:21 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 10:52:21 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 10:52:21 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 4 ]...
+08/04/2026 10:52:21 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: (pymysql.err.OperationalError) (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+[SQL: SELECT monitoreos.id AS monitoreos_id, monitoreos.device_id AS monitoreos_device_id, monitoreos.id_local AS monitoreos_id_local, monitoreos.programa_id AS monitoreos_programa_id, monitoreos.estacion_id AS monitoreos_estacion_id, monitoreos.fecha_hora AS monitoreos_fecha_hora, monitoreos.monitoreo_fallido AS monitoreos_monitoreo_fallido, monitoreos.observacion AS monitoreos_observacion, monitoreos.matriz_id AS monitoreos_matriz_id, monitoreos.equipo_multi_id AS monitoreos_equipo_multi_id, monitoreos.turbidimetro_id AS monitoreos_turbidimetro_id, monitoreos.metodo_id AS monitoreos_metodo_id, monitoreos.hidroquimico AS monitoreos_hidroquimico, monitoreos.isotopico AS monitoreos_isotopico, monitoreos.cod_laboratorio AS monitoreos_cod_laboratorio, monitoreos.usuario_id AS monitoreos_usuario_id, monitoreos.is_draft AS monitoreos_is_draft, monitoreos.equipo_nivel_id AS monitoreos_equipo_nivel_id, monitoreos.tipo_pozo AS monitoreos_tipo_pozo, monitoreos.fecha_hora_nivel AS monitoreos_fecha_hora_nivel, monitoreos.temperatura AS monitoreos_temperatura, monitoreos.ph AS monitoreos_ph, monitoreos.conductividad AS monitoreos_conductividad, monitoreos.oxigeno AS monitoreos_oxigeno, monitoreos.turbiedad AS monitoreos_turbiedad, monitoreos.profundidad AS monitoreos_profundidad, monitoreos.nivel AS monitoreos_nivel, monitoreos.latitud AS monitoreos_latitud, monitoreos.longitud AS monitoreos_longitud, monitoreos.foto_path AS monitoreos_foto_path, monitoreos.foto_multiparametro AS monitoreos_foto_multiparametro, monitoreos.foto_turbiedad AS monitoreos_foto_turbiedad, monitoreos.detalles_json AS monitoreos_detalles_json 
+FROM monitoreos 
+WHERE monitoreos.id_local = %(id_local_1)s AND monitoreos.device_id = %(device_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_local_1': 4, 'device_id_1': 'MOBILE-DATA', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 54, in sync_monitoreos
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 825, in _read_query_result
+    result.read()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'monitoreos.detalles_json' in 'field list'")
+[SQL: SELECT monitoreos.id AS monitoreos_id, monitoreos.device_id AS monitoreos_device_id, monitoreos.id_local AS monitoreos_id_local, monitoreos.programa_id AS monitoreos_programa_id, monitoreos.estacion_id AS monitoreos_estacion_id, monitoreos.fecha_hora AS monitoreos_fecha_hora, monitoreos.monitoreo_fallido AS monitoreos_monitoreo_fallido, monitoreos.observacion AS monitoreos_observacion, monitoreos.matriz_id AS monitoreos_matriz_id, monitoreos.equipo_multi_id AS monitoreos_equipo_multi_id, monitoreos.turbidimetro_id AS monitoreos_turbidimetro_id, monitoreos.metodo_id AS monitoreos_metodo_id, monitoreos.hidroquimico AS monitoreos_hidroquimico, monitoreos.isotopico AS monitoreos_isotopico, monitoreos.cod_laboratorio AS monitoreos_cod_laboratorio, monitoreos.usuario_id AS monitoreos_usuario_id, monitoreos.is_draft AS monitoreos_is_draft, monitoreos.equipo_nivel_id AS monitoreos_equipo_nivel_id, monitoreos.tipo_pozo AS monitoreos_tipo_pozo, monitoreos.fecha_hora_nivel AS monitoreos_fecha_hora_nivel, monitoreos.temperatura AS monitoreos_temperatura, monitoreos.ph AS monitoreos_ph, monitoreos.conductividad AS monitoreos_conductividad, monitoreos.oxigeno AS monitoreos_oxigeno, monitoreos.turbiedad AS monitoreos_turbiedad, monitoreos.profundidad AS monitoreos_profundidad, monitoreos.nivel AS monitoreos_nivel, monitoreos.latitud AS monitoreos_latitud, monitoreos.longitud AS monitoreos_longitud, monitoreos.foto_path AS monitoreos_foto_path, monitoreos.foto_multiparametro AS monitoreos_foto_multiparametro, monitoreos.foto_turbiedad AS monitoreos_foto_turbiedad, monitoreos.detalles_json AS monitoreos_detalles_json 
+FROM monitoreos 
+WHERE monitoreos.id_local = %(id_local_1)s AND monitoreos.device_id = %(device_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'id_local_1': 4, 'device_id_1': 'MOBILE-DATA', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 08/04/2026 11:17:09 - PID: 12324
+====================================================================================================
+
+08/04/2026 11:17:09 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+08/04/2026 11:20:32 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:20:32 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:20:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:20:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:20:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:20:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:20:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+08/04/2026 11:20:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+08/04/2026 11:20:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+08/04/2026 11:20:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+08/04/2026 11:20:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+08/04/2026 11:20:33 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+08/04/2026 11:20:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:20:48 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+08/04/2026 11:20:57 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+08/04/2026 11:20:57 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+08/04/2026 11:20:57 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+08/04/2026 11:20:58 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:20:58 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+08/04/2026 11:20:59 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+08/04/2026 11:20:59 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+08/04/2026 11:20:59 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+08/04/2026 11:29:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 11:29:56 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 11:29:56 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+08/04/2026 11:29:56 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 1 ] - NUEVO. Insertando en la DB...
+08/04/2026 11:29:56 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_65/general_66e36351.jpg
+08/04/2026 11:29:56 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_65/multiparametro_d532a06d.jpg
+08/04/2026 11:29:56 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_65/turbiedad_006fa2ce.jpg
+08/04/2026 11:29:56 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.
+08/04/2026 14:34:39 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 14:34:39 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 14:34:39 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 2 ]...
+08/04/2026 14:34:39 - [ INFO ] - routers.sync - 💾 Registro [ ID Local: 2 ] - EXISTENTE. Actualizando todos los campos...
+08/04/2026 14:34:39 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_64/general_3df2ff8f.jpg
+08/04/2026 14:34:39 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_64/multiparametro_e036ea90.jpg
+08/04/2026 14:34:39 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_64/turbiedad_60d85dd0.jpg
+08/04/2026 14:34:39 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 0 nuevos y 1 editados.
+08/04/2026 14:47:41 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 14:47:41 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 14:47:41 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 3 ]...
+08/04/2026 14:47:41 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 3 ] - NUEVO. Insertando en la DB...
+08/04/2026 14:47:41 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 08/04/2026 15:33:30 - PID: 9540
+====================================================================================================
+
+08/04/2026 15:33:30 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+08/04/2026 16:17:06 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 16:17:06 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 16:17:06 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 4 ]...
+08/04/2026 16:17:06 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 4 ] - NUEVO. Insertando en la DB...
+08/04/2026 16:17:06 - [ ERROR ] - routers.sync - 🚨 ERROR CRÍTICO EN SYNC: dict can not be used as parameter
+Traceback (most recent call last):
+  File "C:\Users\Cristian Gonzalez\Desktop\apicollector\routers\sync.py", line 147, in sync_monitoreos
+    db.flush() # Obtenemos el ID real generado en la tabla principal
+    ~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 2358, in _handle_dbapi_exception
+    raise exc_info[1].with_traceback(exc_info[2])
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 151, in execute
+    query = self.mogrify(query, args)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 129, in mogrify
+    query = query % self._escape_args(args, conn)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\cursors.py", line 104, in _escape_args
+    return {key: conn.literal(val) for (key, val) in args.items()}
+                 ~~~~~~~~~~~~^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 530, in literal
+    return self.escape(obj, self.encoders)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\connections.py", line 523, in escape
+    return converters.escape_item(obj, self.charset, mapping=mapping)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\converters.py", line 23, in escape_item
+    val = encoder(val, charset, mapping)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\converters.py", line 36, in escape_sequence
+    quoted = escape_item(item, charset, mapping)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\converters.py", line 23, in escape_item
+    val = encoder(val, charset, mapping)
+  File "C:\Users\Cristian Gonzalez\AppData\Roaming\Python\Python313\site-packages\pymysql\converters.py", line 30, in escape_dict
+    raise TypeError("dict can not be used as parameter")
+TypeError: dict can not be used as parameter
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 08/04/2026 16:19:37 - PID: 4124
+====================================================================================================
+
+08/04/2026 16:19:37 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+08/04/2026 16:19:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 16:19:46 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 16:19:46 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 4 ]...
+08/04/2026 16:19:46 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 4 ] - NUEVO. Insertando en la DB...
+08/04/2026 16:19:46 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_67/general_fab1dd15.jpg
+08/04/2026 16:19:46 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_67/multiparametro_862d5737.jpg
+08/04/2026 16:19:46 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_67/turbiedad_ce61d45a.jpg
+08/04/2026 16:19:46 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.
+08/04/2026 16:45:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 16:45:47 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 16:45:47 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 5 ]...
+08/04/2026 16:45:47 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 5 ] - NUEVO. Insertando en la DB...
+08/04/2026 16:45:47 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_68/general_6edee92e.jpg
+08/04/2026 16:45:47 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_68/turbiedad_a346a501.jpg
+08/04/2026 16:45:47 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 08/04/2026 17:13:21 - PID: 19280
+====================================================================================================
+
+08/04/2026 17:13:21 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+08/04/2026 17:18:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:18:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:18:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:18:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:18:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:18:48 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:18:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+08/04/2026 17:18:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+08/04/2026 17:18:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+08/04/2026 17:18:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+08/04/2026 17:18:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+08/04/2026 17:18:48 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+08/04/2026 17:19:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:19:03 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-01']
+08/04/2026 17:19:03 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+08/04/2026 17:19:12 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/11" 200 None
+08/04/2026 17:19:12 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+08/04/2026 17:19:12 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+08/04/2026 17:19:12 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+08/04/2026 17:19:13 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:19:13 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 12 ] | Estaciones: ['BRW-02']
+08/04/2026 17:19:13 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+08/04/2026 17:19:14 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/11" 200 None
+08/04/2026 17:19:14 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+08/04/2026 17:19:14 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+08/04/2026 17:19:14 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 322
+08/04/2026 17:27:16 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:27:33 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+
+====================================================================================================
+🚀 INICIO DE SESIÓN: api.log - 08/04/2026 17:33:12 - PID: 16532
+====================================================================================================
+
+08/04/2026 17:33:12 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+08/04/2026 17:34:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+08/04/2026 17:34:11 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+08/04/2026 17:34:11 - [ DEBUG ] - routers.sync - 📦 Payload completo recibido: {"monitoreos":[{"id":1,"device_id":"MOBILE-DATA","programa_id":12,"estacion_id":463,"fecha_hora":"2026-04-08 21:20:00","monitoreo_fallido":0,"observacion":"Prueba  4 JSON","matriz_id":1,"equipo_multi_id":11,"turbidimetro_id":10,"metodo_id":1,"hidroquimico":0,"isotopico":1,"cod_laboratorio":"fghj","usuario_id":2,"is_draft":0,"equipo_nivel_id":11,"tipo_pozo":"Pozo Monitoreo","fecha_hora_nivel":"2026-04-08 21:22:00","temperatura":null,"ph":null,"conductividad":null,"oxigeno":null,"turbiedad":20.0,"profundidad":20.0,"nivel":20.0,"latitud":-28.139322612898212,"longitud":-69.64280016498303,"foto_path":"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5nPq3bc5xnPVllcK9zjljifEddouGaLguvsaPS2qrOgsXrNVNdyIzVXXOY+9PXOOrobdjhut415N+Sv2bprmp811d+1fm1TNXJqquU1RNWOqMdOZ7nLXeJa+/XRXe1+pu1W87JrvVVTTnrxmehhtX71iK4s37lqLkYriiuad0d046yy30bUX671ryn1XDOG2+PTc4zFM6CuibtFFMRP/AI0U0/1TMzmnMTj82PiFzhOj8teL6/iPGo0PEPN7fmsXLFd6NNdrojdH9EdduOiPzjufPbN67pq+Zp71yzXjG63VNM4/OFM5zMzmZ65ntXUW+pXrGio8o9LptHr6dZqNd5NVaWzRyqqMzyo5dWavXjPR1x2vO4BRXwDReTGn4taq0d65xuu9Fu/Gyqm3spo3TE9MRu7+5wNy9du1UV3L1ddVERTTNVUzNMR1RHdEF69d1Fybl+7XermMTVcqmqfjJqLdxw/SaryY8muP08a013TTqOIaSi1zKMc2bd2a65p742x1x0NzUaHU8O4/5a8V1dmq3odVoL1NjU1RPLvTdqpm3FNXVVnwfO7t+9fiiL165diiNtG+uatsd0Z6k1X71yzRZrv3KrVvpot1VzNNP5R2JqLI6oMq7jcwpitkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRwtkyruNxRw9zmeMnM8Za++DfDwopsczxk5njLX3wb4KKbHM8ZOZ4y198G+CimxzPGTmeMtffBvgopsczxk5njLX3wb4KKbHM8ZOZ4y198G+CimxzPGTmeMtffBvgopsczxk5njLX3wb4KKbHM8ZOZ4y198G+CimxzPGTmeMtffBvgopsczxk5njLX3wb4KKbHM8ZOZ4y198G+CimxzPGTmeMtffBvgopsczxk5njLX3wb4KKbHM8ZOZ4y198G+CimxzPGTmeMtffBvgopsczxk5njLX3wb4KKbHM8ZOZ4tffBvhKKbHM8ZOZ4y198G+Fopsczxk5ni198G+CinjbkblN5ubCsm5ucN0Xn9+5TVeizas26rt25MZ20x3R2z0xER3y0HocG1djT3dTa1Vc27Wq09VmbkRnZMzExMx2xmmM+C0r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","foto_multiparametro":"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dVdXooopjrrnqv6I6ZZs8N454WeFOpt9TZa/C9OvRpmrSr064p0NtR0U/wBNr1WtaO2rs9Hmdvv95s6aqdrvdxt4qm9UaWrVRE/3tK55V4lzud5T3fNxw5nPqyxve179V2Vwrecc0OJ8R32y4ZsuC7/Q2e10qtHYaGto1U16kRequubx+KeubdXQy9Dhu9414N+Cvk3bam58V3evpa86VM1cmqrUpqiardUW6bz2PLavEt/r10V62/3OrVp3wmvWqqmm/Xa89Czpa+toRXGjr6mlGpFq4ormnKOybdZZbo24169bS8J91wzhunx6dTjMUzsK6J1aKKYif+2imn+qZmb03ibf3W+IanCdn4a8X3/EeNRseIeL6fisamhXrRttWuiMo/ojr046I/vHY57o62rtq+Zt9bU0a7Wy06ppm394UXveZm8z1zPpXcW6lraGyo8I9rttnv6d5uN94NVbXRo5VVF55Ucuq9Xrxfo649LXcAor4BsvBjb8W0qtnranG69aNPXjCqnTwpoymJ6YjLt7HgdTW1dWqivU1q66qIimmaqpmaYjqiOyINbW1dxqTqa+rXrVzFpq1Kpqn4ybi3uOH7TdeDHg1x+njW21dtO44htKNLmUW5s6erNdc09sYx1x0MzcbHc8O4/4a8V3ejVp7HdbDWp0NzVE8vWnVqpnTimrqqv3Od6uvra8URra2pqxRGNGdc1Yx2RfqTVr62po0aNevqVaWn00adVczTT/AGj0JuLI6oLqcjJhTFVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhVcupyMijhvOZ3yczvlj5wZw8KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZHM75OZ3yx84M4KKZGfe8/k3GcNHkRAuZ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","foto_turbiedad":"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","detalles_json":[{"caudal":1.0},{"caudal":2.0},{"sdt":3.0},{"sdt":4.0},{"uranio":5.0},{"uranio":6.0}],"multiparametros_json":[{"ph":7.0},{"temperatura":20.0},{"conductividad":1000.0},{"oxigeno":2.0},{"ph":8.0},{"temperatura":21.0},{"conductividad":200.0},{"oxigeno":3.0}],"detalles":[]}]}
+08/04/2026 17:34:11 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+08/04/2026 17:34:11 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 1 ] - NUEVO. Insertando en la DB...
+08/04/2026 17:34:11 - [ DEBUG ] - routers.sync - 📝 [INSERT] ID 1 - detalles_json: [{"caudal": 1.0}, {"caudal": 2.0}, {"sdt": 3.0}, {"sdt": 4.0}, {"uranio": 5.0}, {"uranio": 6.0}]... | multiparametros_json: [{"ph": 7.0}, {"temperatura": 20.0}, {"conductividad": 1000.0}, {"oxigeno": 2.0}, {"ph": 8.0}, {"tem...
+08/04/2026 17:34:11 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_69/general_dd36c719.jpg
+08/04/2026 17:34:11 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_69/multiparametro_98bda60b.jpg
+08/04/2026 17:34:11 - [ INFO ] - utils - 📸 Foto dinámica guardada: monitoreos/MOBILE-DATA/2026/04/monitoreo_69/turbiedad_f80ce323.jpg
+08/04/2026 17:34:11 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos y 0 editados.

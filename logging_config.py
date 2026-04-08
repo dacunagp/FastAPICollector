@@ -24,7 +24,7 @@ def setup_logging():
 
     # Configurar el logger raíz
     logger = logging.getLogger()
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG)
 
     # Formato narrativo: Fecha - [ NIVEL ] - Mensaje
     formatter = logging.Formatter('%(asctime)s - [ %(levelname)s ] - %(name)s - %(message)s', datefmt='%d/%m/%Y %H:%M:%S')

@@ -108,7 +108,13 @@ class MonitoreoItem(BaseModel):
     foto_multiparametro: Optional[str] = None
     foto_turbiedad: Optional[str] = None
     
-    # Campo para parámetros dinámicos (Fase 86)
+    # Fase 108: Pivot a Document Pattern (JSON)
+    detalles_json: Optional[Any] = None
+    
+    # Fase 113: Backend Support for Dual JSON Architecture
+    multiparametros_json: Optional[Any] = None
+    
+    # Campo para parámetros dinámicos (Fase 86 - Legacy support)
     detalles: List['DetalleSync'] = []
 
 class SyncPayload(BaseModel):
