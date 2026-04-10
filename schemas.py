@@ -95,10 +95,12 @@ class MonitoreoItem(BaseModel):
     equipo_nivel_id: Optional[int] = None
     tipo_pozo: Optional[str] = None
     fecha_hora_nivel: Optional[str] = None
-    temperatura: Optional[float] = None
-    ph: Optional[float] = None
-    conductividad: Optional[float] = None
-    oxigeno: Optional[float] = None
+    
+    # Fase 115: Campos Caudal
+    equipo_caudal: Optional[int] = None
+    nivel_caudal: Optional[float] = None
+    fecha_hora_caudal: Optional[str] = None
+    
     turbiedad: Optional[float] = None
     profundidad: Optional[float] = None
     nivel: Optional[float] = None
@@ -107,6 +109,9 @@ class MonitoreoItem(BaseModel):
     foto_path: Optional[str] = None
     foto_multiparametro: Optional[str] = None
     foto_turbiedad: Optional[str] = None
+    foto_caudal: Optional[str] = None
+    foto_nivel_freatico: Optional[str] = None
+    foto_muestreo: Optional[str] = None
     
     # Fase 108: Pivot a Document Pattern (JSON)
     detalles_json: Optional[Any] = None

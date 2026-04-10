@@ -8,7 +8,7 @@ from database import get_db
 from models import MonitoreoDB, MonitoreoFotoDB, EstacionDB, MonitoreoDetalleDB
 from schemas import SyncPayload, MuestrasPayload
 from auth import verificar_credenciales
-from utils import save_base64_image, save_dynamic_photo, convert_utm_to_wgs84
+from utils import save_dynamic_photo, convert_utm_to_wgs84
 
 logger = logging.getLogger(__name__)
 
@@ -43,9 +43,28 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     fh_nivel = datetime.strptime(item.fecha_hora_nivel, "%Y-%m-%d %H:%M:%S")
                 except ValueError:
                     raise HTTPException(status_code=400, detail=f"Formato de fecha_hora_nivel inválido: {item.fecha_hora_nivel}")
+                    
+            fh_caudal = None
+            if item.fecha_hora_caudal:
+                try:
+                    fh_caudal = datetime.strptime(item.fecha_hora_caudal, "%Y-%m-%d %H:%M:%S")
+                except ValueError:
+                    raise HTTPException(status_code=400, detail=f"Formato de fecha_hora_caudal inválido: {item.fecha_hora_caudal}")
 
             # 1.5 Depuración de fotos recibidas
-            print(f"📸 [DEBUG API] ID {item.id} - Principal: {bool(item.foto_path)}, Multi: {bool(item.foto_multiparametro)}, Turb: {bool(item.foto_turbiedad)}")
+            print(f"📸 [DEBUG API] ID {item.id} - Principal: {bool(item.foto_path)}, Multi: {bool(item.foto_multiparametro)}, Turb: {bool(item.foto_turbiedad)}, Cau: {bool(item.foto_caudal)}, Nivel: {bool(item.foto_nivel_freatico)}, Muestreo: {bool(item.foto_muestreo)}")
+
+            # --- Log de la información a registrar (sin fotos en base64) ---
+            item_dict = item.model_dump()
+            claves_a_limpiar = [
+                "foto_path", "foto_multiparametro", "foto_turbiedad", 
+                "foto_caudal", "foto_nivel_freatico", "foto_muestreo"
+            ]
+            for clave in claves_a_limpiar:
+                if item_dict.get(clave):
+                    item_dict[clave] = "[FOTO_BASE64_OMITIDA]"
+                    
+            logger.info(f"📥 Información a procesar para la Base de Datos [ID Local: {item.id}]:\n{json.dumps(item_dict, indent=2, ensure_ascii=False)}")
 
             # 2. Verificar si ya existe el registro (Upsert Robust)
             # Buscamos por la llave compuesta (id_local + device_id)
@@ -76,10 +95,9 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 existente.equipo_nivel_id = item.equipo_nivel_id
                 existente.tipo_pozo = item.tipo_pozo
                 existente.fecha_hora_nivel = fh_nivel
-                existente.temperatura = item.temperatura
-                existente.ph = item.ph
-                existente.conductividad = item.conductividad
-                existente.oxigeno = item.oxigeno
+                existente.equipo_caudal = item.equipo_caudal
+                existente.nivel_caudal = item.nivel_caudal
+                existente.fecha_hora_caudal = fh_caudal
                 existente.turbiedad = item.turbiedad
                 existente.profundidad = item.profundidad
                 existente.nivel = item.nivel
@@ -95,10 +113,13 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 
                 logger.debug(f"📝 [UPDATE] ID {item.id} - detalles_json: {existente.detalles_json[:100]}... | multiparametros_json: {existente.multiparametros_json[:100]}...")
                 
-                # --- Fase 86: Limpiar Base64 original para prepararlo para la ruta ---
-                existente.foto_path = None
-                existente.foto_multiparametro = None
-                existente.foto_turbiedad = None
+                # --- Fase 115: Asignar fotos (Base64 original) procedentes del payload ---
+                existente.foto_path = item.foto_path
+                existente.foto_multiparametro = item.foto_multiparametro
+                existente.foto_turbiedad = item.foto_turbiedad
+                existente.foto_caudal = item.foto_caudal
+                existente.foto_nivel_freatico = item.foto_nivel_freatico
+                existente.foto_muestreo = item.foto_muestreo
                 
                 contador_editados += 1
             else:
@@ -124,10 +145,9 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     equipo_nivel_id=item.equipo_nivel_id,
                     tipo_pozo=item.tipo_pozo,
                     fecha_hora_nivel=fh_nivel,
-                    temperatura=item.temperatura,
-                    ph=item.ph,
-                    conductividad=item.conductividad,
-                    oxigeno=item.oxigeno,
+                    equipo_caudal=item.equipo_caudal,
+                    nivel_caudal=item.nivel_caudal,
+                    fecha_hora_caudal=fh_caudal,
                     turbiedad=item.turbiedad,
                     profundidad=item.profundidad,
                     nivel=item.nivel,
@@ -137,27 +157,40 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     detalles_json=json.dumps(item.detalles_json) if not isinstance(item.detalles_json, str) else item.detalles_json,
                     # Fase 113: Backend Support for Dual JSON Architecture
                     multiparametros_json=json.dumps(item.multiparametros_json) if isinstance(item.multiparametros_json, (list, dict)) else item.multiparametros_json,
-                    # --- Fase 86: Iniciamos en None para guardar la ruta después ---
-                    foto_path=None,
-                    foto_multiparametro=None,
-                    foto_turbiedad=None
+                    # --- Fase 115: Asignar fotos (Base64 original) procedentes del payload ---
+                    foto_path=item.foto_path,
+                    foto_multiparametro=item.foto_multiparametro,
+                    foto_turbiedad=item.foto_turbiedad,
+                    foto_caudal=item.foto_caudal,
+                    foto_nivel_freatico=item.foto_nivel_freatico,
+                    foto_muestreo=item.foto_muestreo
                 )
                 db.add(nuevo_monitoreo)
                 logger.debug(f"📝 [INSERT] ID {item.id} - detalles_json: {nuevo_monitoreo.detalles_json[:100]}... | multiparametros_json: {nuevo_monitoreo.multiparametros_json[:100]}...")
                 contador_nuevos += 1
             
-            # --- NUEVA LÓGICA DE FOTOS (Fase 39) ---
+            # --- FASE 120: Advanced Image Organization & Pathing ---
             db.flush() # Obtenemos el ID real generado en la tabla principal
             db_monitoreo_id = existente.id if existente else nuevo_monitoreo.id
             
             # Fecha base para las carpetas
             fecha_base = fh if fh else datetime.now()
 
+            # Obtener nombre de la estación para el slug de la carpeta
+            station_name = "sin_estacion"
+            if item.estacion_id:
+                estacion_obj = db.query(EstacionDB).filter(EstacionDB.id_estacion == item.estacion_id).first()
+                if estacion_obj and estacion_obj.estacion:
+                    station_name = estacion_obj.estacion
+
             # Diccionario para mapear los campos del JSON a los "tipos" de la BD
             fotos_a_procesar = {
                 'general': item.foto_path,
                 'multiparametro': item.foto_multiparametro,
-                'turbiedad': item.foto_turbiedad
+                'turbiedad': item.foto_turbiedad,
+                'caudal': item.foto_caudal,
+                'nivel_freatico': item.foto_nivel_freatico,
+                'muestreo': item.foto_muestreo
             }
 
             for tipo, b64_data in fotos_a_procesar.items():
@@ -168,8 +201,8 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                         MonitoreoFotoDB.tipo == tipo
                     ).first()
 
-                    # Guardar el archivo en el disco y obtener la ruta formateada
-                    ruta_guardada = save_dynamic_photo(b64_data, item.device_id, fecha_base, db_monitoreo_id, tipo)
+                    # Guardar el archivo en el disco con estructura profesional
+                    ruta_guardada = save_dynamic_photo(b64_data, fecha_base, db_monitoreo_id, tipo, station_name)
 
                     if ruta_guardada:
                         # 1. Guardar en la tabla de fotos (Legacy support)
@@ -188,6 +221,9 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                         if tipo == 'general': monitoreo_obj.foto_path = ruta_guardada
                         elif tipo == 'multiparametro': monitoreo_obj.foto_multiparametro = ruta_guardada
                         elif tipo == 'turbiedad': monitoreo_obj.foto_turbiedad = ruta_guardada
+                        elif tipo == 'caudal': monitoreo_obj.foto_caudal = ruta_guardada
+                        elif tipo == 'nivel_freatico': monitoreo_obj.foto_nivel_freatico = ruta_guardada
+                        elif tipo == 'muestreo': monitoreo_obj.foto_muestreo = ruta_guardada
             
             # --- NUEVA LÓGICA DE DETALLES/PARÁMETROS EXTRA (Fase 86) ---
             if item.detalles:

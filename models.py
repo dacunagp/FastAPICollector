@@ -74,10 +74,9 @@ class MonitoreoDB(Base):
     equipo_nivel_id = Column(Integer)
     tipo_pozo = Column(String(255))
     fecha_hora_nivel = Column(DateTime)
-    temperatura = Column(Float)
-    ph = Column(Float)
-    conductividad = Column(Float)
-    oxigeno = Column(Float)
+    equipo_caudal = Column(Integer)
+    nivel_caudal = Column(Float)
+    fecha_hora_caudal = Column(DateTime)
     turbiedad = Column(Float)
     profundidad = Column(Float)
     nivel = Column(Float)
@@ -86,12 +85,19 @@ class MonitoreoDB(Base):
     foto_path = Column(LONGTEXT)
     foto_multiparametro = Column(LONGTEXT)
     foto_turbiedad = Column(LONGTEXT)
+    foto_caudal = Column(LONGTEXT)
+    foto_nivel_freatico = Column(LONGTEXT)
+    foto_muestreo = Column(LONGTEXT)
     
     # Fase 108: Pivot a Document Pattern (JSON) para capturas
     detalles_json = Column(Text)
     
     # Fase 113: Backend Support for Dual JSON Architecture
     multiparametros_json = Column(Text, nullable=True)
+    
+    # Sellos de tiempo de auditoría
+    created_at = Column(DateTime, default=func.now())
+    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
     
     # Relación con parámetros dinámicos (Fase 86 - Legacy support)
     detalles = relationship("MonitoreoDetalleDB", back_populates="monitoreo", cascade="all, delete-orphan")

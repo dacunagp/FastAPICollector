@@ -1,7 +1,9 @@
 import base64
-import uuid
 import os
+import re
+import unicodedata
 import logging
+from pathlib import Path
 from typing import Optional, Tuple
 from datetime import datetime
 from pyproj import Transformer
@@ -35,64 +37,116 @@ UPLOAD_DIR = "static/uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 def save_base64_image(base64_string: str, prefix: str) -> Optional[str]:
-    """ Decodifica una cadena Base64 y la guarda como archivo .jpg """
+    """ Decodifica una cadena Base64 y la guarda como archivo .jpg (Legacy) """
     if not base64_string or base64_string.strip() == "":
         return None
 
     try:
-        # 1. Limpiar cabeceras si existen (ej: data:image/jpeg;base64,)
         if "," in base64_string:
             base64_string = base64_string.split(",")[1]
 
-        # 2. Generar nombre único
+        import uuid
         filename = f"{prefix}_{uuid.uuid4().hex}.jpg"
         file_path = os.path.join(UPLOAD_DIR, filename)
 
-        # 3. Decodificar y Guardar
         img_data = base64.b64decode(base64_string)
         with open(file_path, "wb") as f:
             f.write(img_data)
 
-        # 4. Retornar ruta relativa para la base de datos
         logger.info(f"📸 Imagen [ {prefix} ] guardada exitosamente: [ {filename} ]")
         return f"uploads/{filename}"
     except Exception as e:
         logger.exception(f"🚨 Error al decodificar/guardar imagen {prefix}: {str(e)}")
         return None
 
-# Directorio base del servidor (donde se guardan los archivos físicamente)
-BASE_UPLOAD_DIR = "static" 
+# --- Fase 120: Advanced Image Organization & Pathing ---
 
-def save_dynamic_photo(b64_string: str, device_id: str, fecha: datetime, monitoreo_id: int, tipo: str) -> Optional[str]:
+# Mapeo de tipo de foto a nombre de archivo estandarizado
+PHOTO_FILENAME_MAP = {
+    "general": "general",
+    "multiparametro": "multiparametro",
+    "turbiedad": "turbiedad",
+}
+
+def slugify(text: str) -> str:
+    """
+    Convierte un nombre de estación en un slug URL-safe.
+    Ej: "Estación Río Maipo #1" -> "estacion_rio_maipo_1"
+    """
+    # 1. Normalizar Unicode (descomponer acentos) y eliminar marcas diacríticas
+    text = unicodedata.normalize("NFKD", text)
+    text = text.encode("ascii", "ignore").decode("ascii")
+    # 2. Convertir a minúsculas
+    text = text.lower()
+    # 3. Reemplazar cualquier carácter no alfanumérico por guión bajo
+    text = re.sub(r"[^a-z0-9]+", "_", text)
+    # 4. Eliminar guiones bajos al inicio/final y colapsar múltiples
+    text = re.sub(r"_+", "_", text).strip("_")
+    return text or "sin_nombre"
+
+
+def save_dynamic_photo(
+    b64_string: str,
+    fecha: datetime,
+    monitoreo_id: int,
+    tipo: str,
+    station_name: str = "sin_estacion",
+) -> Optional[str]:
+    """
+    Guarda una foto decodificada de Base64 en la estructura profesional:
+      static/monitoreos/{year}/{month}/{station_slug}/{monitoring_id}/{tipo}.jpg
+
+    Args:
+        b64_string:   Cadena Base64 de la imagen.
+        fecha:        Fecha/hora del monitoreo (para year/month).
+        monitoreo_id: PK del monitoreo en la BD.
+        tipo:         Tipo de foto ('general', 'multiparametro', 'turbiedad').
+        station_name: Nombre legible de la estación (se convierte a slug).
+
+    Returns:
+        Ruta relativa sin 'static/' para almacenar en la BD,
+        o None si hubo error.
+    """
     if not b64_string:
         return None
-        
-    # Limpiar cabeceras de Base64 si existen
+
+    # 1. Limpiar cabeceras de Base64 si existen
     if "," in b64_string:
         b64_string = b64_string.split(",")[1]
 
-    # Extraer Año y Mes
-    year = fecha.strftime("%Y") if fecha else datetime.now().strftime("%Y")
-    month = fecha.strftime("%m") if fecha else datetime.now().strftime("%m")
-    
-    # Construir la ruta relativa exacta (la que se guarda en la BD)
-    # Ej: monitoreos/MOBILE-DATA/2026/03/monitoreo_35/general_a1b2.jpg
-    relative_folder = f"monitoreos/{device_id}/{year}/{month}/monitoreo_{monitoreo_id}"
-    file_name = f"{tipo}_{uuid.uuid4().hex[:8]}.jpg"
-    relative_path = f"{relative_folder}/{file_name}"
-    
-    # Construir la ruta absoluta (para el sistema operativo)
-    absolute_folder = os.path.join(BASE_UPLOAD_DIR, relative_folder)
-    os.makedirs(absolute_folder, exist_ok=True) # Crea todas las carpetas si no existen
-    
-    absolute_file_path = os.path.join(absolute_folder, file_name)
-    
-    # Guardar el archivo físico
+    # 2. Extraer componentes de la fecha
+    fecha_ref = fecha if fecha else datetime.now()
+    year = fecha_ref.strftime("%Y")
+    month = fecha_ref.strftime("%m")
+    day = fecha_ref.strftime("%d")
+
+    # 3. Generar slug de la estación
+    station_slug = slugify(station_name)
+
+    # 4. Nombre de archivo estandarizado + timestamp para versionado
+    base_name = PHOTO_FILENAME_MAP.get(tipo, tipo)
+    timestamp = fecha_ref.strftime("%H%M%S")
+    file_name = f"{base_name}_{timestamp}.jpg"
+
+    # 5. Construir rutas con pathlib
+    #    Ruta relativa (para la BD): monitoreos/2026/04/09/estacion_rio_maipo/35/general_112630.jpg
+    relative_folder = Path("monitoreos") / year / month / day / station_slug / str(monitoreo_id)
+    relative_path = relative_folder / file_name
+
+    #    Ruta absoluta (en disco): static/monitoreos/2026/04/...
+    absolute_folder = Path("static") / relative_folder
+    absolute_folder.mkdir(parents=True, exist_ok=True)
+
+    absolute_file_path = absolute_folder / file_name
+
+    # 6. Guardar el archivo físico
     try:
-        with open(absolute_file_path, "wb") as f:
-            f.write(base64.b64decode(b64_string))
-        logger.info(f"📸 Foto dinámica guardada: {relative_path}")
-        return relative_path
+        img_bytes = base64.b64decode(b64_string)
+        absolute_file_path.write_bytes(img_bytes)
+        # Usar forward-slashes para la ruta guardada en la BD (compatible con URLs)
+        db_path = relative_path.as_posix()
+        logger.info(f"📸 Foto guardada [{tipo}]: {db_path}")
+        return db_path
     except Exception as e:
         logger.exception(f"🚨 Error guardando foto {tipo}: {e}")
         return None
