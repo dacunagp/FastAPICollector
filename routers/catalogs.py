@@ -15,9 +15,8 @@ router = APIRouter(prefix="/api", dependencies=[Depends(verificar_credenciales)]
 @router.get("/campanas", response_model=List[Campana])
 def get_campanas(db: Session = Depends(get_db)):
     logger.info("📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)")
-    # Se eliminó cualquier filtro de 'disabled == 0' para mostrar todo el catálogo
-    # Importante usar joinedload para que las estaciones se incluyan en el JSON de respuesta
-    campanas = db.query(CampanaDB).options(joinedload(CampanaDB.estaciones)).all()
+    # Phase 122: Filtro para retornar solo campañas activas y asignadas a la App Móvil (collector == 1)
+    campanas = db.query(CampanaDB).filter(CampanaDB.collector == 1, CampanaDB.disabled == 0).options(joinedload(CampanaDB.estaciones)).all()
     
     # Phase 72: Refactorización para conversión explícita en el router
     for campana in campanas:
