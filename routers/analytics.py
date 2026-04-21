@@ -1,4 +1,5 @@
 import math
+import json
 import logging
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
@@ -23,13 +24,18 @@ def calculate_stats(values):
 @router.get("/{parametro}", response_model=AnalyticsResponse)
 def get_analytics(parametro: str, db: Session = Depends(get_db)):
     """ 
-    Fase 97: Obtiene estadísticas para un parámetro dinámico.
+    Fase 125: Obtiene estadísticas para un parámetro dinámico.
+    Soporta tanto la tabla legacy (MonitoreoDetalleDB) como los nuevos documentos JSON.
     Filtra fallos y detecta outliers usando 5-sigma.
     """
     logger.info(f"📊 Generando analítica para el parámetro: [ {parametro} ]")
     
-    # 1. Obtener datos crudos uniendo con Monitoreo para filtrar por fallido
-    query = db.query(
+    raw_points = []
+    clean_values = []
+    detected_unit = None
+
+    # 1. Obtener datos de la tabla legacy (MonitoreoDetalleDB)
+    legacy_rows = db.query(
         MonitoreoDetalleDB.valor,
         MonitoreoDB.fecha_hora,
         MonitoreoDB.monitoreo_fallido,
@@ -39,45 +45,64 @@ def get_analytics(parametro: str, db: Session = Depends(get_db)):
         MonitoreoDetalleDB.parametro == parametro
     ).all()
 
-    if not query:
-        raise HTTPException(status_code=404, detail=f"No hay datos para el parámetro: {parametro}")
-
-    raw_points = []
-    clean_values = []
-
-    for row in query:
+    for row in legacy_rows:
         val_str, fecha, fallido, obs, est = row
-        
-        # Intentar convertir valor a float (solo procesamos números para estadística)
         try:
             val_float = float(val_str)
-        except (ValueError, TypeError):
-            continue
+            raw_points.append({
+                "valor": val_float,
+                "fecha": fecha.strftime("%Y-%m-%d %H:%M:%S") if fecha else None,
+                "estacion": est,
+                "is_test": bool(fallido == 1 or (obs and any(word in obs.upper() for word in ["TEST", "PRUEBA", "DEMO", "BORRAR"]))),
+                "is_outlier": False
+            })
+        except: continue
 
-        # Clasificar como "test" si fallido=1 o si la observación contiene palabras clave
-        is_test = False
-        if fallido == 1:
-            is_test = True
-        elif obs and any(word in obs.upper() for word in ["TEST", "PRUEBA", "DEMO", "BORRAR"]):
-            is_test = True
-        
-        point = {
-            "valor": val_float,
-            "fecha": fecha.strftime("%Y-%m-%d %H:%M:%S") if fecha else None,
-            "estacion": est,
-            "is_test": is_test,
-            "is_outlier": False
-        }
-        raw_points.append(point)
-        
-        # Solo usamos datos limpios (no test) para el baseline estadístico
-        if not is_test:
-            clean_values.append(val_float)
+    # 2. Obtener datos de los nuevos campos JSON (detalles_json y multiparametros_json)
+    json_rows = db.query(
+        MonitoreoDB.detalles_json,
+        MonitoreoDB.multiparametros_json,
+        MonitoreoDB.fecha_hora,
+        MonitoreoDB.monitoreo_fallido,
+        MonitoreoDB.observacion,
+        EstacionDB.estacion
+    ).outerjoin(EstacionDB, MonitoreoDB.estacion_id == EstacionDB.id_estacion).filter(
+        (MonitoreoDB.detalles_json.isnot(None)) | (MonitoreoDB.multiparametros_json.isnot(None))
+    ).all()
 
-    # 2. Calcular baseline estadístico (Media y Sigma)
+    for row in json_rows:
+        detalles_raw, multi_raw, fecha, fallido, obs, est = row
+        
+        # Combinar ambos arrays JSON para buscar el parámetro
+        items = []
+        try:
+            if detalles_raw: items.extend(json.loads(detalles_raw))
+            if multi_raw: items.extend(json.loads(multi_raw))
+        except: continue
+
+        for item in items:
+            if isinstance(item, dict) and item.get("parametro") == parametro:
+                try:
+                    val_float = float(item.get("valor"))
+                    raw_points.append({
+                        "valor": val_float,
+                        "fecha": fecha.strftime("%Y-%m-%d %H:%M:%S") if fecha else None,
+                        "estacion": est,
+                        "is_test": bool(fallido == 1 or (obs and any(word in obs.upper() for word in ["TEST", "PRUEBA", "DEMO", "BORRAR"]))),
+                        "is_outlier": False
+                    })
+                    if item.get("unidad"):
+                        detected_unit = item.get("unidad")
+                except: continue
+
+    if not raw_points:
+        raise HTTPException(status_code=404, detail=f"No hay datos para el parámetro: {parametro}")
+
+    # 3. Calcular baseline estadístico (Media y Sigma) usando solo puntos que no son test
+    clean_values = [p["valor"] for p in raw_points if not p["is_test"]]
     mean, sigma = calculate_stats(clean_values)
     
-    # 3. Identificar outliers (Sanity Check: 5-sigma)
+    # 4. Identificar outliers (Sanity Check: 5-sigma)
     count_outliers = 0
     for p in raw_points:
         if not p["is_test"] and sigma > 0:
@@ -86,10 +111,11 @@ def get_analytics(parametro: str, db: Session = Depends(get_db)):
                 p["is_outlier"] = True
                 count_outliers += 1
 
-    logger.info(f"✅ Estadísticas: Clean Mean={mean:.4f}, Clean Sigma={sigma:.4f}. Outliers Detectados: {count_outliers}")
+    logger.info(f"✅ Analítica completada. Puntos: {len(raw_points)}, Media: {mean:.2f}, Unidad: {detected_unit}")
 
     return {
         "parametro": parametro,
+        "unidad": detected_unit,
         "media": mean,
         "desviacion_estandar": sigma,
         "puntos": raw_points,

@@ -1,6 +1,11 @@
 import logging
 import json
+import os
 import requests as req
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
 from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.orm import Session
 from datetime import datetime
@@ -27,7 +32,13 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
     
     try:
         for item in payload.monitoreos:
-            logger.info(f"📍 Procesando registro móvil [ ID Local: {item.id} ]...")
+            # Fase 132: Validación temprana — id_local es requerido por la BD
+            if item.id_local is None:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"El campo 'id' o 'id_local' es requerido para device_id='{item.device_id}'. La base de datos no acepta id_local=NULL."
+                )
+            logger.info(f"📍 Procesando registro móvil [ ID Local: {item.id_local} ]...")
             
             # 1. Conversión de fechas
             fh = None
@@ -52,7 +63,7 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     raise HTTPException(status_code=400, detail=f"Formato de fecha_hora_caudal inválido: {item.fecha_hora_caudal}")
 
             # 1.5 Depuración de fotos recibidas
-            print(f"📸 [DEBUG API] ID {item.id} - Principal: {bool(item.foto_path)}, Multi: {bool(item.foto_multiparametro)}, Turb: {bool(item.foto_turbiedad)}, Cau: {bool(item.foto_caudal)}, Nivel: {bool(item.foto_nivel_freatico)}, Muestreo: {bool(item.foto_muestreo)}")
+            print(f"📸 [DEBUG API] ID Local: {item.id_local} - Principal: {bool(item.foto_path)}, Multi: {bool(item.foto_multiparametro)}, Turb: {bool(item.foto_turbiedad)}, Cau: {bool(item.foto_caudal)}, Nivel: {bool(item.foto_nivel_freatico)}, Muestreo: {bool(item.foto_muestreo)}")
 
             # --- Log de la información a registrar (sin fotos en base64) ---
             item_dict = item.model_dump()
@@ -64,12 +75,13 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 if item_dict.get(clave):
                     item_dict[clave] = "[FOTO_BASE64_OMITIDA]"
                     
-            logger.info(f"📥 Información a procesar para la Base de Datos [ID Local: {item.id}]:\n{json.dumps(item_dict, indent=2, ensure_ascii=False)}")
+            logger.info(f"📥 Información a procesar para la Base de Datos [ID Local: {item.id_local}]:\n{json.dumps(item_dict, indent=2, ensure_ascii=False)}")
 
             # 2. Verificar si ya existe el registro (Upsert Robust)
             # Buscamos por la llave compuesta (id_local + device_id)
+            # Fase 132: Buscar por la llave compuesta (id_local + device_id)
             existente = db.query(MonitoreoDB).filter(
-                MonitoreoDB.id_local == item.id,
+                MonitoreoDB.id_local == item.id_local,
                 MonitoreoDB.device_id == item.device_id
             ).first()
 
@@ -77,7 +89,7 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
 
             if existente:
                 # 3. ACTUALIZAR registro existente (Narrativo)
-                logger.info(f"💾 Registro [ ID Local: {item.id} ] - EXISTENTE. Actualizando todos los campos...")
+                logger.info(f"💾 Registro [ ID Local: {item.id_local} ] - EXISTENTE. Actualizando todos los campos...")
                 existente.programa_id = item.programa_id
                 existente.estacion_id = item.estacion_id
                 existente.fecha_hora = fh
@@ -106,12 +118,17 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 
                 # Fase 108: Pivot a JSON Document
                 if item.detalles_json is not None:
-                    existente.detalles_json = json.dumps(item.detalles_json) if not isinstance(item.detalles_json, str) else item.detalles_json
+                    # Convertimos cada item a dict para que json.dumps funcione (Fase 125)
+                    data_detalles = [d.model_dump() for d in item.detalles_json] if isinstance(item.detalles_json, list) else item.detalles_json
+                    existente.detalles_json = json.dumps(data_detalles) if not isinstance(data_detalles, str) else data_detalles
                 
                 # Fase 113: Backend Support for Dual JSON Architecture
-                existente.multiparametros_json = json.dumps(item.multiparametros_json) if isinstance(item.multiparametros_json, (list, dict)) else item.multiparametros_json
+                if item.multiparametros_json is not None:
+                    # Convertimos cada item a dict (Fase 125)
+                    data_multi = [d.model_dump() for d in item.multiparametros_json] if isinstance(item.multiparametros_json, list) else item.multiparametros_json
+                    existente.multiparametros_json = json.dumps(data_multi) if not isinstance(data_multi, str) else data_multi
                 
-                logger.debug(f"📝 [UPDATE] ID {item.id} - detalles_json: {existente.detalles_json[:100]}... | multiparametros_json: {existente.multiparametros_json[:100]}...")
+                logger.debug(f"📝 [UPDATE] ID Local {item.id_local} - detalles_json: {existente.detalles_json[:100] if existente.detalles_json else 'None'}... | multiparametros_json: {existente.multiparametros_json[:100] if existente.multiparametros_json else 'None'}...")
                 
                 # --- Fase 115: Asignar fotos (Base64 original) procedentes del payload ---
                 existente.foto_path = item.foto_path
@@ -124,10 +141,12 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                 contador_editados += 1
             else:
                 # 4. CREAR nuevo registro (Narrativo)
-                logger.info(f"✨ Registro [ ID Local: {item.id} ] - NUEVO. Insertando en la DB...")
+                logger.info(f"✨ Registro [ ID Local: {item.id_local} ] - NUEVO. Insertando en la DB...")
                 nuevo_monitoreo = MonitoreoDB(
                     device_id=item.device_id,
-                    id_local=item.id, 
+                    # Fase 132: id_local almacena el ID de SQLite del móvil.
+                    # El PK 'id' se deja en None para que MySQL haga auto-increment.
+                    id_local=item.id_local, 
                     programa_id=item.programa_id,
                     estacion_id=item.estacion_id,
                     fecha_hora=fh,
@@ -153,10 +172,10 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     nivel=item.nivel,
                     latitud=item.latitud,
                     longitud=item.longitud,
-                    # Fase 108: Pivot a JSON Document
-                    detalles_json=json.dumps(item.detalles_json) if not isinstance(item.detalles_json, str) else item.detalles_json,
+                    # Fase 108: Pivot a JSON Document (Fase 125: Serialize list of models)
+                    detalles_json=json.dumps([d.model_dump() for d in item.detalles_json]) if isinstance(item.detalles_json, list) else item.detalles_json,
                     # Fase 113: Backend Support for Dual JSON Architecture
-                    multiparametros_json=json.dumps(item.multiparametros_json) if isinstance(item.multiparametros_json, (list, dict)) else item.multiparametros_json,
+                    multiparametros_json=json.dumps([d.model_dump() for d in item.multiparametros_json]) if isinstance(item.multiparametros_json, list) else item.multiparametros_json,
                     # --- Fase 115: Asignar fotos (Base64 original) procedentes del payload ---
                     foto_path=item.foto_path,
                     foto_multiparametro=item.foto_multiparametro,
@@ -166,7 +185,7 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
                     foto_muestreo=item.foto_muestreo
                 )
                 db.add(nuevo_monitoreo)
-                logger.debug(f"📝 [INSERT] ID {item.id} - detalles_json: {nuevo_monitoreo.detalles_json[:100]}... | multiparametros_json: {nuevo_monitoreo.multiparametros_json[:100]}...")
+                logger.debug(f"📝 [INSERT] ID Local {item.id_local} - detalles_json: {(nuevo_monitoreo.detalles_json or '')[:100]}... | multiparametros_json: {(nuevo_monitoreo.multiparametros_json or '')[:100]}...")
                 contador_nuevos += 1
             
             # --- FASE 120: Advanced Image Organization & Pathing ---
@@ -250,6 +269,11 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
             "mensaje": f"Se sincronizaron con éxito {contador_nuevos} nuevos y {contador_editados} ya existentes."
         }
 
+    except HTTPException:
+        # Fase 132: Re-lanzar HTTPException (400, 422, etc.) sin envolverla en un 500
+        db.rollback()
+        raise
+
     except Exception as e:
         db.rollback() 
         logger.exception(f"🚨 ERROR CRÍTICO EN SYNC: {str(e)}") 
@@ -261,7 +285,7 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
 @router.post("/muestras")
 def exponer_muestras(payload: MuestrasPayload, request: Request):
     """ Proxy hacia la API externa: reenvía la consulta de historial de muestras con autenticación """
-    URL_EXTERNA = "http://apicollector.gpconsultores.cl/api/muestras"
+    URL_EXTERNA = os.getenv("EXTERNAL_API_URL", "http://apicollector.gpconsultores.cl/api/muestras")
 
     cuerpo = {
         "programa": payload.programa,

@@ -74,9 +74,21 @@ class Estacion(BaseModel):
 
     class Config: from_attributes = True
 
+class JSONDetailItem(BaseModel):
+    """ Estructura para los items dentro de los campos JSON (Fase 125) """
+    parametro: str
+    valor: Any
+    unidad: Optional[str] = None
+
+    class Config:
+        from_attributes = True
+
 # --- Esquemas para POST ---
 class MonitoreoItem(BaseModel):
-    id: int
+    # Fase 132: 'id' es el ID local de SQLite del móvil (se acepta por compatibilidad).
+    # 'id_local' es el campo explícito preferido. El validador los coerciona automáticamente.
+    id: Optional[int] = None
+    id_local: Optional[int] = None
     device_id: str
     programa_id: Optional[int] = None
     estacion_id: Optional[int] = None
@@ -114,13 +126,20 @@ class MonitoreoItem(BaseModel):
     foto_muestreo: Optional[str] = None
     
     # Fase 108: Pivot a Document Pattern (JSON)
-    detalles_json: Optional[Any] = None
+    detalles_json: Optional[List[JSONDetailItem]] = None
     
     # Fase 113: Backend Support for Dual JSON Architecture
-    multiparametros_json: Optional[Any] = None
+    multiparametros_json: Optional[List[JSONDetailItem]] = None
     
     # Campo para parámetros dinámicos (Fase 86 - Legacy support)
     detalles: List['DetalleSync'] = []
+
+    @model_validator(mode='after')
+    def coerce_id_local(self) -> 'MonitoreoItem':
+        """ Fase 132: Si id_local no viene explícito, lo toma del campo 'id' (compatibilidad Flutter). """
+        if self.id_local is None and self.id is not None:
+            self.id_local = self.id
+        return self
 
 class SyncPayload(BaseModel):
     monitoreos: List[MonitoreoItem]
@@ -161,6 +180,7 @@ class AnalyticsPoint(BaseModel):
 
 class AnalyticsResponse(BaseModel):
     parametro: str
+    unidad: Optional[str] = None
     media: float
     desviacion_estandar: float
     puntos: List[AnalyticsPoint]

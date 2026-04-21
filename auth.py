@@ -1,16 +1,24 @@
+import os
 import secrets
 import logging
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
 security = HTTPBasic()
 
 def verificar_credenciales(credentials: HTTPBasicCredentials = Depends(security)):
-    # Soporta ambos usuarios para mayor flexibilidad en las pruebas y despliegue
-    usuario_valido = credentials.username in ["gpconsul", "collector"]
-    password_correcto = secrets.compare_digest(credentials.password, "gp2026")
+    # Obtener credenciales desde el entorno
+    api_usernames = os.getenv("API_USERNAMES", "gpconsul,collector").split(",")
+    api_password = os.getenv("API_PASSWORD", "gp2026")
+
+    usuario_valido = credentials.username in api_usernames
+    password_correcto = secrets.compare_digest(credentials.password, api_password)
     
     if not (usuario_valido and password_correcto):
         logger.warning(f"❌ Intento de acceso fallido para el usuario: [{credentials.username}]")

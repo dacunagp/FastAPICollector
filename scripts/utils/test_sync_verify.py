@@ -6,7 +6,7 @@ import base64
 B64_PIXEL = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
 
 def test_sync_v2_post_fix():
-    url = "http://localhost:8000/api/sync/monitoreos"
+    url = "http://localhost:5348/api/sync/monitoreos"
     auth = ("gpconsul", "gp2026")
     
     payload = {

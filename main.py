@@ -12,7 +12,7 @@ setup_logging()
 
 app = FastAPI(title="API GP Consultores")
 
-# Montar carpeta estática para poder ver las fotos desde el navegador (Ej: http://localhost:8000/static/uploads/foto.jpg)
+# Montar carpeta estática para poder ver las fotos desde el navegador (Ej: http://localhost:5348/static/uploads/foto.jpg)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Registrar los routers

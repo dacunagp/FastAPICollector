@@ -90,9 +90,11 @@ class MonitoreoDB(Base):
     foto_muestreo = Column(LONGTEXT)
     
     # Fase 108: Pivot a Document Pattern (JSON) para capturas
+    # Estructura esperada (Fase 125): [{ parametro: "x", valor: "x", unidad: "x" }]
     detalles_json = Column(Text)
     
     # Fase 113: Backend Support for Dual JSON Architecture
+    # Estructura esperada (Fase 125): [{ parametro: "x", valor: "x", unidad: "x" }]
     multiparametros_json = Column(Text, nullable=True)
     
     # Sellos de tiempo de auditoría
