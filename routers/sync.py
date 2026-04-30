@@ -1,12 +1,14 @@
 import logging
 import json
 import os
+import base64
+from typing import Optional
 import requests as req
 from dotenv import load_dotenv
 
 # Cargar variables de entorno
 load_dotenv()
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Request, File, UploadFile, Form
 from sqlalchemy.orm import Session
 from datetime import datetime
 from database import get_db
@@ -20,18 +22,69 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api", dependencies=[Depends(verificar_credenciales)])
 
 @router.post("/sync/monitoreos")
-def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
-    """ Recibe array de monitoreos del dispositivo móvil y los guarda con manejo de errores """
+async def sync_monitoreos(
+    payload: str = Form(...), 
+    firma_operador: Optional[UploadFile] = File(None), 
+    foto_path: Optional[UploadFile] = File(None),
+    foto_multiparametro: Optional[UploadFile] = File(None),
+    foto_turbiedad: Optional[UploadFile] = File(None),
+    foto_caudal: Optional[UploadFile] = File(None),
+    foto_nivel_freatico: Optional[UploadFile] = File(None),
+    foto_muestreo: Optional[UploadFile] = File(None),
+    db: Session = Depends(get_db)
+):
+    """ Recibe array de monitoreos del dispositivo móvil (multipart) y los guarda con manejo de errores """
+    # Parsear el payload JSON desde el campo Form
+    try:
+        data_dict = json.loads(payload)
+        payload_obj = SyncPayload(**data_dict)
+    except Exception as e:
+        logger.error(f"❌ Error al parsear payload JSON: {str(e)}")
+        raise HTTPException(status_code=400, detail=f"Error en formato JSON del payload: {str(e)}")
+
     contador_nuevos = 0
     contador_editados = 0
     
     # Log: Inicio de sincronización (Narrativo)
-    dispositivo = payload.monitoreos[0].device_id if payload.monitoreos else "DESCONOCIDO"
+    dispositivo = payload_obj.monitoreos[0].device_id if payload_obj.monitoreos else "DESCONOCIDO"
     logger.info(f"🔄 Iniciando sincronización de registros para el dispositivo: [ {dispositivo} ]")
-    logger.debug(f"📦 Payload completo recibido: {payload.model_dump_json()}")
     
+    # Guardar firma si existe (se aplica a los registros del lote)
+    firma_path_guardada = None
+    firma_bytes = None
+    if firma_operador:
+        logger.info(f"✍️ Recibida firma del operador: {firma_operador.filename}")
+        try:
+            # Leer contenido del archivo
+            firma_bytes = await firma_operador.read()
+        except Exception as e:
+            logger.error(f"❌ Error al leer firma_operador: {str(e)}")
+
+    # Procesar fotos de evidencia recibidas vía Multipart (Fase Multipart Evidence)
+    multipart_photos_data = {} # Guardaremos los bytes directamente
+    evidence_fields = {
+        "general": foto_path,
+        "multiparametro": foto_multiparametro,
+        "turbiedad": foto_turbiedad,
+        "caudal": foto_caudal,
+        "nivel_freatico": foto_nivel_freatico,
+        "muestreo": foto_muestreo
+    }
+    
+    for key, file_obj in evidence_fields.items():
+        if file_obj:
+            logger.info(f"📸 Recibida foto multipart [ {key} ]: {file_obj.filename}")
+            try:
+                multipart_photos_data[key] = await file_obj.read()
+            except Exception as e:
+                logger.error(f"❌ Error al leer foto multipart {key}: {str(e)}")
+
+    # Diccionario para rastrear rutas ya guardadas en este lote (Batch-wide optimization)
+    # Evita guardar físicamente el mismo archivo multipart múltiples veces
+    rutas_guardadas_lote = {}
+
     try:
-        for item in payload.monitoreos:
+        for item in payload_obj.monitoreos:
             # Fase 132: Validación temprana — id_local es requerido por la BD
             if item.id_local is None:
                 raise HTTPException(
@@ -65,192 +118,127 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
             # 1.5 Depuración de fotos recibidas
             print(f"📸 [DEBUG API] ID Local: {item.id_local} - Principal: {bool(item.foto_path)}, Multi: {bool(item.foto_multiparametro)}, Turb: {bool(item.foto_turbiedad)}, Cau: {bool(item.foto_caudal)}, Nivel: {bool(item.foto_nivel_freatico)}, Muestreo: {bool(item.foto_muestreo)}")
 
-            # --- Log de la información a registrar (sin fotos en base64) ---
-            item_dict = item.model_dump()
-            claves_a_limpiar = [
-                "foto_path", "foto_multiparametro", "foto_turbiedad", 
-                "foto_caudal", "foto_nivel_freatico", "foto_muestreo"
-            ]
-            for clave in claves_a_limpiar:
-                if item_dict.get(clave):
-                    item_dict[clave] = "[FOTO_BASE64_OMITIDA]"
-                    
-            logger.info(f"📥 Información a procesar para la Base de Datos [ID Local: {item.id_local}]:\n{json.dumps(item_dict, indent=2, ensure_ascii=False)}")
-
-            # 2. Verificar si ya existe el registro (Upsert Robust)
-            # Buscamos por la llave compuesta (id_local + device_id)
-            # Fase 132: Buscar por la llave compuesta (id_local + device_id)
-            existente = db.query(MonitoreoDB).filter(
-                MonitoreoDB.id_local == item.id_local,
-                MonitoreoDB.device_id == item.device_id
-            ).first()
-
-            nuevo_monitoreo = None
-
-            if existente:
-                # 3. ACTUALIZAR registro existente (Narrativo)
-                logger.info(f"💾 Registro [ ID Local: {item.id_local} ] - EXISTENTE. Actualizando todos los campos...")
-                existente.programa_id = item.programa_id
-                existente.estacion_id = item.estacion_id
-                existente.fecha_hora = fh
-                existente.monitoreo_fallido = item.monitoreo_fallido
-                existente.observacion = item.observacion
-                existente.matriz_id = item.matriz_id
-                existente.equipo_multi_id = item.equipo_multi_id
-                existente.turbidimetro_id = item.turbidimetro_id
-                existente.metodo_id = item.metodo_id
-                existente.hidroquimico = item.hidroquimico
-                existente.isotopico = item.isotopico
-                existente.cod_laboratorio = item.cod_laboratorio
-                existente.usuario_id = item.usuario_id
-                existente.is_draft = item.is_draft
-                existente.equipo_nivel_id = item.equipo_nivel_id
-                existente.tipo_pozo = item.tipo_pozo
-                existente.fecha_hora_nivel = fh_nivel
-                existente.equipo_caudal = item.equipo_caudal
-                existente.nivel_caudal = item.nivel_caudal
-                existente.fecha_hora_caudal = fh_caudal
-                existente.turbiedad = item.turbiedad
-                existente.profundidad = item.profundidad
-                existente.nivel = item.nivel
-                existente.latitud = item.latitud
-                existente.longitud = item.longitud
-                
-                # Fase 108: Pivot a JSON Document
-                if item.detalles_json is not None:
-                    # Convertimos cada item a dict para que json.dumps funcione (Fase 125)
-                    data_detalles = [d.model_dump() for d in item.detalles_json] if isinstance(item.detalles_json, list) else item.detalles_json
-                    existente.detalles_json = json.dumps(data_detalles) if not isinstance(data_detalles, str) else data_detalles
-                
-                # Fase 113: Backend Support for Dual JSON Architecture
-                if item.multiparametros_json is not None:
-                    # Convertimos cada item a dict (Fase 125)
-                    data_multi = [d.model_dump() for d in item.multiparametros_json] if isinstance(item.multiparametros_json, list) else item.multiparametros_json
-                    existente.multiparametros_json = json.dumps(data_multi) if not isinstance(data_multi, str) else data_multi
-                
-                logger.debug(f"📝 [UPDATE] ID Local {item.id_local} - detalles_json: {existente.detalles_json[:100] if existente.detalles_json else 'None'}... | multiparametros_json: {existente.multiparametros_json[:100] if existente.multiparametros_json else 'None'}...")
-                
-                # --- Fase 115: Asignar fotos (Base64 original) procedentes del payload ---
-                existente.foto_path = item.foto_path
-                existente.foto_multiparametro = item.foto_multiparametro
-                existente.foto_turbiedad = item.foto_turbiedad
-                existente.foto_caudal = item.foto_caudal
-                existente.foto_nivel_freatico = item.foto_nivel_freatico
-                existente.foto_muestreo = item.foto_muestreo
-                
-                contador_editados += 1
-            else:
-                # 4. CREAR nuevo registro (Narrativo)
-                logger.info(f"✨ Registro [ ID Local: {item.id_local} ] - NUEVO. Insertando en la DB...")
-                nuevo_monitoreo = MonitoreoDB(
-                    device_id=item.device_id,
-                    # Fase 132: id_local almacena el ID de SQLite del móvil.
-                    # El PK 'id' se deja en None para que MySQL haga auto-increment.
-                    id_local=item.id_local, 
-                    programa_id=item.programa_id,
-                    estacion_id=item.estacion_id,
-                    fecha_hora=fh,
-                    monitoreo_fallido=item.monitoreo_fallido,
-                    observacion=item.observacion,
-                    matriz_id=item.matriz_id,
-                    equipo_multi_id=item.equipo_multi_id,
-                    turbidimetro_id=item.turbidimetro_id,
-                    metodo_id=item.metodo_id,
-                    hidroquimico=item.hidroquimico,
-                    isotopico=item.isotopico,
-                    cod_laboratorio=item.cod_laboratorio,
-                    usuario_id=item.usuario_id,
-                    is_draft=item.is_draft,
-                    equipo_nivel_id=item.equipo_nivel_id,
-                    tipo_pozo=item.tipo_pozo,
-                    fecha_hora_nivel=fh_nivel,
-                    equipo_caudal=item.equipo_caudal,
-                    nivel_caudal=item.nivel_caudal,
-                    fecha_hora_caudal=fh_caudal,
-                    turbiedad=item.turbiedad,
-                    profundidad=item.profundidad,
-                    nivel=item.nivel,
-                    latitud=item.latitud,
-                    longitud=item.longitud,
-                    # Fase 108: Pivot a JSON Document (Fase 125: Serialize list of models)
-                    detalles_json=json.dumps([d.model_dump() for d in item.detalles_json]) if isinstance(item.detalles_json, list) else item.detalles_json,
-                    # Fase 113: Backend Support for Dual JSON Architecture
-                    multiparametros_json=json.dumps([d.model_dump() for d in item.multiparametros_json]) if isinstance(item.multiparametros_json, list) else item.multiparametros_json,
-                    # --- Fase 115: Asignar fotos (Base64 original) procedentes del payload ---
-                    foto_path=item.foto_path,
-                    foto_multiparametro=item.foto_multiparametro,
-                    foto_turbiedad=item.foto_turbiedad,
-                    foto_caudal=item.foto_caudal,
-                    foto_nivel_freatico=item.foto_nivel_freatico,
-                    foto_muestreo=item.foto_muestreo
-                )
-                db.add(nuevo_monitoreo)
-                logger.debug(f"📝 [INSERT] ID Local {item.id_local} - detalles_json: {(nuevo_monitoreo.detalles_json or '')[:100]}... | multiparametros_json: {(nuevo_monitoreo.multiparametros_json or '')[:100]}...")
-                contador_nuevos += 1
+            # Fase 170: Deep Debug - Se asegura que NINGÚN ID primario del móvil sea usado.
+            # Se extrae la data y se remueve explícitamente el 'id' para garantizar un INSERT limpio.
+            item_data = item.model_dump()
+            item_data.pop("id", None)
             
-            # --- FASE 120: Advanced Image Organization & Pathing ---
-            db.flush() # Obtenemos el ID real generado en la tabla principal
-            db_monitoreo_id = existente.id if existente else nuevo_monitoreo.id
+            logger.info(f"✨ Registro [ ID Local: {item.id_local} ] - Creando registro independiente en BD...")
             
-            # Fecha base para las carpetas
+            monitoreo_actual = MonitoreoDB(
+                device_id=item.device_id,
+                id_local=item.id_local, 
+                programa_id=item.programa_id,
+                estacion_id=item.estacion_id,
+                fecha_hora=fh,
+                monitoreo_fallido=item.monitoreo_fallido,
+                observacion=item.observacion,
+                matriz_id=item.matriz_id,
+                equipo_multi_id=item.equipo_multi_id,
+                turbidimetro_id=item.turbidimetro_id,
+                metodo_id=item.metodo_id,
+                hidroquimico=item.hidroquimico,
+                isotopico=item.isotopico,
+                cod_laboratorio=item.cod_laboratorio,
+                usuario_id=item.usuario_id,
+                is_draft=item.is_draft,
+                equipo_nivel_id=item.equipo_nivel_id,
+                tipo_pozo=item.tipo_pozo,
+                fecha_hora_nivel=fh_nivel,
+                equipo_caudal=item.equipo_caudal,
+                nivel_caudal=item.nivel_caudal,
+                fecha_hora_caudal=fh_caudal,
+                turbiedad=item.turbiedad,
+                profundidad=item.profundidad,
+                nivel=item.nivel,
+                latitud=item.latitud,
+                longitud=item.longitud,
+                detalles_json=json.dumps([d.model_dump() for d in item.detalles_json]) if isinstance(item.detalles_json, list) else item.detalles_json,
+                multiparametros_json=json.dumps([d.model_dump() for d in item.multiparametros_json]) if isinstance(item.multiparametros_json, list) else item.multiparametros_json,
+                foto_path=item.foto_path,
+                foto_multiparametro=item.foto_multiparametro,
+                foto_turbiedad=item.foto_turbiedad,
+                foto_caudal=item.foto_caudal,
+                foto_nivel_freatico=item.foto_nivel_freatico,
+                foto_muestreo=item.foto_muestreo,
+                firma_path=item.firma_path
+            )
+            db.add(monitoreo_actual)
+            contador_nuevos += 1
+            
+            # --- FASE 120: Almacenamiento Dinámico en Disco ---
+            db.flush() 
+            db_monitoreo_id = monitoreo_actual.id
             fecha_base = fh if fh else datetime.now()
 
-            # Obtener nombre de la estación para el slug de la carpeta
             station_name = "sin_estacion"
             if item.estacion_id:
                 estacion_obj = db.query(EstacionDB).filter(EstacionDB.id_estacion == item.estacion_id).first()
                 if estacion_obj and estacion_obj.estacion:
                     station_name = estacion_obj.estacion
 
-            # Diccionario para mapear los campos del JSON a los "tipos" de la BD
+            # Mapeo de fotos para procesar (incluyendo firma para consistencia)
             fotos_a_procesar = {
                 'general': item.foto_path,
                 'multiparametro': item.foto_multiparametro,
                 'turbiedad': item.foto_turbiedad,
                 'caudal': item.foto_caudal,
                 'nivel_freatico': item.foto_nivel_freatico,
-                'muestreo': item.foto_muestreo
+                'muestreo': item.foto_muestreo,
+                'firma': item.firma_path
             }
 
-            for tipo, b64_data in fotos_a_procesar.items():
-                if b64_data and len(b64_data) > 100: # Solo si hay datos significativos
-                    # Verificar si ya existe en la BD
+            # Prioridad 1: Firma Multipart (Batch-wide)
+            if firma_operador and not rutas_guardadas_lote.get('firma'):
+                logger.info(f"✍️ Procesando firma multipart para el lote...")
+                ruta_firma = save_dynamic_photo(firma_bytes, fecha_base, db_monitoreo_id, "firma", station_name)
+                if ruta_firma:
+                    rutas_guardadas_lote['firma'] = ruta_firma
+
+            for tipo, b64_json in fotos_a_procesar.items():
+                ruta_final = None
+                
+                # Caso A: Existe un archivo Multipart para este tipo (Prioridad)
+                if tipo in multipart_photos_data or (tipo == 'firma' and 'firma' in rutas_guardadas_lote):
+                    # Si ya lo guardamos en este lote, usamos la misma ruta (Optimization)
+                    if tipo in rutas_guardadas_lote:
+                        ruta_final = rutas_guardadas_lote[tipo]
+                    elif tipo in multipart_photos_data:
+                        # Guardar por primera vez en este lote
+                        ruta_final = save_dynamic_photo(multipart_photos_data[tipo], fecha_base, db_monitoreo_id, tipo, station_name)
+                        if ruta_final:
+                            rutas_guardadas_lote[tipo] = ruta_final
+                
+                # Caso B: No hay multipart, pero hay Base64 en el JSON
+                elif b64_json and len(b64_json) > 50:
+                    logger.debug(f"📄 Procesando foto Base64 del JSON para tipo: {tipo} [ID Local: {item.id_local}]")
+                    ruta_final = save_dynamic_photo(b64_json, fecha_base, db_monitoreo_id, tipo, station_name)
+
+                # Si logramos obtener una ruta de disco, actualizamos el modelo
+                if ruta_final:
+                    logger.info(f"✅ Foto/Firma guardada en disco: {ruta_final} [Tipo: {tipo}]")
+                    if tipo == 'general': monitoreo_actual.foto_path = ruta_final
+                    elif tipo == 'multiparametro': monitoreo_actual.foto_multiparametro = ruta_final
+                    elif tipo == 'turbiedad': monitoreo_actual.foto_turbiedad = ruta_final
+                    elif tipo == 'caudal': monitoreo_actual.foto_caudal = ruta_final
+                    elif tipo == 'nivel_freatico': monitoreo_actual.foto_nivel_freatico = ruta_final
+                    elif tipo == 'muestreo': monitoreo_actual.foto_muestreo = ruta_final
+                    elif tipo == 'firma': monitoreo_actual.firma_path = ruta_final
+
+                    # Mantener soporte legacy en tabla monitoreo_fotos
                     foto_existente = db.query(MonitoreoFotoDB).filter(
                         MonitoreoFotoDB.monitoreo_id == db_monitoreo_id,
                         MonitoreoFotoDB.tipo == tipo
                     ).first()
-
-                    # Guardar el archivo en el disco con estructura profesional
-                    ruta_guardada = save_dynamic_photo(b64_data, fecha_base, db_monitoreo_id, tipo, station_name)
-
-                    if ruta_guardada:
-                        # 1. Guardar en la tabla de fotos (Legacy support)
-                        if foto_existente:
-                            foto_existente.ruta = ruta_guardada
-                        else:
-                            nueva_foto = MonitoreoFotoDB(
-                                monitoreo_id=db_monitoreo_id,
-                                tipo=tipo,
-                                ruta=ruta_guardada
-                            )
-                            db.add(nueva_foto)
-                        
-                        # 2. Sincronizar en el registro principal (Fase 86)
-                        monitoreo_obj = existente if existente else nuevo_monitoreo
-                        if tipo == 'general': monitoreo_obj.foto_path = ruta_guardada
-                        elif tipo == 'multiparametro': monitoreo_obj.foto_multiparametro = ruta_guardada
-                        elif tipo == 'turbiedad': monitoreo_obj.foto_turbiedad = ruta_guardada
-                        elif tipo == 'caudal': monitoreo_obj.foto_caudal = ruta_guardada
-                        elif tipo == 'nivel_freatico': monitoreo_obj.foto_nivel_freatico = ruta_guardada
-                        elif tipo == 'muestreo': monitoreo_obj.foto_muestreo = ruta_guardada
-            
+                    
+                    if foto_existente:
+                        foto_existente.ruta = ruta_final
+                    else:
+                        db.add(MonitoreoFotoDB(monitoreo_id=db_monitoreo_id, tipo=tipo, ruta=ruta_final))
             # --- NUEVA LÓGICA DE DETALLES/PARÁMETROS EXTRA (Fase 86) ---
             if item.detalles:
                 logger.info(f"💾 Guardando {len(item.detalles)} parámetros extra (detalles) para el monitoreo...")
-                # Si es un edit, limpiamos los detalles previos (Full Sync)
-                if existente:
-                    db.query(MonitoreoDetalleDB).filter(MonitoreoDetalleDB.monitoreo_id == db_monitoreo_id).delete()
-                
+                # Al ser siempre un registro nuevo, no necesitamos limpiar detalles previos.
                 for det in item.detalles:
                     db_detalle = MonitoreoDetalleDB(
                         monitoreo_id=db_monitoreo_id,
@@ -262,11 +250,11 @@ def sync_monitoreos(payload: SyncPayload, db: Session = Depends(get_db)):
             
         # 3. Intento de persistencia en MySQL
         db.commit() 
-        logger.info(f"🚀 Sincronización Finalizada de forma exitosa. Se detectaron {contador_nuevos} nuevos y {contador_editados} editados.")
+        logger.info(f"🚀 Sincronización Finalizada de forma exitosa. Se detectaron {contador_nuevos} nuevos registros.")
         
         return {
             "status": "success",
-            "mensaje": f"Se sincronizaron con éxito {contador_nuevos} nuevos y {contador_editados} ya existentes."
+            "mensaje": f"Se sincronizaron con éxito {contador_nuevos} nuevos registros."
         }
 
     except HTTPException:
@@ -288,7 +276,7 @@ def exponer_muestras(payload: MuestrasPayload, request: Request):
     URL_EXTERNA = os.getenv("EXTERNAL_API_URL", "http://apicollector.gpconsultores.cl/api/muestras")
 
     cuerpo = {
-        "programa": payload.programa,
+        "programa": "0",
         "estaciones": payload.estaciones
     }
 
@@ -336,14 +324,24 @@ def exponer_muestras(payload: MuestrasPayload, request: Request):
 
             if not lista_muestras:
                 logger.warning(f"⚠️ No se pudo extraer una lista del dict externo. Llaves: {list(datos.keys())}")
+                if "message" in datos:
+                    logger.warning(f"💬 Mensaje de la API externa: {datos['message']}")
 
         # Phase 72: Conversión UTM a WGS84 para el historial de muestras antes del dispatch
         for m in lista_muestras:
-            if isinstance(m, dict) and m.get("latitud") and m.get("longitud"):
-                # convert_utm_to_wgs84 detecta si ya son decimales y no los altera
-                lat, lon = convert_utm_to_wgs84(easting=m["longitud"], northing=m["latitud"])
-                m["latitud"] = lat
-                m["longitud"] = lon
+            if isinstance(m, dict):
+                lat_raw = m.get("latitud")
+                lon_raw = m.get("longitud")
+                if lat_raw is not None and lon_raw is not None:
+                    try:
+                        # Asegurar que son numéricos antes de la conversión
+                        lat_val = float(lat_raw)
+                        lon_val = float(lon_raw)
+                        lat, lon = convert_utm_to_wgs84(easting=lon_val, northing=lat_val)
+                        m["latitud"] = lat
+                        m["longitud"] = lon
+                    except (ValueError, TypeError):
+                        logger.warning(f"⚠️ Coordenadas inválidas en muestra: lat={lat_raw}, lon={lon_raw}")
         
         logger.info(f"✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: {len(lista_muestras)}")
         return lista_muestras

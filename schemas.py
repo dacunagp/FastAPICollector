@@ -49,6 +49,13 @@ class Usuario(BaseModel):
     habilitado: Optional[int] = None
     class Config: from_attributes = True
 
+class ObservacionPredefinida(BaseModel):
+    id: int
+    texto: str
+    categoria: Optional[str] = None
+    activo: Optional[int] = 1
+    class Config: from_attributes = True
+
 class Estacion(BaseModel):
     id_estacion: int
     estacion: Optional[str] = None
@@ -124,6 +131,7 @@ class MonitoreoItem(BaseModel):
     foto_caudal: Optional[str] = None
     foto_nivel_freatico: Optional[str] = None
     foto_muestreo: Optional[str] = None
+    firma_path: Optional[str] = None
     
     # Fase 108: Pivot a Document Pattern (JSON)
     detalles_json: Optional[List[JSONDetailItem]] = None
@@ -167,7 +175,7 @@ class DetalleSync(BaseModel):
     class Config: from_attributes = True
 
 class MuestrasPayload(BaseModel):
-    programa: str
+    programa: int
     estaciones: List[str]
 
 # --- Fase 97: Esquemas para Analítica ---

@@ -88,6 +88,7 @@ class MonitoreoDB(Base):
     foto_caudal = Column(LONGTEXT)
     foto_nivel_freatico = Column(LONGTEXT)
     foto_muestreo = Column(LONGTEXT)
+    firma_path = Column(String(255), nullable=True)
     
     # Fase 108: Pivot a Document Pattern (JSON) para capturas
     # Estructura esperada (Fase 125): [{ parametro: "x", valor: "x", unidad: "x" }]
@@ -103,6 +104,16 @@ class MonitoreoDB(Base):
     
     # Relación con parámetros dinámicos (Fase 86 - Legacy support)
     detalles = relationship("MonitoreoDetalleDB", back_populates="monitoreo", cascade="all, delete-orphan")
+
+class ObservacionPredefinidaDB(Base):
+    __tablename__ = "observaciones_predefinidas"
+    id = Column(Integer, primary_key=True, index=True)
+    texto = Column(String(255))
+    categoria = Column(String(50), nullable=True)
+    activo = Column(Integer, default=1)
+    created_at = Column(DateTime, default=func.now())
+    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+
 
 class MonitoreoFotoDB(Base):
     __tablename__ = "monitoreo_fotos"

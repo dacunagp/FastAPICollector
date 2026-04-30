@@ -4,7 +4,7 @@ import re
 import unicodedata
 import logging
 from pathlib import Path
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Union
 from datetime import datetime
 from pyproj import Transformer
 
@@ -66,6 +66,10 @@ PHOTO_FILENAME_MAP = {
     "general": "general",
     "multiparametro": "multiparametro",
     "turbiedad": "turbiedad",
+    "caudal": "caudal",
+    "nivel_freatico": "nivel_freatico",
+    "muestreo": "muestreo",
+    "firma": "firma",
 }
 
 def slugify(text: str) -> str:
@@ -86,33 +90,46 @@ def slugify(text: str) -> str:
 
 
 def save_dynamic_photo(
-    b64_string: str,
+    data: Union[str, bytes],
     fecha: datetime,
     monitoreo_id: int,
     tipo: str,
     station_name: str = "sin_estacion",
 ) -> Optional[str]:
     """
-    Guarda una foto decodificada de Base64 en la estructura profesional:
-      static/monitoreos/{year}/{month}/{station_slug}/{monitoring_id}/{tipo}.jpg
+    Guarda una foto (en bytes o Base64) en la estructura profesional:
+      static/monitoreos/{year}/{month}/{day}/{station_slug}/{monitoring_id}/{tipo}.jpg
 
     Args:
-        b64_string:   Cadena Base64 de la imagen.
-        fecha:        Fecha/hora del monitoreo (para year/month).
+        data:         Cadena Base64 o bytes de la imagen.
+        fecha:        Fecha/hora del monitoreo (para year/month/day).
         monitoreo_id: PK del monitoreo en la BD.
-        tipo:         Tipo de foto ('general', 'multiparametro', 'turbiedad').
+        tipo:         Tipo de foto ('general', 'multiparametro', 'firma', etc).
         station_name: Nombre legible de la estación (se convierte a slug).
 
     Returns:
         Ruta relativa sin 'static/' para almacenar en la BD,
         o None si hubo error.
     """
-    if not b64_string:
+    if not data:
         return None
 
-    # 1. Limpiar cabeceras de Base64 si existen
-    if "," in b64_string:
-        b64_string = b64_string.split(",")[1]
+    # 1. Preparar los bytes de la imagen
+    img_bytes = None
+    try:
+        if isinstance(data, bytes):
+            img_bytes = data
+        else:
+            # Es un string Base64, limpiar cabeceras si existen
+            if "," in data:
+                data = data.split(",")[1]
+            img_bytes = base64.b64decode(data)
+    except Exception as e:
+        logger.error(f"🚨 Error decodificando datos de imagen {tipo}: {e}")
+        return None
+
+    if not img_bytes:
+        return None
 
     # 2. Extraer componentes de la fecha
     fecha_ref = fecha if fecha else datetime.now()
@@ -123,17 +140,16 @@ def save_dynamic_photo(
     # 3. Generar slug de la estación
     station_slug = slugify(station_name)
 
-    # 4. Nombre de archivo estandarizado + timestamp para versionado
+    # 4. Nombre de archivo estandarizado + timestamp para evitar colisiones
     base_name = PHOTO_FILENAME_MAP.get(tipo, tipo)
     timestamp = fecha_ref.strftime("%H%M%S")
     file_name = f"{base_name}_{timestamp}.jpg"
 
     # 5. Construir rutas con pathlib
-    #    Ruta relativa (para la BD): monitoreos/2026/04/09/estacion_rio_maipo/35/general_112630.jpg
     relative_folder = Path("monitoreos") / year / month / day / station_slug / str(monitoreo_id)
     relative_path = relative_folder / file_name
 
-    #    Ruta absoluta (en disco): static/monitoreos/2026/04/...
+    #    Ruta absoluta (en disco)
     absolute_folder = Path("static") / relative_folder
     absolute_folder.mkdir(parents=True, exist_ok=True)
 
@@ -141,12 +157,11 @@ def save_dynamic_photo(
 
     # 6. Guardar el archivo físico
     try:
-        img_bytes = base64.b64decode(b64_string)
         absolute_file_path.write_bytes(img_bytes)
-        # Usar forward-slashes para la ruta guardada en la BD (compatible con URLs)
+        # Usar forward-slashes para la ruta guardada en la BD
         db_path = relative_path.as_posix()
         logger.info(f"📸 Foto guardada [{tipo}]: {db_path}")
         return db_path
     except Exception as e:
-        logger.exception(f"🚨 Error guardando foto {tipo}: {e}")
+        logger.exception(f"🚨 Error guardando archivo físico {tipo}: {e}")
         return None

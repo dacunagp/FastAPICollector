@@ -15,7 +15,7 @@ if not URL_BASE_DATOS:
     # O simplemente lanzar un error si es crítico
     # raise ValueError("DATABASE_URL no está definida en el archivo .env")
 
-engine = create_engine(URL_BASE_DATOS)
+engine = create_engine(URL_BASE_DATOS, pool_pre_ping=True, pool_recycle=3600)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 

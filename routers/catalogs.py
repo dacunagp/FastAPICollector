@@ -3,8 +3,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session, joinedload
 from typing import List
 from database import get_db
-from models import CampanaDB, EquipoDB, MatrizDB, MetodoDB, ParametroDB, UsuarioDB
-from schemas import Campana, Equipo, Matriz, Metodo, Parametro, Usuario
+from models import CampanaDB, EquipoDB, MatrizDB, MetodoDB, ParametroDB, UsuarioDB, ObservacionPredefinidaDB
+from schemas import Campana, Equipo, Matriz, Metodo, Parametro, Usuario, ObservacionPredefinida
 from auth import verificar_credenciales
 from utils import convert_utm_to_wgs84
 
@@ -53,3 +53,8 @@ def get_usuarios(db: Session = Depends(get_db)):
     logger.info("📋 Consulta de catálogo [ USUARIOS ] solicitada.")
     # Trae los usuarios sin exponer la contraseña
     return db.query(UsuarioDB).all()
+
+@router.get("/catalogos/observaciones", response_model=List[ObservacionPredefinida])
+def get_observaciones_predefinidas(db: Session = Depends(get_db)):
+    logger.info("📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.")
+    return db.query(ObservacionPredefinidaDB).filter(ObservacionPredefinidaDB.activo == 1).all()
