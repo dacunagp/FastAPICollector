@@ -50,6 +50,7 @@ class UsuarioDB(Base):
     apellido = Column(String(50))
     clave_app = Column(String(50))
     email = Column(String(50))
+    password = Column(String(255))
     habilitado = Column(Integer)
 
 class MonitoreoDB(Base):

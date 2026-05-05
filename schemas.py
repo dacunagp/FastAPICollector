@@ -46,6 +46,7 @@ class Usuario(BaseModel):
     apellido: Optional[str] = None
     clave_app: Optional[str] = None
     email: Optional[str] = None
+    password: Optional[str] = None
     habilitado: Optional[int] = None
     class Config: from_attributes = True
 
