@@ -51,8 +51,14 @@ def get_parametros(db: Session = Depends(get_db)):
 @router.get("/usuarios", response_model=List[Usuario])
 def get_usuarios(db: Session = Depends(get_db)):
     logger.info("📋 Consulta de catálogo [ USUARIOS ] solicitada.")
-    # Trae los usuarios incluyendo el hash de contraseña para validación local en la App
-    return db.query(UsuarioDB).all()
+    # Forzamos la carga explícita de todas las columnas incluyendo 'password'
+    usuarios = db.query(UsuarioDB).all()
+    
+    # Log de depuración para ver qué está llegando de la base de datos
+    if usuarios:
+        logger.debug(f"DEBUG: Usuario {usuarios[0].nombre} tiene password: {bool(usuarios[0].password)}")
+        
+    return usuarios
 
 @router.get("/catalogos/observaciones", response_model=List[ObservacionPredefinida])
 def get_observaciones_predefinidas(db: Session = Depends(get_db)):
