@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from routers import catalogs, sync, analytics
+from routers import catalogs, sync, analytics, email
 from database import engine, Base
 from logging_config import setup_logging
 
@@ -19,6 +19,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(catalogs.router)
 app.include_router(sync.router)
 app.include_router(analytics.router)
+app.include_router(email.router)
 
 @app.get("/")
 def read_root():

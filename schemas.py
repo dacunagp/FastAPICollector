@@ -196,3 +196,8 @@ class AnalyticsResponse(BaseModel):
     count_total: int
     count_clean: int
     count_outliers: int
+
+class EmailRequest(BaseModel):
+    destinatario: str
+    asunto: str
+    cuerpo: str
