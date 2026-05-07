@@ -114,6 +114,7 @@ class MonitoreoItem(BaseModel):
     is_draft: int = 0
     equipo_nivel_id: Optional[int] = None
     tipo_pozo: Optional[str] = None
+    tipo_nivel: Optional[str] = None
     fecha_hora_nivel: Optional[str] = None
     
     # Fase 115: Campos Caudal

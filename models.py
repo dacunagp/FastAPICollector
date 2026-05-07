@@ -74,6 +74,7 @@ class MonitoreoDB(Base):
     is_draft = Column(Integer)
     equipo_nivel_id = Column(Integer)
     tipo_pozo = Column(String(255))
+    tipo_nivel = Column(String(255))
     fecha_hora_nivel = Column(DateTime)
     equipo_caudal = Column(Integer)
     nivel_caudal = Column(Float)

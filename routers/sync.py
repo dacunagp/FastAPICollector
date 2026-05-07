@@ -144,6 +144,7 @@ async def sync_monitoreos(
                 is_draft=item.is_draft,
                 equipo_nivel_id=item.equipo_nivel_id,
                 tipo_pozo=item.tipo_pozo,
+                tipo_nivel=item.tipo_nivel,
                 fecha_hora_nivel=fh_nivel,
                 equipo_caudal=item.equipo_caudal,
                 nivel_caudal=item.nivel_caudal,
