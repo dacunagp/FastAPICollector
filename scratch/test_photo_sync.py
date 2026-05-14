@@ -27,7 +27,7 @@ def test_photo_sync_mixed():
                 "id_local": 1001,
                 "programa_id": 1,
                 "estacion_id": 1,
-                "fecha_hora": "2026-04-23 15:00:00",
+                "fecha_hora_muestreo": "2026-04-23 15:00:00",
                 "observacion": "Registro con foto Base64",
                 "foto_path": dummy_img_b64 # Base64 en el JSON
             },
@@ -36,7 +36,7 @@ def test_photo_sync_mixed():
                 "id_local": 1002,
                 "programa_id": 1,
                 "estacion_id": 1,
-                "fecha_hora": "2026-04-23 15:05:00",
+                "fecha_hora_muestreo": "2026-04-23 15:05:00",
                 "observacion": "Registro que usará foto multipart"
             }
         ]

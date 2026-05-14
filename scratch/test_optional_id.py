@@ -12,7 +12,7 @@ def test_optional_id():
                 "device_id": "TEST-OPTIONAL-ID",
                 "programa_id": 1,
                 "estacion_id": 1,
-                "fecha_hora": "2026-04-21 15:00:00",
+                "fecha_hora_muestreo": "2026-04-21 15:00:00",
                 "observacion": "Test de ID opcional - Fase 131"
             }
         ]

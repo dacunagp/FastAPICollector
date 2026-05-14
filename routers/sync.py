@@ -15,7 +15,7 @@ from database import get_db
 from models import MonitoreoDB, MonitoreoFotoDB, EstacionDB, MonitoreoDetalleDB
 from schemas import SyncPayload, MuestrasPayload
 from auth import verificar_credenciales
-from utils import save_dynamic_photo, convert_utm_to_wgs84
+from utils import save_dynamic_photo, convert_utm_to_wgs84, log_audit
 
 logger = logging.getLogger(__name__)
 
@@ -61,7 +61,7 @@ async def sync_monitoreos(
             logger.error(f"❌ Error al leer firma_operador: {str(e)}")
 
     # Procesar fotos de evidencia recibidas vía Multipart (Fase Multipart Evidence)
-    multipart_photos_data = {} # Guardaremos los bytes directamente
+    multipart_photos_data = {} # Guardaremos dict con bytes y content_type
     evidence_fields = {
         "general": foto_path,
         "multiparametro": foto_multiparametro,
@@ -75,12 +75,14 @@ async def sync_monitoreos(
         if file_obj:
             logger.info(f"📸 Recibida foto multipart [ {key} ]: {file_obj.filename}")
             try:
-                multipart_photos_data[key] = await file_obj.read()
+                multipart_photos_data[key] = {
+                    "bytes": await file_obj.read(),
+                    "content_type": file_obj.content_type or "image/jpeg"
+                }
             except Exception as e:
                 logger.error(f"❌ Error al leer foto multipart {key}: {str(e)}")
 
     # Diccionario para rastrear rutas ya guardadas en este lote (Batch-wide optimization)
-    # Evita guardar físicamente el mismo archivo multipart múltiples veces
     rutas_guardadas_lote = {}
 
     try:
@@ -93,33 +95,36 @@ async def sync_monitoreos(
                 )
             logger.info(f"📍 Procesando registro móvil [ ID Local: {item.id_local} ]...")
             
-            # 1. Conversión de fechas
-            fh = None
-            if item.fecha_hora:
-                try:
-                    fh = datetime.strptime(item.fecha_hora, "%Y-%m-%d %H:%M:%S")
-                except ValueError:
-                    raise HTTPException(status_code=400, detail=f"Formato de fecha_hora inválido: {item.fecha_hora}")
+            # 1. Conversión de fechas con validación de "vacio" para evitar copias accidentales
+            # La fecha_hora principal tomará la fecha de subida del monitoreo al servidor
+            fh = datetime.now()
                 
             fh_nivel = None
-            if item.fecha_hora_nivel:
+            if item.fecha_hora_nivel and str(item.fecha_hora_nivel).strip() != "":
                 try:
                     fh_nivel = datetime.strptime(item.fecha_hora_nivel, "%Y-%m-%d %H:%M:%S")
                 except ValueError:
                     raise HTTPException(status_code=400, detail=f"Formato de fecha_hora_nivel inválido: {item.fecha_hora_nivel}")
                     
             fh_caudal = None
-            if item.fecha_hora_caudal:
+            if item.fecha_hora_caudal and str(item.fecha_hora_caudal).strip() != "":
                 try:
                     fh_caudal = datetime.strptime(item.fecha_hora_caudal, "%Y-%m-%d %H:%M:%S")
                 except ValueError:
                     raise HTTPException(status_code=400, detail=f"Formato de fecha_hora_caudal inválido: {item.fecha_hora_caudal}")
 
-            # 1.5 Depuración de fotos recibidas
-            print(f"📸 [DEBUG API] ID Local: {item.id_local} - Principal: {bool(item.foto_path)}, Multi: {bool(item.foto_multiparametro)}, Turb: {bool(item.foto_turbiedad)}, Cau: {bool(item.foto_caudal)}, Nivel: {bool(item.foto_nivel_freatico)}, Muestreo: {bool(item.foto_muestreo)}")
+            # --- CORRECCIÓN FECHA MUESTREO (Independiente) ---
+            fh_muestreo = None
+            if item.fecha_hora_muestreo and str(item.fecha_hora_muestreo).strip() != "":
+                try:
+                    fh_muestreo = datetime.strptime(item.fecha_hora_muestreo, "%Y-%m-%d %H:%M:%S")
+                except ValueError:
+                    logger.warning(f"⚠️ Formato inválido en muestreo para ID {item.id_local}")
 
+            # 1.5 Depuración de fotos y campos recibidos
+            logger.debug(f"🔍 [DEBUG SYNC] Datos recibidos para ID Local {item.id_local}: {item.model_dump(exclude={'foto_path', 'foto_multiparametro', 'foto_turbiedad', 'foto_caudal', 'foto_nivel_freatico', 'foto_muestreo', 'firma_path'})}")
+            
             # Fase 170: Deep Debug - Se asegura que NINGÚN ID primario del móvil sea usado.
-            # Se extrae la data y se remueve explícitamente el 'id' para garantizar un INSERT limpio.
             item_data = item.model_dump()
             item_data.pop("id", None)
             
@@ -162,6 +167,7 @@ async def sync_monitoreos(
                 foto_caudal=item.foto_caudal,
                 foto_nivel_freatico=item.foto_nivel_freatico,
                 foto_muestreo=item.foto_muestreo,
+                fecha_hora_muestreo=fh_muestreo, # ✅ AHORA ES INDEPENDIENTE
                 firma_path=item.firma_path
             )
             db.add(monitoreo_actual)
@@ -192,7 +198,16 @@ async def sync_monitoreos(
             # Prioridad 1: Firma Multipart (Batch-wide)
             if firma_operador and not rutas_guardadas_lote.get('firma'):
                 logger.info(f"✍️ Procesando firma multipart para el lote...")
-                ruta_firma = save_dynamic_photo(firma_bytes, fecha_base, db_monitoreo_id, "firma", station_name)
+                ruta_firma = save_dynamic_photo(
+                    firma_bytes, 
+                    fecha_base, 
+                    db_monitoreo_id, 
+                    "firma", 
+                    station_name,
+                    id_equipo=str(item.equipo_multi_id or 0),
+                    id_punto=str(item.estacion_id or 0),
+                    content_type=firma_operador.content_type or "image/png"
+                )
                 if ruta_firma:
                     rutas_guardadas_lote['firma'] = ruta_firma
 
@@ -206,18 +221,37 @@ async def sync_monitoreos(
                         ruta_final = rutas_guardadas_lote[tipo]
                     elif tipo in multipart_photos_data:
                         # Guardar por primera vez en este lote
-                        ruta_final = save_dynamic_photo(multipart_photos_data[tipo], fecha_base, db_monitoreo_id, tipo, station_name)
+                        photo_info = multipart_photos_data[tipo]
+                        ruta_final = save_dynamic_photo(
+                            photo_info["bytes"], 
+                            fecha_base, 
+                            db_monitoreo_id, 
+                            tipo, 
+                            station_name,
+                            id_equipo=str(item.equipo_multi_id or 0),
+                            id_punto=str(item.estacion_id or 0),
+                            content_type=photo_info["content_type"]
+                        )
                         if ruta_final:
                             rutas_guardadas_lote[tipo] = ruta_final
                 
                 # Caso B: No hay multipart, pero hay Base64 en el JSON
                 elif b64_json and len(b64_json) > 50:
                     logger.debug(f"📄 Procesando foto Base64 del JSON para tipo: {tipo} [ID Local: {item.id_local}]")
-                    ruta_final = save_dynamic_photo(b64_json, fecha_base, db_monitoreo_id, tipo, station_name)
+                    ruta_final = save_dynamic_photo(
+                        b64_json, 
+                        fecha_base, 
+                        db_monitoreo_id, 
+                        tipo, 
+                        station_name,
+                        id_equipo=str(item.equipo_multi_id or 0),
+                        id_punto=str(item.estacion_id or 0),
+                        content_type="image/jpeg"
+                    )
 
-                # Si logramos obtener una ruta de disco, actualizamos el modelo
+                # Si logramos obtener la URL de S3, actualizamos el modelo
                 if ruta_final:
-                    logger.info(f"✅ Foto/Firma guardada en disco: {ruta_final} [Tipo: {tipo}]")
+                    logger.info(f"✅ Foto/Firma subida: {ruta_final} [Tipo: {tipo}]")
                     if tipo == 'general': monitoreo_actual.foto_path = ruta_final
                     elif tipo == 'multiparametro': monitoreo_actual.foto_multiparametro = ruta_final
                     elif tipo == 'turbiedad': monitoreo_actual.foto_turbiedad = ruta_final
@@ -236,10 +270,10 @@ async def sync_monitoreos(
                         foto_existente.ruta = ruta_final
                     else:
                         db.add(MonitoreoFotoDB(monitoreo_id=db_monitoreo_id, tipo=tipo, ruta=ruta_final))
+            
             # --- NUEVA LÓGICA DE DETALLES/PARÁMETROS EXTRA (Fase 86) ---
             if item.detalles:
                 logger.info(f"💾 Guardando {len(item.detalles)} parámetros extra (detalles) para el monitoreo...")
-                # Al ser siempre un registro nuevo, no necesitamos limpiar detalles previos.
                 for det in item.detalles:
                     db_detalle = MonitoreoDetalleDB(
                         monitoreo_id=db_monitoreo_id,
@@ -253,6 +287,25 @@ async def sync_monitoreos(
         db.commit() 
         logger.info(f"🚀 Sincronización Finalizada de forma exitosa. Se detectaron {contador_nuevos} nuevos registros.")
         
+        # Auditoría: Registrar la sincronización masiva
+        try:
+            user_id = payload_obj.monitoreos[0].usuario_id if payload_obj.monitoreos else None
+            log_audit(
+                db=db,
+                usuario_id=user_id,
+                accion="BULK_SYNC",
+                tabla="monitoreos",
+                detalles={
+                    "dispositivo": dispositivo,
+                    "nuevos": contador_nuevos,
+                    "editados": contador_editados,
+                    "total": len(payload_obj.monitoreos)
+                }
+            )
+            db.commit() # Commit del log de auditoría
+        except Exception as audit_err:
+            logger.error(f"⚠️ No se pudo registrar auditoría de sync: {audit_err}")
+
         return {
             "status": "success",
             "mensaje": f"Se sincronizaron con éxito {contador_nuevos} nuevos registros."
@@ -272,12 +325,12 @@ async def sync_monitoreos(
         )
 
 @router.post("/muestras")
-def exponer_muestras(payload: MuestrasPayload, request: Request):
+def exponer_muestras(payload: MuestrasPayload, request: Request, db: Session = Depends(get_db)):
     """ Proxy hacia la API externa: reenvía la consulta de historial de muestras con autenticación """
     URL_EXTERNA = os.getenv("EXTERNAL_API_URL", "http://apicollector.gpconsultores.cl/api/muestras")
 
     cuerpo = {
-        "programa": "0",
+        "programa": str(payload.programa),   # Fix: usar el programa real enviado por Flutter
         "estaciones": payload.estaciones
     }
 
@@ -310,10 +363,13 @@ def exponer_muestras(payload: MuestrasPayload, request: Request):
             # Buscar por llaves conocidas primero
             llaves_comunes = ["data", "muestras", "registros", "historico", "result", "items", "results"]
             for key in llaves_comunes:
-                if key in datos and isinstance(datos[key], list):
-                    lista_muestras = datos[key]
+                val = datos.get(key)
+                if isinstance(val, list):
+                    lista_muestras = val
                     logger.info(f"✅ Lista extraída desde la llave: '{key}'")
                     break
+                elif val is not None and not isinstance(val, list):
+                    logger.warning(f"⚠️ La llave '{key}' existe pero no contiene una lista. Tipo: {type(val).__name__}, Valor: {str(val)[:100]}")
 
             # Fallback agresivo: cualquier valor que sea lista
             if not lista_muestras:
@@ -343,6 +399,56 @@ def exponer_muestras(payload: MuestrasPayload, request: Request):
                         m["longitud"] = lon
                     except (ValueError, TypeError):
                         logger.warning(f"⚠️ Coordenadas inválidas en muestra: lat={lat_raw}, lon={lon_raw}")
+        
+        # --- Fase 140: Integración de registros locales (Historial Local) ---
+        try:
+            # Buscar registros en la BD local que coincidan con el programa y estaciones
+            # Nota: estaciones en el payload es List[str], en la BD estacion_id es int
+            estaciones_ids = []
+            for e_id in payload.estaciones:
+                try: estaciones_ids.append(int(e_id))
+                except: continue
+
+            if estaciones_ids:
+                logger.info(f"🏠 Buscando registros locales para el historial. Programa: {payload.programa}, Estaciones: {estaciones_ids}")
+                registros_locales = db.query(MonitoreoDB).filter(
+                    MonitoreoDB.programa_id == payload.programa,
+                    MonitoreoDB.estacion_id.in_(estaciones_ids)
+                ).order_by(MonitoreoDB.fecha_hora.desc()).all()
+
+                for r in registros_locales:
+                    # Evitar duplicados si ya vienen de la API externa (comparando por fecha y estación o id_local)
+                    # Por simplicidad, agregamos los que no estén en la lista por 'fecha_hora' y 'estacion_id'
+                    ya_existe = any(
+                        str(m.get("fecha_hora")) == (r.fecha_hora.strftime("%Y-%m-%d %H:%M:%S") if r.fecha_hora else None) and 
+                        str(m.get("estacion_id")) == str(r.estacion_id)
+                        for m in lista_muestras
+                    )
+                    
+                    if not ya_existe:
+                        m_local = {
+                            "id": r.id,
+                            "id_local": r.id_local,
+                            "device_id": r.device_id,
+                            "fecha_hora": r.fecha_hora.strftime("%Y-%m-%d %H:%M:%S") if r.fecha_hora else None,
+                            "fecha_hora_muestreo": r.fecha_hora_muestreo.strftime("%Y-%m-%d %H:%M:%S") if r.fecha_hora_muestreo else None,
+                            "estacion_id": r.estacion_id,
+                            "matriz_id": r.matriz_id,
+                            "tipo_pozo": r.tipo_pozo,
+                            "tipo_nivel": r.tipo_nivel,
+                            "turbiedad": r.turbiedad,
+                            "nivel": r.nivel,
+                            "latitud": r.latitud,
+                            "longitud": r.longitud,
+                            "observacion": r.observacion,
+                            "is_local": True # Flag para identificar que viene del collector
+                        }
+                        lista_muestras.insert(0, m_local) # Insertar al inicio para que aparezcan primero
+                
+                logger.info(f"✅ Historial mezclado. Total registros: {len(lista_muestras)} ({len(registros_locales)} locales)")
+
+        except Exception as e:
+            logger.error(f"⚠️ Error al mezclar registros locales: {str(e)}")
         
         logger.info(f"✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: {len(lista_muestras)}")
         return lista_muestras

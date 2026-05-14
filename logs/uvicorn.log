@@ -1,10 +1,738 @@
 nohup: ignoring input
-27/04/2026 21:41:39 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
-INFO:     Started server process [2093]
+INFO:     Will watch for changes in these directories: ['/home/ubuntu/FastAPICollector']
+INFO:     Uvicorn running on http://0.0.0.0:5348 (Press CTRL+C to quit)
+INFO:     Started reloader process [8734] using StatReload
+05/05/2026 15:35:32 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+INFO:     Started server process [8742]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:5348 (Press CTRL+C to quit)
+05/05/2026 15:35:41 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.216.185:14780 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 15:36:20 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:36:20 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 15:36:20 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     127.0.0.1:48590 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 15:36:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:36:50 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 15:36:50 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:60957 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 15:44:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:44:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:53963 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 15:44:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:44:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:54230 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 15:44:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:44:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:54232 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 15:44:45 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:44:45 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:54233 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:54234 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 15:44:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:44:46 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:54235 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 15:44:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:44:46 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:60103 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 15:44:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:44:47 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 15:44:47 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:60104 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 15:56:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.216.185:14778 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 15:58:20 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:58:20 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.189.104.228:46996 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 15:58:21 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:58:21 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.189.104.228:36190 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 15:58:21 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:58:21 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.189.104.228:48248 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 15:58:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:58:23 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.189.104.228:36210 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.189.104.228:36226 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 15:58:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:58:24 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.189.104.228:36234 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 15:58:25 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:58:25 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.189.104.228:36242 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 15:58:26 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:58:26 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 15:58:26 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.189.104.228:36250 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 15:59:39 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:59:39 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.189.104.228:57228 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 15:59:40 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:59:40 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.189.104.228:57242 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 15:59:40 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:59:40 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.189.104.228:57246 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 15:59:41 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:59:41 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.189.104.228:36416 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.189.104.228:36424 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 15:59:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:59:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.189.104.228:36436 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 15:59:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:59:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.189.104.228:36444 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 15:59:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 15:59:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 15:59:44 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.189.104.228:57022 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[74:93]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[95:120]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[122:134]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[136:161]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[163:188]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[190:196]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[200:1289]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1365:1377]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1379:1403]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1405:1424]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1426:1501]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[1505:11221]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:13880]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:12492]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:8328]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2775]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:18044]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5633]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[5709:5721]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[5723:5747]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[5749:5768]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[5770:5855]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[5859:8328]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:18044]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:13008]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:872]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:3185]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[3261:3273]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[3275:3299]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[3301:3320]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[3322:3407]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[3411:4164]
+05/05/2026 16:04:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:9360]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1744]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:14356]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[14432:14444]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[14446:14470]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[14472:14491]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[14493:14572]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[14576:23596]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:13880]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1908]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:164]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[240:252]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[254:278]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[280:299]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[301:369]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[373:3477]
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:05:00 - [ DEBUG ] - python_multipart.multipart - Calling on_end with no data
+INFO:     186.189.104.228:42052 - "POST /api/sync/monitoreos HTTP/1.1" 401 Unauthorized
+05/05/2026 16:12:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.216.185:14784 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 16:19:35 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:19:35 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.189.104.228:57064 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 16:19:36 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:19:36 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.189.104.228:51224 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 16:19:36 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:19:36 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.189.104.228:63058 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 16:19:37 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:19:37 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.189.104.228:59944 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.189.104.228:51258 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 16:19:38 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:19:38 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.189.104.228:7108 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 16:19:38 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:19:38 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.189.104.228:51276 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 16:19:39 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:19:39 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 16:19:39 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.189.104.228:51284 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[74:93]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[95:120]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[122:134]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[136:161]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[163:188]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[190:196]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[200:1289]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1365:1377]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1379:1403]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1405:1424]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1426:1501]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[1505:5669]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:27760]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5633]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[5709:5721]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[5723:5747]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[5749:5768]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[5770:5855]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[5859:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:58 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:3185]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[3261:3273]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[3275:3299]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[3301:3320]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[3322:3407]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[3411:6940]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:8844]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:872]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:15268]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:40728]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[40804:40816]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[40818:40842]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[40844:40863]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[40865:40944]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[40948:63848]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:30536]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:628]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:6940]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4220]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[4296:4308]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[4310:4334]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[4336:4355]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[4357:4425]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[4429:7793]
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 16:19:59 - [ DEBUG ] - python_multipart.multipart - Calling on_end with no data
+05/05/2026 16:19:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - ✍️ Recibida firma del operador: firma_1777997990465.png
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - 📸 Recibida foto multipart [ general ]: EVIDENCIA_TECNICA_1777996850222.jpg
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - 📸 Recibida foto multipart [ multiparametro ]: EVIDENCIA_TECNICA_1777996952350.jpg
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - 📸 Recibida foto multipart [ nivel_freatico ]: EVIDENCIA_TECNICA_1777996893022.jpg
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - 📸 Recibida foto multipart [ muestreo ]: EVIDENCIA_TECNICA_1777997082490.jpg
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 3 ]...
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 3 ] - Creando registro independiente en BD...
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - ✍️ Procesando firma multipart para el lote...
+05/05/2026 16:19:59 - [ INFO ] - utils - 📸 Foto guardada [firma]: monitoreos/2026/05/05/brw_01/115/firma_120009.jpg
+05/05/2026 16:19:59 - [ INFO ] - utils - 📸 Foto guardada [general]: monitoreos/2026/05/05/brw_01/115/general_120009.jpg
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - ✅ Foto/Firma guardada en disco: monitoreos/2026/05/05/brw_01/115/general_120009.jpg [Tipo: general]
+05/05/2026 16:19:59 - [ INFO ] - utils - 📸 Foto guardada [multiparametro]: monitoreos/2026/05/05/brw_01/115/multiparametro_120009.jpg
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - ✅ Foto/Firma guardada en disco: monitoreos/2026/05/05/brw_01/115/multiparametro_120009.jpg [Tipo: multiparametro]
+05/05/2026 16:19:59 - [ INFO ] - utils - 📸 Foto guardada [nivel_freatico]: monitoreos/2026/05/05/brw_01/115/nivel_freatico_120009.jpg
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - ✅ Foto/Firma guardada en disco: monitoreos/2026/05/05/brw_01/115/nivel_freatico_120009.jpg [Tipo: nivel_freatico]
+05/05/2026 16:19:59 - [ INFO ] - utils - 📸 Foto guardada [muestreo]: monitoreos/2026/05/05/brw_01/115/muestreo_120009.jpg
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - ✅ Foto/Firma guardada en disco: monitoreos/2026/05/05/brw_01/115/muestreo_120009.jpg [Tipo: muestreo]
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - ✅ Foto/Firma guardada en disco: monitoreos/2026/05/05/brw_01/115/firma_120009.jpg [Tipo: firma]
+05/05/2026 16:19:59 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos registros.
+📸 [DEBUG API] ID Local: 3 - Principal: False, Multi: False, Turb: False, Cau: False, Nivel: False, Muestreo: False
+INFO:     186.189.104.228:52330 - "POST /api/sync/monitoreos HTTP/1.1" 200 OK
+05/05/2026 16:33:58 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.216.185:14766 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 16:33:58 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.216.185:14782 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 16:42:21 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:21 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:58699 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 16:42:22 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:22 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:58701 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 16:42:22 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:22 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:58702 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 16:42:23 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:23 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:54269 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:54270 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 16:42:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:24 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:54272 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 16:42:25 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:25 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:55064 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 16:42:25 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:25 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 16:42:25 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:55065 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 16:42:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:50465 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 16:42:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:50466 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 16:42:53 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:53 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:50467 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 16:42:53 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:53 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:50469 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:50623 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 16:42:54 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:54 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:50624 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 16:42:55 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:55 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:50629 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 16:42:55 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:42:55 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 16:42:55 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:61812 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 16:43:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:43:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:64381 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 16:43:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:43:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:64384 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 16:43:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:43:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:59439 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 16:43:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:43:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:59442 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:59443 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 16:43:04 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:43:04 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:59445 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 16:43:05 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:43:05 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:59449 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 16:43:05 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:43:05 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 16:43:05 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:59450 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 16:46:13 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     186.11.77.151:11272 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 16:48:57 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:48:57 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:56105 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 16:48:58 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:48:58 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:54815 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 16:48:58 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:48:58 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:54816 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 16:48:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:48:59 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:54817 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:54818 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 16:49:00 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:49:00 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:54819 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 16:49:00 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:49:00 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:54820 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 16:49:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:49:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 16:49:01 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:65511 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 16:49:05 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     186.11.77.151:11312 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 16:50:24 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     186.11.43.18:46400 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 16:53:25 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:25 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:53278 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 16:53:25 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:25 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:53279 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 16:53:26 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:26 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:53280 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 16:53:26 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:26 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:59557 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:52594 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 16:53:27 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:27 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:52595 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 16:53:28 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:28 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:52596 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 16:53:28 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:28 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 16:53:28 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:52597 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 16:53:35 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:35 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['BRW-01']
+05/05/2026 16:53:35 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+05/05/2026 16:53:46 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+05/05/2026 16:53:46 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+05/05/2026 16:53:46 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+05/05/2026 16:53:46 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 324
+INFO:     186.67.203.130:65029 - "POST /api/muestras HTTP/1.1" 200 OK
+05/05/2026 16:53:47 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:47 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['BRW-02']
+05/05/2026 16:53:47 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+05/05/2026 16:53:48 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+05/05/2026 16:53:48 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+05/05/2026 16:53:48 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+05/05/2026 16:53:48 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 324
+INFO:     186.67.203.130:63691 - "POST /api/muestras HTTP/1.1" 200 OK
+05/05/2026 16:53:49 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:49 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-6']
+05/05/2026 16:53:49 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+05/05/2026 16:53:49 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+05/05/2026 16:53:49 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+05/05/2026 16:53:49 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+05/05/2026 16:53:49 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+05/05/2026 16:53:49 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+05/05/2026 16:53:49 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:58092 - "POST /api/muestras HTTP/1.1" 200 OK
+05/05/2026 16:53:50 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:50 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-1']
+05/05/2026 16:53:50 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+05/05/2026 16:53:50 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+05/05/2026 16:53:50 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+05/05/2026 16:53:50 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+05/05/2026 16:53:50 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+05/05/2026 16:53:50 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+05/05/2026 16:53:50 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:58094 - "POST /api/muestras HTTP/1.1" 200 OK
+05/05/2026 16:53:51 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 16:53:51 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-5']
+05/05/2026 16:53:51 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+05/05/2026 16:53:51 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+05/05/2026 16:53:51 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+05/05/2026 16:53:51 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+05/05/2026 16:53:51 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+05/05/2026 16:53:51 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+05/05/2026 16:53:51 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:61925 - "POST /api/muestras HTTP/1.1" 200 OK
+05/05/2026 17:20:35 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     186.11.43.18:46406 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 17:31:29 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.170.141:15283 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[74:93]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[95:120]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[122:134]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[136:161]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[163:188]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[190:196]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[200:1079]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1155:1167]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1169:1193]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1195:1214]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1216:1284]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[1288:2089]
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 19:07:42 - [ DEBUG ] - python_multipart.multipart - Calling on_end with no data
+05/05/2026 19:07:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 19:07:42 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+05/05/2026 19:07:42 - [ INFO ] - routers.sync - ✍️ Recibida firma del operador: firma_1778008054352.png
+05/05/2026 19:07:42 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+05/05/2026 19:07:42 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 1 ] - Creando registro independiente en BD...
+05/05/2026 19:07:42 - [ INFO ] - routers.sync - ✍️ Procesando firma multipart para el lote...
+05/05/2026 19:07:42 - [ INFO ] - utils - 📸 Foto guardada [firma]: monitoreos/2026/05/05/brw_01/116/firma_164320.jpg
+05/05/2026 19:07:42 - [ INFO ] - routers.sync - ✅ Foto/Firma guardada en disco: monitoreos/2026/05/05/brw_01/116/firma_164320.jpg [Tipo: firma]
+05/05/2026 19:07:42 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos registros.
+📸 [DEBUG API] ID Local: 1 - Principal: False, Multi: False, Turb: False, Cau: False, Nivel: False, Muestreo: False
+INFO:     186.67.203.130:63535 - "POST /api/sync/monitoreos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:58404 - "POST /api/enviar-correo HTTP/1.1" 404 Not Found
+05/05/2026 19:18:38 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.212.70:15468 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 19:54:06 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.212.70:15464 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 20:00:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.240.107:12580 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 20:09:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.240.107:12582 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 20:18:22 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.240.107:12577 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 20:19:00 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 20:19:00 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     181.42.240.107:12606 - "GET /api/campanas HTTP/1.1" 200 OK
+05/05/2026 20:19:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 20:19:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     181.42.240.107:12556 - "GET /api/equipos HTTP/1.1" 200 OK
+05/05/2026 20:19:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 20:19:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     181.42.240.107:12562 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+05/05/2026 20:19:02 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 20:19:02 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     181.42.240.107:12577 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     181.42.240.107:12580 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+05/05/2026 20:19:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 20:19:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     181.42.240.107:12594 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+05/05/2026 20:19:03 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 20:19:03 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     181.42.240.107:12607 - "GET /api/parametros HTTP/1.1" 200 OK
+05/05/2026 20:19:04 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 20:19:04 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+05/05/2026 20:19:04 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     181.42.240.107:12552 - "GET /api/usuarios HTTP/1.1" 200 OK
+05/05/2026 20:52:41 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.240.107:12592 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 20:52:41 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.240.107:12598 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[74:93]
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[95:120]
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[124:801]
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[877:889]
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[891:915]
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[917:936]
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[938:1006]
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[1010:2187]
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+05/05/2026 21:11:55 - [ DEBUG ] - python_multipart.multipart - Calling on_end with no data
+05/05/2026 21:11:55 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+05/05/2026 21:11:55 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+05/05/2026 21:11:55 - [ INFO ] - routers.sync - ✍️ Recibida firma del operador: firma_1778015507503.png
+05/05/2026 21:11:55 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 2 ]...
+05/05/2026 21:11:55 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 2 ] - Creando registro independiente en BD...
+05/05/2026 21:11:55 - [ INFO ] - routers.sync - ✍️ Procesando firma multipart para el lote...
+05/05/2026 21:11:55 - [ INFO ] - utils - 📸 Foto guardada [firma]: monitoreos/2026/05/05/brw_01/117/firma_202853.jpg
+05/05/2026 21:11:55 - [ INFO ] - routers.sync - ✅ Foto/Firma guardada en disco: monitoreos/2026/05/05/brw_01/117/firma_202853.jpg [Tipo: firma]
+05/05/2026 21:11:55 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos registros.
+📸 [DEBUG API] ID Local: 2 - Principal: False, Multi: False, Turb: False, Cau: False, Nivel: False, Muestreo: False
+INFO:     186.67.203.130:61917 - "POST /api/sync/monitoreos HTTP/1.1" 200 OK
+05/05/2026 21:13:09 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.240.107:12596 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+05/05/2026 21:40:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.240.107:12559 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+06/05/2026 13:11:41 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     186.107.17.143:56264 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+06/05/2026 13:33:00 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     186.107.17.143:56102 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+INFO:     186.67.203.130:62568 - "GET /api/enviar-correo HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'schemas.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [2093]
+INFO:     Finished server process [8742]
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/uvicorn/server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/uvicorn/server.py", line 79, in serve
+    await self._serve(sockets)
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/uvicorn/server.py", line 86, in _serve
+    config.load()
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/uvicorn/config.py", line 441, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ubuntu/FastAPICollector/main.py", line 3, in <module>
+    from routers import catalogs, sync, analytics, email
+  File "/home/ubuntu/FastAPICollector/routers/catalogs.py", line 5, in <module>
+    from database import get_db
+  File "/home/ubuntu/FastAPICollector/database.py", line 8, in <module>
+    load_dotenv()
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/dotenv/main.py", line 429, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/dotenv/main.py", line 101, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/dotenv/main.py", line 84, in dict
+    resolve_variables(raw_values, override=self.override)
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/dotenv/main.py", line 295, in resolve_variables
+    for name, value in values:
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/dotenv/main.py", line 93, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/dotenv/main.py", line 33, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/dotenv/parser.py", line 180, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "/home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/dotenv/parser.py", line 71, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf3 in position 211: invalid continuation byte

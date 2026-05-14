@@ -1,5 +1,6 @@
 from pydantic import BaseModel, model_validator
 from typing import List, Optional, Any
+from datetime import datetime
 from utils import convert_utm_to_wgs84
 
 class Campana(BaseModel):
@@ -133,6 +134,7 @@ class MonitoreoItem(BaseModel):
     foto_caudal: Optional[str] = None
     foto_nivel_freatico: Optional[str] = None
     foto_muestreo: Optional[str] = None
+    fecha_hora_muestreo: Optional[str] = None
     firma_path: Optional[str] = None
     
     # Fase 108: Pivot a Document Pattern (JSON)
@@ -187,6 +189,7 @@ class AnalyticsPoint(BaseModel):
     estacion: Optional[str] = None
     is_outlier: bool = False
     is_test: bool = False
+    fecha_hora_muestreo: Optional[str] = None
 
 class AnalyticsResponse(BaseModel):
     parametro: str
@@ -202,3 +205,29 @@ class EmailRequest(BaseModel):
     destinatario: str
     asunto: str
     cuerpo: str
+
+class EmailNotificationPayload(BaseModel):
+    inspector: str
+    destinatario: Optional[str] = None
+    asunto: str
+    mensaje: str
+    fecha: str
+    estacion_id: Optional[int] = None
+
+# --- Esquemas para Auditoría ---
+class AuditLogBase(BaseModel):
+    usuario_id: Optional[int] = None
+    accion: str
+    tabla: str
+    registro_id: Optional[int] = None
+    detalles: Optional[str] = None
+
+class AuditLogCreate(AuditLogBase):
+    pass
+
+class AuditLog(AuditLogBase):
+    id: int
+    fecha_hora: datetime
+
+    class Config:
+        from_attributes = True

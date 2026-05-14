@@ -40,7 +40,8 @@ def get_analytics(parametro: str, db: Session = Depends(get_db)):
         MonitoreoDB.fecha_hora,
         MonitoreoDB.monitoreo_fallido,
         MonitoreoDB.observacion,
-        EstacionDB.estacion
+        EstacionDB.estacion,
+        MonitoreoDB.fecha_hora_muestreo
     ).join(MonitoreoDB).outerjoin(EstacionDB, MonitoreoDB.estacion_id == EstacionDB.id_estacion).filter(
         MonitoreoDetalleDB.parametro == parametro
     ).all()
@@ -54,7 +55,8 @@ def get_analytics(parametro: str, db: Session = Depends(get_db)):
                 "fecha": fecha.strftime("%Y-%m-%d %H:%M:%S") if fecha else None,
                 "estacion": est,
                 "is_test": bool(fallido == 1 or (obs and any(word in obs.upper() for word in ["TEST", "PRUEBA", "DEMO", "BORRAR"]))),
-                "is_outlier": False
+                "is_outlier": False,
+                "fecha_hora_muestreo": row.fecha_hora_muestreo.strftime("%Y-%m-%d %H:%M:%S") if row.fecha_hora_muestreo else None
             })
         except: continue
 
@@ -65,7 +67,8 @@ def get_analytics(parametro: str, db: Session = Depends(get_db)):
         MonitoreoDB.fecha_hora,
         MonitoreoDB.monitoreo_fallido,
         MonitoreoDB.observacion,
-        EstacionDB.estacion
+        EstacionDB.estacion,
+        MonitoreoDB.fecha_hora_muestreo
     ).outerjoin(EstacionDB, MonitoreoDB.estacion_id == EstacionDB.id_estacion).filter(
         (MonitoreoDB.detalles_json.isnot(None)) | (MonitoreoDB.multiparametros_json.isnot(None))
     ).all()
@@ -89,7 +92,8 @@ def get_analytics(parametro: str, db: Session = Depends(get_db)):
                         "fecha": fecha.strftime("%Y-%m-%d %H:%M:%S") if fecha else None,
                         "estacion": est,
                         "is_test": bool(fallido == 1 or (obs and any(word in obs.upper() for word in ["TEST", "PRUEBA", "DEMO", "BORRAR"]))),
-                        "is_outlier": False
+                        "is_outlier": False,
+                        "fecha_hora_muestreo": row.fecha_hora_muestreo.strftime("%Y-%m-%d %H:%M:%S") if row.fecha_hora_muestreo else None
                     })
                     if item.get("unidad"):
                         detected_unit = item.get("unidad")

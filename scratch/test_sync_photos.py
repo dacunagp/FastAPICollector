@@ -14,7 +14,7 @@ payload_data = {
             "device_id": "TEST_DEVICE",
             "programa_id": 1,
             "estacion_id": 1,
-            "fecha_hora": "2026-04-23 14:40:00",
+            "fecha_hora_muestreo": "2026-04-23 14:40:00",
             "monitoreo_fallido": 0,
             "observacion": "Test with multipart photos",
             "is_draft": 0

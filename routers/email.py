@@ -12,6 +12,10 @@ from dotenv import load_dotenv
 # Cargar variables de entorno
 load_dotenv()
 
+from database import get_db
+from sqlalchemy.orm import Session
+from utils import log_audit
+
 router = APIRouter(prefix="/api", tags=["Email"])
 
 logger = logging.getLogger(__name__)
@@ -19,6 +23,7 @@ logger = logging.getLogger(__name__)
 @router.post("/enviar-correo")
 def enviar_correo(
     request: EmailRequest,
+    db: Session = Depends(get_db),
     username: str = Depends(verificar_credenciales)
 ):
     # 1. Log de recepción
@@ -57,13 +62,31 @@ def enviar_correo(
         
         logger.info(f"🔑 Autenticando como: {smtp_user}...")
         server.login(smtp_user, smtp_password)
-        
-        logger.info(f"📧 Enviando correo a: {request.destinatario}...")
-        server.send_message(msg)
-        
+        server.send_message(msg) # Faltaba esta línea para enviar el mensaje real
         server.quit()
         
         logger.info(f"✅ Correo enviado con éxito a {request.destinatario}")
+        
+        # Auditoría (¡Corregida para que no envíe la columna 'tabla' fantasma!)
+        try:
+            from models import UsuarioDB
+            usuario = db.query(UsuarioDB).filter(UsuarioDB.nombre == username).first()
+            user_id = usuario.id_usuario if usuario else None
+            
+            log_audit(
+                db=db,
+                usuario_id=user_id,
+                accion="EMAIL_SENT",
+                # 🔥 ELIMINAMOS tabla="n/a" DE AQUÍ 🔥
+                detalles={
+                    "destinatario": request.destinatario,
+                    "asunto": request.asunto
+                }
+            )
+            db.commit()
+        except Exception as audit_err:
+            logger.error(f"⚠️ No se pudo registrar auditoría de correo: {audit_err}")
+
         return {
             "status": "success",
             "message": f"Correo enviado correctamente a {request.destinatario}"

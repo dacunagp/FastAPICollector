@@ -3,10 +3,14 @@ import os
 import re
 import unicodedata
 import logging
+import boto3
+import io
+import json
 from pathlib import Path
 from typing import Optional, Tuple, Union
 from datetime import datetime
 from pyproj import Transformer
+from sqlalchemy.orm import Session
 
 logger = logging.getLogger(__name__)
 
@@ -32,32 +36,18 @@ def convert_utm_to_wgs84(easting: float, northing: float) -> Tuple[float, float]
         logger.error(f"🚨 Error crítico en conversión de coordenadas UTM ({easting}, {northing}): {str(e)}")
         return 0.0, 0.0
 
-# --- Almacenamiento de Imágenes ---
-UPLOAD_DIR = "static/uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+# --- Configuración AWS S3 ---
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION")
+AWS_BUCKET = os.getenv("AWS_BUCKET")
 
-def save_base64_image(base64_string: str, prefix: str) -> Optional[str]:
-    """ Decodifica una cadena Base64 y la guarda como archivo .jpg (Legacy) """
-    if not base64_string or base64_string.strip() == "":
-        return None
-
-    try:
-        if "," in base64_string:
-            base64_string = base64_string.split(",")[1]
-
-        import uuid
-        filename = f"{prefix}_{uuid.uuid4().hex}.jpg"
-        file_path = os.path.join(UPLOAD_DIR, filename)
-
-        img_data = base64.b64decode(base64_string)
-        with open(file_path, "wb") as f:
-            f.write(img_data)
-
-        logger.info(f"📸 Imagen [ {prefix} ] guardada exitosamente: [ {filename} ]")
-        return f"uploads/{filename}"
-    except Exception as e:
-        logger.exception(f"🚨 Error al decodificar/guardar imagen {prefix}: {str(e)}")
-        return None
+s3_client = boto3.client(
+    "s3",
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    region_name=AWS_DEFAULT_REGION
+)
 
 # --- Fase 120: Advanced Image Organization & Pathing ---
 
@@ -95,21 +85,16 @@ def save_dynamic_photo(
     monitoreo_id: int,
     tipo: str,
     station_name: str = "sin_estacion",
+    id_equipo: str = "0",
+    id_punto: str = "0",
+    content_type: str = "image/jpeg"
 ) -> Optional[str]:
     """
-    Guarda una foto (en bytes o Base64) en la estructura profesional:
-      static/monitoreos/{year}/{month}/{day}/{station_slug}/{monitoring_id}/{tipo}.jpg
-
-    Args:
-        data:         Cadena Base64 o bytes de la imagen.
-        fecha:        Fecha/hora del monitoreo (para year/month/day).
-        monitoreo_id: PK del monitoreo en la BD.
-        tipo:         Tipo de foto ('general', 'multiparametro', 'firma', etc).
-        station_name: Nombre legible de la estación (se convierte a slug).
+    Sube una foto (en bytes o Base64) a Amazon S3 en la estructura profesional:
+      monitoreos/{year}/{month}/{day}/{id_equipo}/{id_punto}/{filename}
 
     Returns:
-        Ruta relativa sin 'static/' para almacenar en la BD,
-        o None si hubo error.
+        URL pública de S3 para almacenar en la BD, o None si hubo error.
     """
     if not data:
         return None
@@ -120,7 +105,6 @@ def save_dynamic_photo(
         if isinstance(data, bytes):
             img_bytes = data
         else:
-            # Es un string Base64, limpiar cabeceras si existen
             if "," in data:
                 data = data.split(",")[1]
             img_bytes = base64.b64decode(data)
@@ -137,31 +121,50 @@ def save_dynamic_photo(
     month = fecha_ref.strftime("%m")
     day = fecha_ref.strftime("%d")
 
-    # 3. Generar slug de la estación
-    station_slug = slugify(station_name)
-
-    # 4. Nombre de archivo estandarizado + timestamp para evitar colisiones
+    # 3. Nombre de archivo estandarizado + timestamp para evitar colisiones
     base_name = PHOTO_FILENAME_MAP.get(tipo, tipo)
     timestamp = fecha_ref.strftime("%H%M%S")
     file_name = f"{base_name}_{timestamp}.jpg"
 
-    # 5. Construir rutas con pathlib
-    relative_folder = Path("monitoreos") / year / month / day / station_slug / str(monitoreo_id)
-    relative_path = relative_folder / file_name
+    # 4. Construir S3 Key: monitoreos/YYYY/MM/DD/[id_equipo]/[id_punto]/[filename]
+    s3_key = f"monitoreos/{year}/{month}/{day}/{id_equipo}/{id_punto}/{file_name}"
 
-    #    Ruta absoluta (en disco)
-    absolute_folder = Path("static") / relative_folder
-    absolute_folder.mkdir(parents=True, exist_ok=True)
-
-    absolute_file_path = absolute_folder / file_name
-
-    # 6. Guardar el archivo físico
+    # 5. Subir a S3 usando upload_fileobj para streaming
     try:
-        absolute_file_path.write_bytes(img_bytes)
-        # Usar forward-slashes para la ruta guardada en la BD
-        db_path = relative_path.as_posix()
-        logger.info(f"📸 Foto guardada [{tipo}]: {db_path}")
-        return db_path
+        file_obj = io.BytesIO(img_bytes)
+        s3_client.upload_fileobj(
+            file_obj,
+            AWS_BUCKET,
+            s3_key,
+            ExtraArgs={"ContentType": content_type}
+        )
+        
+        # 6. Construir URL pública
+        public_url = f"https://{AWS_BUCKET}.s3.{AWS_DEFAULT_REGION}.amazonaws.com/{s3_key}"
+        logger.info(f"🚀 Foto subida a S3 [{tipo}]: {public_url}")
+        return public_url
+
     except Exception as e:
-        logger.exception(f"🚨 Error guardando archivo físico {tipo}: {e}")
+        logger.exception(f"🚨 Error subiendo archivo a S3 {tipo}: {e}")
         return None
+
+def log_audit(db: Session, usuario_id: Optional[int], accion: str, tabla: str, registro_id: Optional[int] = None, detalles: Optional[Union[dict, str]] = None):
+    """
+    Registra una acción en la tabla de auditoría para trazabilidad.
+    """
+    from models import AuditLogDB
+    try:
+        if isinstance(detalles, dict):
+            detalles = json.dumps(detalles, ensure_ascii=False)
+        
+        nuevo_log = AuditLogDB(
+            usuario_id=usuario_id,
+            accion=accion,
+            tabla=tabla,
+            registro_id=registro_id,
+            detalles=detalles
+        )
+        db.add(nuevo_log)
+        # Se asume que el commit lo hará la función llamadora
+    except Exception as e:
+        logger.error(f"⚠️ Error al crear log de auditoría: {str(e)}")

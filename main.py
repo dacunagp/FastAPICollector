@@ -1,6 +1,5 @@
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from routers import catalogs, sync, analytics, email
+from routers import catalogs, sync, analytics, email, comunicaciones, audit
 from database import engine, Base
 from logging_config import setup_logging
 
@@ -12,14 +11,13 @@ setup_logging()
 
 app = FastAPI(title="API GP Consultores")
 
-# Montar carpeta estática para poder ver las fotos desde el navegador (Ej: http://localhost:5348/static/uploads/foto.jpg)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
 # Registrar los routers
 app.include_router(catalogs.router)
 app.include_router(sync.router)
 app.include_router(analytics.router)
 app.include_router(email.router)
+app.include_router(comunicaciones.router)
+app.include_router(audit.router)
 
 @app.get("/")
 def read_root():

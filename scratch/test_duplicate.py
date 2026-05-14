@@ -18,7 +18,7 @@ def test_insert_duplicate():
         nuevo = MonitoreoDB(
             device_id='MOBILE-DATA',
             id_local=2,
-            fecha_hora=datetime.now(),
+            fecha_hora_muestreo=datetime.now(),
             observacion="Test duplicado"
         )
         db.add(nuevo)

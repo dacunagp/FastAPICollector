@@ -20,7 +20,7 @@ def test_base64_only():
                 "id_local": 2001,
                 "programa_id": 1,
                 "estacion_id": 1,
-                "fecha_hora": "2026-04-23 15:15:00",
+                "fecha_hora_muestreo": "2026-04-23 15:15:00",
                 "observacion": "Registro con solo foto Base64",
                 "foto_path": dummy_img_b64,
                 "firma_path": dummy_img_b64

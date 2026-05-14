@@ -1,0 +1,432 @@
+nohup: ignoring input
+11/05/2026 14:45:29 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+INFO:     Started server process [2691]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5348 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58606 - "GET /docs HTTP/1.1" 200 OK
+11/05/2026 14:49:10 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:49:10 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:53295 - "GET /api/campanas HTTP/1.1" 200 OK
+INFO:     186.67.203.130:53296 - "GET /api/enviar-correo HTTP/1.1" 405 Method Not Allowed
+11/05/2026 14:49:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:49:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:53297 - "GET /api/equipos HTTP/1.1" 200 OK
+11/05/2026 14:49:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:49:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:53302 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+11/05/2026 14:49:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:49:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:53305 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:53309 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+11/05/2026 14:49:13 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:49:13 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:53310 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+11/05/2026 14:49:13 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:49:13 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:53311 - "GET /api/parametros HTTP/1.1" 200 OK
+11/05/2026 14:49:13 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:49:13 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+11/05/2026 14:49:13 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:53313 - "GET /api/usuarios HTTP/1.1" 200 OK
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[74:93]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[95:120]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[122:134]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[136:161]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[163:188]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[190:196]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[200:1267]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1343:1355]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1357:1381]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1383:1402]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1404:1472]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[1476:3113]
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+11/05/2026 14:51:05 - [ DEBUG ] - python_multipart.multipart - Calling on_end with no data
+11/05/2026 14:51:05 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:51:05 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+11/05/2026 14:51:05 - [ INFO ] - routers.sync - ✍️ Recibida firma del operador: firma_1778511057008.png
+11/05/2026 14:51:05 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 10 ]...
+11/05/2026 14:51:05 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 10 ] - Creando registro independiente en BD...
+11/05/2026 14:51:05 - [ INFO ] - routers.sync - ✍️ Procesando firma multipart para el lote...
+11/05/2026 14:51:05 - [ DEBUG ] - boto3.s3.transfer - Opting out of CRT Transfer Manager. Preferred client: auto, CRT available: False, Instance Optimized: False
+11/05/2026 14:51:05 - [ DEBUG ] - boto3.s3.transfer - Using default client. pid: 2691, thread: 125296861089920
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x71f4ecb61bb0>}) about to wait for the following futures []
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x71f4ecb61bb0>}) done waiting for dependent futures
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.tasks - Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x71f4ecb61bb0>}) with kwargs {'client': <botocore.client.S3 object at 0x71f4ed0b2a50>, 'config': <boto3.s3.transfer.TransferConfig object at 0x71f4ecb61340>, 'osutil': <s3transfer.utils.OSUtils object at 0x71f4ecb61640>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x71f4ecb61790>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x71f4ecb61bb0>}
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.futures - Submitting task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/11/11/160/firma_145000.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) to executor <s3transfer.futures.BoundedExecutor object at 0x71f4ecb61790> for transfer request: 0.
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/11/11/160/firma_145000.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) about to wait for the following futures []
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/11/11/160/firma_145000.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) done waiting for dependent futures
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.tasks - Executing task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/11/11/160/firma_145000.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) with kwargs {'client': <botocore.client.S3 object at 0x71f4ed0b2a50>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x71f4ece97e30>, 'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/11/11/160/firma_145000.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x71f4eea607c0>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x71f4eea3fa60>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x71f4eea611c0>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x71f4eea3f9c0>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x71f4eea61e40>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x71f4ed0d4620>>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x71f4ee212d50>>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x71f4eea3f7e0>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x71f4eea625c0>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x71f4eea62020>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x71f4ed0d4620>>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.regions - Calling endpoint provider with parameters: {'Bucket': 'app-collector-storage', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'monitoreos/2026/05/11/11/160/firma_145000.jpg', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True, 'DisableS3ExpressSessionAuth': False}
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.regions - Endpoint provider result: https://app-collector-storage.s3.amazonaws.com
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.regions - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.regions - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x71f4eea3fd80>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.handlers - Adding expect 100 continue header to request.
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x71f4ed1092e0>>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x71f4eea3e480>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x71f4eea61300>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.endpoint - Making request for OperationModel(name=PutObject) with params: {'url_path': '/monitoreos/2026/05/11/11/160/firma_145000.jpg', 'query_string': {}, 'method': 'PUT', 'headers': {'Content-Type': 'application/octet-stream', 'x-amz-sdk-checksum-algorithm': 'CRC32', 'User-Agent': 'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/Z,D,G,e,b cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': '100-continue', 'Transfer-Encoding': 'chunked', 'Content-Encoding': 'aws-chunked', 'X-Amz-Trailer': 'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': '1637'}, 'body': <botocore.httpchecksum.AwsChunkedWrapper object at 0x71f4ecb62cf0>, 'auth_path': '/app-collector-storage/monitoreos/2026/05/11/11/160/firma_145000.jpg', 'url': 'https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/11/11/160/firma_145000.jpg', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x71f4ed0b2ae0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'app-collector-storage', 'params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/11/11/160/firma_145000.jpg', 'Body': <s3transfer.utils.ReadFileChunk object at 0x71f4ece97e30>, 'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}, 'input_params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/11/11/160/firma_145000.jpg'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm': {'algorithm': 'crc32', 'in': 'trailer', 'name': 'x-amz-checksum-crc32'}}}}
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x71f4eeebf7e0>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x71f4eeaa88f0>>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x71f4ee212d50>>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x71f4eea3f4c0>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x71f4eea61f80>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x71f4eea62660>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x71f4ed1092e0>>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.auth - Calculating signature using v4 auth.
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.auth - CanonicalRequest:
+PUT
+/monitoreos/2026/05/11/11/160/firma_145000.jpg
+
+content-encoding:aws-chunked
+content-type:application/octet-stream
+host:app-collector-storage.s3.amazonaws.com
+x-amz-content-sha256:STREAMING-UNSIGNED-PAYLOAD-TRAILER
+x-amz-date:20260511T145105Z
+x-amz-decoded-content-length:1637
+x-amz-sdk-checksum-algorithm:CRC32
+x-amz-trailer:x-amz-checksum-crc32
+
+content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer
+STREAMING-UNSIGNED-PAYLOAD-TRAILER
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.auth - StringToSign:
+AWS4-HMAC-SHA256
+20260511T145105Z
+20260511/us-east-1/s3/aws4_request
+cbf1b94427de923afadc0465774b99b18f0fb3eaaf5817d57b67106ada0ef8fe
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.auth - Signature:
+600707b591a9b5e48ea545d54e2e189e00fbf530af9e49e52cb2da2ef540ddec
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x71f4ed108470>>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x71f4eec41760>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x71f4eea61da0>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.endpoint - Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/11/11/160/firma_145000.jpg, headers={'Content-Type': b'application/octet-stream', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'User-Agent': b'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/Z,D,G,U,e,b cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': b'100-continue', 'Transfer-Encoding': b'chunked', 'Content-Encoding': b'aws-chunked', 'X-Amz-Trailer': b'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': b'1637', 'X-Amz-Date': b'20260511T145105Z', 'X-Amz-Content-SHA256': b'STREAMING-UNSIGNED-PAYLOAD-TRAILER', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAZAI4GTCDHMMHAEKW/20260511/us-east-1/s3/aws4_request, SignedHeaders=content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer, Signature=600707b591a9b5e48ea545d54e2e189e00fbf530af9e49e52cb2da2ef540ddec', 'amz-sdk-invocation-id': b'89ef06de-cb6a-4574-8950-d75fc07495ea', 'amz-sdk-request': b'attempt=1'}>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.httpsession - Certificate path: /home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/certifi/cacert.pem
+11/05/2026 14:51:05 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTPS connection (1): app-collector-storage.s3.amazonaws.com:443
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.awsrequest - Waiting for 100 Continue response.
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.awsrequest - 100 Continue response seen, now sending request body.
+11/05/2026 14:51:05 - [ DEBUG ] - urllib3.connectionpool - https://app-collector-storage.s3.amazonaws.com:443 "PUT /monitoreos/2026/05/11/11/160/firma_145000.jpg HTTP/1.1" 200 0
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x71f4eea62340>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x71f4eea62160>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.parsers - Response headers: {'x-amz-id-2': '7JCs9Ki4IAUjFFZYg2nIQpI2seYVMkihcLHlzet5HQnalLf88kJddmn2NXnacll41Q8/7Zuqefk=', 'x-amz-request-id': 'SFN84X06KPBWDWMW', 'Date': 'Mon, 11 May 2026 14:51:06 GMT', 'x-amz-server-side-encryption': 'AES256', 'ETag': '"7f514581ed170a1d816c5404291da697"', 'x-amz-checksum-crc32': 'f7r0fA==', 'x-amz-checksum-type': 'FULL_OBJECT', 'Content-Length': '0', 'Server': 'AmazonS3'}
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.parsers - Response body:
+b''
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x71f4eea62520>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x71f4ed109280>
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.retryhandler - No retry needed.
+11/05/2026 14:51:05 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x71f4ed0d4620>>
+11/05/2026 14:51:05 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+11/05/2026 14:51:05 - [ INFO ] - utils - 🚀 Foto subida a S3 [firma]: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/11/11/160/firma_145000.jpg
+11/05/2026 14:51:05 - [ INFO ] - routers.sync - ✅ Foto/Firma subida a S3: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/11/11/160/firma_145000.jpg [Tipo: firma]
+11/05/2026 14:51:05 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos registros.
+📸 [DEBUG API] ID Local: 10 - Principal: False, Multi: False, Turb: False, Cau: False, Nivel: False, Muestreo: False
+INFO:     186.67.203.130:65038 - "POST /api/sync/monitoreos HTTP/1.1" 200 OK
+11/05/2026 14:56:10 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:10 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:55693 - "GET /api/campanas HTTP/1.1" 200 OK
+11/05/2026 14:56:10 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:10 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:55694 - "GET /api/equipos HTTP/1.1" 200 OK
+11/05/2026 14:56:10 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:10 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:55695 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+11/05/2026 14:56:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:55696 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:55697 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+11/05/2026 14:56:11 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:11 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:55698 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+11/05/2026 14:56:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:55700 - "GET /api/parametros HTTP/1.1" 200 OK
+11/05/2026 14:56:12 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:12 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+11/05/2026 14:56:12 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:55705 - "GET /api/usuarios HTTP/1.1" 200 OK
+11/05/2026 14:56:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:55744 - "GET /api/campanas HTTP/1.1" 200 OK
+11/05/2026 14:56:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:55747 - "GET /api/equipos HTTP/1.1" 200 OK
+11/05/2026 14:56:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:55748 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+11/05/2026 14:56:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:55749 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:55750 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+11/05/2026 14:56:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:55751 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+11/05/2026 14:56:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:55752 - "GET /api/parametros HTTP/1.1" 200 OK
+11/05/2026 14:56:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+11/05/2026 14:56:44 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:55753 - "GET /api/usuarios HTTP/1.1" 200 OK
+11/05/2026 14:56:51 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 14:56:51 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['BRW-01']
+11/05/2026 14:56:51 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 14:57:00 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 14:57:00 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 14:57:00 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 14:57:00 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 324
+INFO:     186.67.203.130:55762 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:03:51 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:03:51 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:53587 - "GET /api/campanas HTTP/1.1" 200 OK
+11/05/2026 15:03:51 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:03:51 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:57250 - "GET /api/equipos HTTP/1.1" 200 OK
+11/05/2026 15:03:51 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:03:51 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:62969 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+11/05/2026 15:03:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:03:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:63673 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:53172 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+11/05/2026 15:03:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:03:52 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:65283 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+11/05/2026 15:03:53 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:03:53 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:63049 - "GET /api/parametros HTTP/1.1" 200 OK
+11/05/2026 15:03:53 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:03:53 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+11/05/2026 15:03:53 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:63050 - "GET /api/usuarios HTTP/1.1" 200 OK
+11/05/2026 15:42:28 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:28 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:55239 - "GET /api/campanas HTTP/1.1" 200 OK
+11/05/2026 15:42:29 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:29 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:61908 - "GET /api/equipos HTTP/1.1" 200 OK
+11/05/2026 15:42:29 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:29 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:53442 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+11/05/2026 15:42:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:58000 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:64114 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+11/05/2026 15:42:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:64115 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+11/05/2026 15:42:30 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:30 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:61477 - "GET /api/parametros HTTP/1.1" 200 OK
+11/05/2026 15:42:31 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:31 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+11/05/2026 15:42:31 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:62874 - "GET /api/usuarios HTTP/1.1" 200 OK
+11/05/2026 15:42:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:59 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:49238 - "GET /api/campanas HTTP/1.1" 200 OK
+11/05/2026 15:42:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:59 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:60677 - "GET /api/equipos HTTP/1.1" 200 OK
+11/05/2026 15:42:59 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:42:59 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:53798 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+11/05/2026 15:43:00 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:00 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:60148 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:60151 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+11/05/2026 15:43:00 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:00 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:61653 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+11/05/2026 15:43:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:63375 - "GET /api/parametros HTTP/1.1" 200 OK
+11/05/2026 15:43:01 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:01 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+11/05/2026 15:43:01 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:50081 - "GET /api/usuarios HTTP/1.1" 200 OK
+11/05/2026 15:43:08 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:08 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['BRW-01']
+11/05/2026 15:43:08 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:43:09 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:43:09 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:43:09 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:43:09 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 324
+INFO:     186.67.203.130:56309 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:43:14 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:14 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['BRW-01']
+11/05/2026 15:43:14 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:43:14 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:43:14 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:43:14 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:43:14 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 324
+INFO:     186.67.203.130:54956 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:43:15 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:15 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['BRW-02']
+11/05/2026 15:43:15 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:43:16 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:43:16 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:43:16 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:43:16 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 324
+INFO:     186.67.203.130:62095 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:43:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:17 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-6']
+11/05/2026 15:43:17 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:43:17 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:43:17 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:43:17 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:43:17 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+11/05/2026 15:43:17 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+11/05/2026 15:43:17 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:63626 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:43:18 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:18 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-1']
+11/05/2026 15:43:18 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:43:18 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:43:18 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:43:18 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:43:18 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+11/05/2026 15:43:18 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+11/05/2026 15:43:18 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:54269 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:43:19 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:43:19 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-5']
+11/05/2026 15:43:19 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:43:19 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:43:19 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:43:19 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:43:19 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+11/05/2026 15:43:19 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+11/05/2026 15:43:19 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:53723 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:56:26 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:56:26 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:60558 - "GET /api/campanas HTTP/1.1" 200 OK
+11/05/2026 15:56:27 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:56:27 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:61107 - "GET /api/equipos HTTP/1.1" 200 OK
+11/05/2026 15:56:27 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:56:27 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:61108 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+11/05/2026 15:56:27 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:56:27 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:62743 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:53466 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+11/05/2026 15:56:28 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:56:28 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:61902 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+11/05/2026 15:56:28 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:56:28 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:60431 - "GET /api/parametros HTTP/1.1" 200 OK
+11/05/2026 15:56:29 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:56:29 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+11/05/2026 15:56:29 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:63195 - "GET /api/usuarios HTTP/1.1" 200 OK
+11/05/2026 15:57:41 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:41 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:62018 - "GET /api/campanas HTTP/1.1" 200 OK
+11/05/2026 15:57:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:54436 - "GET /api/equipos HTTP/1.1" 200 OK
+11/05/2026 15:57:42 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:42 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:56702 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+11/05/2026 15:57:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:56704 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:56705 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+11/05/2026 15:57:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:50200 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+11/05/2026 15:57:43 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:43 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:55031 - "GET /api/parametros HTTP/1.1" 200 OK
+11/05/2026 15:57:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+11/05/2026 15:57:44 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:62474 - "GET /api/usuarios HTTP/1.1" 200 OK
+11/05/2026 15:57:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:52 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['BRW-01']
+11/05/2026 15:57:52 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:57:52 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:57:53 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:57:53 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:57:53 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 324
+INFO:     186.67.203.130:54039 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:57:54 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:54 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['BRW-02']
+11/05/2026 15:57:54 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:57:54 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:57:54 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:57:54 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:57:54 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 324
+INFO:     186.67.203.130:62302 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:57:56 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:56 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-6']
+11/05/2026 15:57:56 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:57:56 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:57:56 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:57:56 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:57:56 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+11/05/2026 15:57:56 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+11/05/2026 15:57:56 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:63749 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:57:57 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:57 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-1']
+11/05/2026 15:57:57 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:57:57 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:57:57 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:57:57 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:57:57 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+11/05/2026 15:57:57 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+11/05/2026 15:57:57 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:55001 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:57:57 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:57:57 - [ INFO ] - routers.sync - 📋 [ HISTORIAL MUESTRAS ] Reenviando a API externa. Programa: [ 1022 ] | Estaciones: ['PCH-5']
+11/05/2026 15:57:57 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): apicollector.gpconsultores.cl:80
+11/05/2026 15:57:58 - [ DEBUG ] - urllib3.connectionpool - http://apicollector.gpconsultores.cl:80 "POST /api/muestras HTTP/1.1" 200 None
+11/05/2026 15:57:58 - [ INFO ] - routers.sync - 🔍 Respuesta externa es un dict. Llaves detectadas: ['status', 'data']
+11/05/2026 15:57:58 - [ INFO ] - routers.sync - ✅ Lista extraída desde la llave: 'data'
+11/05/2026 15:57:58 - [ WARNING ] - routers.sync - ⚠️ Ninguna llave conocida contiene una lista. Intentando fallback agresivo...
+11/05/2026 15:57:58 - [ WARNING ] - routers.sync - ⚠️ No se pudo extraer una lista del dict externo. Llaves: ['status', 'data']
+11/05/2026 15:57:58 - [ INFO ] - routers.sync - ✅ Normalización y conversión de coordenadas completada. Registros enviados a Flutter: 0
+INFO:     186.67.203.130:64041 - "POST /api/muestras HTTP/1.1" 200 OK
+11/05/2026 15:58:52 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+11/05/2026 15:58:52 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[74:93]
+11/05/2026 15:58:52 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[95:120]
+11/05/2026 15:58:52 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+11/05/2026 15:58:52 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+11/05/2026 15:58:52 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[124:838]
+11/05/2026 15:58:52 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+11/05/2026 15:58:52 - [ DEBUG ] - python_multipart.multipart - Calling on_end with no data
+11/05/2026 15:58:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+11/05/2026 15:58:52 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+11/05/2026 15:58:52 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 1 ]...
+11/05/2026 15:58:52 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 1 ] - Creando registro independiente en BD...
+11/05/2026 15:58:52 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos registros.
+📸 [DEBUG API] ID Local: 1 - Principal: False, Multi: False, Turb: False, Cau: False, Nivel: False, Muestreo: False
+INFO:     186.67.203.130:65521 - "POST /api/sync/monitoreos HTTP/1.1" 200 OK

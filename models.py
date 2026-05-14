@@ -90,6 +90,7 @@ class MonitoreoDB(Base):
     foto_caudal = Column(LONGTEXT)
     foto_nivel_freatico = Column(LONGTEXT)
     foto_muestreo = Column(LONGTEXT)
+    fecha_hora_muestreo = Column(DateTime)
     firma_path = Column(String(255), nullable=True)
     
     # Fase 108: Pivot a Document Pattern (JSON) para capturas
@@ -151,3 +152,16 @@ class MonitoreoDetalleDB(Base):
     tipo_dato = Column(String(50))    # Fase 88: "number", "text", "boolean" — indica al frontend cómo parsear
     
     monitoreo = relationship("MonitoreoDB", back_populates="detalles")
+
+class AuditLogDB(Base):
+    """ Almacena el historial de auditoría y trazabilidad de acciones en el sistema """
+    __tablename__ = "audit_logs"
+    id = Column(Integer, primary_key=True, index=True)
+    usuario_id = Column(Integer, ForeignKey("usuarios.id_usuario"), nullable=True)
+    accion = Column(String(100)) # 'INSERT', 'UPDATE', 'DELETE', 'BULK_SYNC'
+    tabla = Column(String(100))
+    registro_id = Column(Integer, nullable=True)
+    detalles = Column(Text) # Información JSON con cambios o descripción
+    fecha_hora = Column(DateTime, default=func.now())
+
+    usuario = relationship("UsuarioDB")

@@ -18,7 +18,7 @@ def test_sync_with_signature():
                 "id_local": 9999,
                 "programa_id": 1,
                 "estacion_id": 1,
-                "fecha_hora": "2026-04-23 12:00:00",
+                "fecha_hora_muestreo": "2026-04-23 12:00:00",
                 "monitoreo_fallido": 0,
                 "observacion": "Test sync with signature"
             }
