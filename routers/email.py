@@ -145,16 +145,16 @@ def enviar_correo(
         msg_alternative.attach(MIMEText(html_content, 'html'))
 
         # 3. Adjuntar la imagen del logo (CID)
-        logo_path = "static/assets/logo_gp.png"
+        logo_path = "static/assets/gp_icon_email.png"
         try:
             with open(logo_path, "rb") as f:
                 img_data = f.read()
             logo_img = MIMEImage(img_data)
             logo_img.add_header('Content-ID', '<logo_gp>')
-            logo_img.add_header('Content-Disposition', 'inline', filename='logo_gp.png')
+            logo_img.add_header('Content-Disposition', 'inline', filename='gp_icon_email.png')
             msg.attach(logo_img)
         except FileNotFoundError:
-            logger.warning(f"⚠️ Logo no encontrado en {{logo_path}}. El correo se enviará sin imagen incrustada.")
+            logger.warning(f"⚠️ Logo no encontrado en {logo_path}. El correo se enviará sin imagen incrustada.")
 
         # Proceso SMTP con logs detallados
         logger.info(f"🔄 Conectando al servidor SMTP: {smtp_server}:{smtp_port}...")
