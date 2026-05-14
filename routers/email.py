@@ -4,6 +4,7 @@ import logging
 import traceback
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
 from fastapi import APIRouter, Depends, HTTPException, status
 from auth import verificar_credenciales
 from schemas import EmailRequest
@@ -48,12 +49,112 @@ def enviar_correo(
         )
 
     try:
-        # Preparar el mensaje
-        msg = MIMEMultipart()
+        # Preparar el mensaje principal como 'related' para soportar imágenes incrustadas
+        msg = MIMEMultipart('related')
         msg['From'] = smtp_from
         msg['To'] = request.destinatario
         msg['Subject'] = request.asunto
-        msg.attach(MIMEText(request.cuerpo, 'plain'))
+
+        # Crear alternativa para texto plano y HTML
+        msg_alternative = MIMEMultipart('alternative')
+        msg.attach(msg_alternative)
+
+        # 1. Versión en texto plano (fallback)
+        text_plain = f"{request.asunto}\n\n{request.cuerpo}"
+        msg_alternative.attach(MIMEText(text_plain, 'plain'))
+
+        # 2. Versión en HTML
+        # Convertir los saltos de línea a <br> para el HTML
+        cuerpo_html = request.cuerpo.replace('\n', '<br>')
+        
+        html_content = f"""
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <style>
+                body {{
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    color: #333333;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f9f9f9;
+                }}
+                .email-container {{
+                    max-width: 650px;
+                    margin: 20px auto;
+                    background-color: #ffffff;
+                    border: 1px solid #e0e0e0;
+                    border-top: 5px solid #0EA5E9; /* Azul de GP */
+                    padding: 30px;
+                }}
+                .title {{
+                    color: #2563EB;
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin: 0;
+                }}
+                .subtitle {{
+                    font-size: 11px;
+                    color: #888888;
+                    text-transform: uppercase;
+                    margin-top: 5px;
+                }}
+                .body-content {{
+                    font-size: 14px;
+                    line-height: 1.6;
+                    color: #444444;
+                }}
+                .footer {{
+                    margin-top: 40px;
+                    padding-top: 20px;
+                    border-top: 1px solid #f0f0f0;
+                    font-size: 13px;
+                    color: #666666;
+                }}
+            </style>
+        </head>
+        <body>
+            <div class="email-container">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 25px;">
+                    <tr>
+                        <td width="70%" valign="top">
+                            <h2 class="title">{request.asunto}</h2>
+                            <div class="subtitle">SISTEMA GP COLLECTOR</div>
+                        </td>
+                        <td width="30%" align="right" valign="top">
+                            <!-- Logo incrustado vía CID -->
+                            <img src="cid:logo_gp" alt="GP Consultores" style="max-width: 140px; height: auto;">
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="body-content">
+                    {cuerpo_html}
+                </div>
+                
+                <div class="footer">
+                    <p>Saludos cordiales,<br>
+                    <strong>GP Collector</strong><br>
+                    GP Consultores - Recursos Hídricos & Medio Ambiente</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        """
+        msg_alternative.attach(MIMEText(html_content, 'html'))
+
+        # 3. Adjuntar la imagen del logo (CID)
+        logo_path = "static/assets/logo_gp.png"
+        try:
+            with open(logo_path, "rb") as f:
+                img_data = f.read()
+            logo_img = MIMEImage(img_data)
+            logo_img.add_header('Content-ID', '<logo_gp>')
+            logo_img.add_header('Content-Disposition', 'inline', filename='logo_gp.png')
+            msg.attach(logo_img)
+        except FileNotFoundError:
+            logger.warning(f"⚠️ Logo no encontrado en {{logo_path}}. El correo se enviará sin imagen incrustada.")
 
         # Proceso SMTP con logs detallados
         logger.info(f"🔄 Conectando al servidor SMTP: {smtp_server}:{smtp_port}...")
