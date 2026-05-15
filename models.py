@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, Text, DateTime, func, For
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.mysql import LONGTEXT
 from database import Base
+from utils import get_chile_time
 
 class CampanaDB(Base):
     __tablename__ = "campanas"
@@ -102,8 +103,8 @@ class MonitoreoDB(Base):
     multiparametros_json = Column(Text, nullable=True)
     
     # Sellos de tiempo de auditoría
-    created_at = Column(DateTime, default=func.now())
-    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+    created_at = Column(DateTime, default=get_chile_time)
+    updated_at = Column(DateTime, default=get_chile_time, onupdate=get_chile_time)
     
     # Relación con parámetros dinámicos (Fase 86 - Legacy support)
     detalles = relationship("MonitoreoDetalleDB", back_populates="monitoreo", cascade="all, delete-orphan")
@@ -114,8 +115,8 @@ class ObservacionPredefinidaDB(Base):
     texto = Column(String(255))
     categoria = Column(String(50), nullable=True)
     activo = Column(Integer, default=1)
-    created_at = Column(DateTime, default=func.now())
-    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+    created_at = Column(DateTime, default=get_chile_time)
+    updated_at = Column(DateTime, default=get_chile_time, onupdate=get_chile_time)
 
 
 class MonitoreoFotoDB(Base):
@@ -124,8 +125,8 @@ class MonitoreoFotoDB(Base):
     monitoreo_id = Column(Integer, index=True)
     tipo = Column(String(50)) # 'general', 'multiparametro', 'turbiedad'
     ruta = Column(String(255))
-    created_at = Column(DateTime, default=func.now())
-    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+    created_at = Column(DateTime, default=get_chile_time)
+    updated_at = Column(DateTime, default=get_chile_time, onupdate=get_chile_time)
 
 class EstacionDB(Base):
     __tablename__ = "estaciones"
@@ -162,6 +163,6 @@ class AuditLogDB(Base):
     tabla = Column(String(100))
     registro_id = Column(Integer, nullable=True)
     detalles = Column(Text) # Información JSON con cambios o descripción
-    fecha_hora = Column(DateTime, default=func.now())
+    fecha_hora = Column(DateTime, default=get_chile_time)
 
     usuario = relationship("UsuarioDB")

@@ -9,8 +9,13 @@ import json
 from pathlib import Path
 from typing import Optional, Tuple, Union
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pyproj import Transformer
 from sqlalchemy.orm import Session
+
+def get_chile_time():
+    """Retorna la hora actual en Chile (America/Santiago) para almacenamiento en DB."""
+    return datetime.now(ZoneInfo("America/Santiago")).replace(tzinfo=None)
 
 logger = logging.getLogger(__name__)
 
@@ -116,7 +121,7 @@ def save_dynamic_photo(
         return None
 
     # 2. Extraer componentes de la fecha
-    fecha_ref = fecha if fecha else datetime.now()
+    fecha_ref = fecha if fecha else get_chile_time()
     year = fecha_ref.strftime("%Y")
     month = fecha_ref.strftime("%m")
     day = fecha_ref.strftime("%d")

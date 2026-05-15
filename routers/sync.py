@@ -15,7 +15,7 @@ from database import get_db
 from models import MonitoreoDB, MonitoreoFotoDB, EstacionDB, MonitoreoDetalleDB
 from schemas import SyncPayload, MuestrasPayload
 from auth import verificar_credenciales
-from utils import save_dynamic_photo, convert_utm_to_wgs84, log_audit
+from utils import save_dynamic_photo, convert_utm_to_wgs84, log_audit, get_chile_time
 
 logger = logging.getLogger(__name__)
 
@@ -97,7 +97,7 @@ async def sync_monitoreos(
             
             # 1. Conversión de fechas con validación de "vacio" para evitar copias accidentales
             # La fecha_hora principal tomará la fecha de subida del monitoreo al servidor
-            fh = datetime.now()
+            fh = get_chile_time()
                 
             fh_nivel = None
             if item.fecha_hora_nivel and str(item.fecha_hora_nivel).strip() != "":
@@ -176,7 +176,7 @@ async def sync_monitoreos(
             # --- FASE 120: Almacenamiento Dinámico en Disco ---
             db.flush() 
             db_monitoreo_id = monitoreo_actual.id
-            fecha_base = fh if fh else datetime.now()
+            fecha_base = fh if fh else get_chile_time()
 
             station_name = "sin_estacion"
             if item.estacion_id:
