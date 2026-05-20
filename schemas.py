@@ -217,17 +217,20 @@ class EmailNotificationPayload(BaseModel):
 # --- Esquemas para Auditoría ---
 class AuditLogBase(BaseModel):
     usuario_id: Optional[int] = None
+    usuario_nombre: Optional[str] = None
     accion: str
-    tabla: str
+    modulo: Optional[str] = None
     registro_id: Optional[int] = None
-    detalles: Optional[str] = None
+    registro_ref: Optional[str] = None
+    cambios: Optional[str] = None
+    ip_address: Optional[str] = None
 
 class AuditLogCreate(AuditLogBase):
     pass
 
 class AuditLog(AuditLogBase):
     id: int
-    fecha_hora: datetime
+    created_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True
