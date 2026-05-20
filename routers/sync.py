@@ -44,6 +44,7 @@ async def sync_monitoreos(
 
     contador_nuevos = 0
     contador_editados = 0
+    ids_registrados = []  # ✅ Lista para rastrear mapeo de IDs locales vs servidor
     
     # Log: Inicio de sincronización (Narrativo)
     dispositivo = payload_obj.monitoreos[0].device_id if payload_obj.monitoreos else "DESCONOCIDO"
@@ -176,6 +177,12 @@ async def sync_monitoreos(
             # --- FASE 120: Almacenamiento Dinámico en Disco ---
             db.flush() 
             db_monitoreo_id = monitoreo_actual.id
+            
+            # ✅ Almacenamos el mapeo de ID Local del móvil vs ID Real que le dio MySQL
+            ids_registrados.append({
+                "id_local": item.id_local,
+                "id_servidor": db_monitoreo_id
+            })
             fecha_base = fh if fh else get_chile_time()
 
             station_name = "sin_estacion"
@@ -308,7 +315,8 @@ async def sync_monitoreos(
 
         return {
             "status": "success",
-            "mensaje": f"Se sincronizaron con éxito {contador_nuevos} nuevos registros."
+            "mensaje": f"Se sincronizaron con éxito {contador_nuevos} nuevos registros.",
+            "ids_registrados": ids_registrados  # ✅ Enviamos el mapeo de IDs de vuelta a la App
         }
 
     except HTTPException:
