@@ -153,7 +153,7 @@ def save_dynamic_photo(
         logger.exception(f"🚨 Error subiendo archivo a S3 {tipo}: {e}")
         return None
 
-def log_audit(db: Session, usuario_id: Optional[int], accion: str, tabla: str, registro_id: Optional[int] = None, detalles: Optional[Union[dict, str]] = None):
+def log_audit(db: Session, usuario_id: Optional[int], accion: str, tabla: str, registro_id: Optional[int] = None, detalles: Optional[Union[dict, str]] = None, usuario_nombre: Optional[str] = None):
     """
     Registra una acción en la tabla de auditoría para trazabilidad.
     """
@@ -164,10 +164,11 @@ def log_audit(db: Session, usuario_id: Optional[int], accion: str, tabla: str, r
         
         nuevo_log = AuditLogDB(
             usuario_id=usuario_id,
+            usuario_nombre=usuario_nombre,
             accion=accion,
-            tabla=tabla,
+            modulo='web_admin',      # Los logs internos del servidor son del módulo web
             registro_id=registro_id,
-            detalles=detalles
+            cambios=detalles         # Ahora mapea correctamente al campo 'cambios'
         )
         db.add(nuevo_log)
         # Se asume que el commit lo hará la función llamadora

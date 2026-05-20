@@ -159,10 +159,13 @@ class AuditLogDB(Base):
     __tablename__ = "audit_logs"
     id = Column(Integer, primary_key=True, index=True)
     usuario_id = Column(Integer, ForeignKey("usuarios.id_usuario"), nullable=True)
-    accion = Column(String(100)) # 'INSERT', 'UPDATE', 'DELETE', 'BULK_SYNC'
-    tabla = Column(String(100))
+    usuario_nombre = Column(String(255), nullable=True)
+    accion = Column(String(100))      # 'INSERT', 'UPDATE', 'DELETE', 'BULK_SYNC', 'update'
+    modulo = Column(String(100), nullable=True)  # 'web_admin', 'app_collector', etc.
     registro_id = Column(Integer, nullable=True)
-    detalles = Column(Text) # Información JSON con cambios o descripción
-    fecha_hora = Column(DateTime, default=get_chile_time)
+    registro_ref = Column(String(255), nullable=True)
+    cambios = Column(Text, nullable=True)  # JSON con cambios o descripción
+    ip_address = Column(String(45), nullable=True)
+    created_at = Column(DateTime, default=get_chile_time)
 
     usuario = relationship("UsuarioDB")
