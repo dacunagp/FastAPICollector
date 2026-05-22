@@ -18,6 +18,7 @@ router = APIRouter(prefix="/api/audit", tags=["Audit"], dependencies=[Depends(ve
 
 # --- Schema para recibir logs desde la app móvil ---
 class AuditLogAppItem(BaseModel):
+    local_id: Optional[str] = None       # ID que asigna la app (para rastreo)
     usuario_id: Optional[int] = None
     usuario_nombre: Optional[str] = None
     accion: Optional[str] = "update"
@@ -70,8 +71,6 @@ def get_audit_summary(db: Session = Depends(get_db)):
             equipo_label = eq.codigo_equipo if eq else f"ID {detalle_obj['equipo_id']}"
 
         msg = f"Acción: {log.accion} | Módulo: {log.modulo or 'N/A'}"
-        if log.accion == "BULK_SYNC":
-            msg = f"Sincronización masiva: {detalle_obj.get('nuevos', 0)} nuevos, {detalle_obj.get('editados', 0)} editados."
         
         summary.append({
             "id": log.id,
@@ -95,10 +94,11 @@ def sync_audit_from_app(payload: AuditSyncPayload, request: Request, db: Session
     Endpoint: POST /api/audit/sync
     """
     if not payload.logs:
-        return {"status": "error", "message": "No se recibieron logs."}
+        return {"status": "error", "message": "No se recibieron logs.", "saved": []}
 
     ahora = get_chile_time()
     insertados = 0
+    saved = []  # Mapeo local_id → id_unica para cada log guardado
 
     for item in payload.logs:
         try:
@@ -121,10 +121,20 @@ def sync_audit_from_app(payload: AuditSyncPayload, request: Request, db: Session
                 created_at=created,
             )
             db.add(nuevo_log)
+            db.flush()  # Obtener el id generado por la BD antes del commit
+
+            saved.append({
+                "local_id": item.local_id,       # ID enviado por la app
+                "id_unica": nuevo_log.id          # ID asignado por el servidor
+            })
             insertados += 1
         except Exception as e:
             logger.error(f"⚠️ Error insertando log de app: {str(e)}")
 
     db.commit()
     logger.info(f"✅ [AUDIT SYNC] {insertados} logs recibidos desde la app GPCollector.")
-    return {"status": "ok", "insertados": insertados}
+    return {
+        "status": "ok",
+        "insertados": insertados,
+        "saved": saved  # ✅ Mapeo de IDs locales vs IDs del servidor
+    }

@@ -1,0 +1,550 @@
+nohup: ignoring input
+14/05/2026 20:56:26 - [ INFO ] - root - 🚀 Sistema de Logs Narrativos inicializado correctamente.
+INFO:     Started server process [41302]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5348 (Press CTRL+C to quit)
+14/05/2026 21:01:52 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+14/05/2026 21:01:52 - [ INFO ] - routers.email - 📩 Recibida solicitud de correo para: [dacuna@gpconsultores.cl,ecea@gpconsultores.cl]
+14/05/2026 21:01:52 - [ INFO ] - routers.email - 📋 Asunto: Prueba 3 | Longitud del cuerpo: 23 caracteres
+14/05/2026 21:01:52 - [ INFO ] - routers.email - 🔄 Conectando al servidor SMTP: email-smtp.us-east-1.amazonaws.com:587...
+14/05/2026 21:01:52 - [ INFO ] - routers.email - 🔑 Autenticando como: AKIAZAI4GTCDFE4YHICY...
+14/05/2026 21:01:53 - [ INFO ] - routers.email - ✅ Correo enviado con éxito a dacuna@gpconsultores.cl,ecea@gpconsultores.cl
+14/05/2026 21:01:53 - [ ERROR ] - routers.email - ⚠️ No se pudo registrar auditoría de correo: (pymysql.err.OperationalError) (1054, "Unknown column 'detalles' in 'field list'")
+[SQL: INSERT INTO audit_logs (usuario_id, accion, tabla, registro_id, detalles, fecha_hora) VALUES (%(usuario_id)s, %(accion)s, %(tabla)s, %(registro_id)s, %(detalles)s, now())]
+[parameters: {'usuario_id': None, 'accion': 'EMAIL_SENT', 'tabla': 'correos', 'registro_id': None, 'detalles': '{"destinatario": "dacuna@gpconsultores.cl,ecea@gpconsultores.cl", "asunto": "Prueba 3"}'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:     186.67.203.130:60390 - "POST /api/enviar-correo HTTP/1.1" 200 OK
+14/05/2026 21:01:53 - [ INFO ] - routers.comunicaciones - 📩 RAW Payload recibido: {'inspector': 'Diego Acuña', 'asunto': 'Prueba 3', 'mensaje': 'Hola esto es una Prueba', 'fecha': '2026-05-14T21:01:34.100943', 'estacion_id': None}
+INFO:     186.67.203.130:60391 - "POST /api/comunicaciones/notificar-email HTTP/1.1" 200 OK
+14/05/2026 21:01:53 - [ INFO ] - routers.comunicaciones - 🔄 Reenviando notificación a Laravel (Background): http://localhost/api/notificaciones/email
+14/05/2026 21:01:53 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): localhost:80
+14/05/2026 21:01:53 - [ DEBUG ] - urllib3.connectionpool - http://localhost:80 "POST /api/notificaciones/email HTTP/1.1" 201 None
+14/05/2026 21:01:53 - [ INFO ] - routers.comunicaciones - ✅ Notificación reenviada con éxito a Laravel. Status: 201
+14/05/2026 21:32:26 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.209.113:2465 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+14/05/2026 21:32:26 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.209.113:2456 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+14/05/2026 21:36:38 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.209.113:2471 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+14/05/2026 21:40:17 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+14/05/2026 21:40:17 - [ INFO ] - routers.email - 📩 Recibida solicitud de correo para: [ecea@gpconsultores.cl,dacuna@gpconsultores.cl]
+14/05/2026 21:40:17 - [ INFO ] - routers.email - 📋 Asunto: prueba mails | Longitud del cuerpo: 28 caracteres
+14/05/2026 21:40:17 - [ INFO ] - routers.email - 🔄 Conectando al servidor SMTP: email-smtp.us-east-1.amazonaws.com:587...
+14/05/2026 21:40:17 - [ INFO ] - routers.email - 🔑 Autenticando como: AKIAZAI4GTCDFE4YHICY...
+14/05/2026 21:40:18 - [ INFO ] - routers.email - ✅ Correo enviado con éxito a ecea@gpconsultores.cl,dacuna@gpconsultores.cl
+14/05/2026 21:40:18 - [ ERROR ] - routers.email - ⚠️ No se pudo registrar auditoría de correo: (pymysql.err.OperationalError) (1054, "Unknown column 'detalles' in 'field list'")
+[SQL: INSERT INTO audit_logs (usuario_id, accion, tabla, registro_id, detalles, fecha_hora) VALUES (%(usuario_id)s, %(accion)s, %(tabla)s, %(registro_id)s, %(detalles)s, now())]
+[parameters: {'usuario_id': None, 'accion': 'EMAIL_SENT', 'tabla': 'correos', 'registro_id': None, 'detalles': '{"destinatario": "ecea@gpconsultores.cl,dacuna@gpconsultores.cl", "asunto": "prueba mails"}'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:     181.42.209.113:2473 - "POST /api/enviar-correo HTTP/1.1" 200 OK
+14/05/2026 21:40:18 - [ INFO ] - routers.comunicaciones - 📩 RAW Payload recibido: {'inspector': 'Esperanza Cea', 'asunto': 'prueba mails', 'mensaje': 'llegando a más de un usuario', 'fecha': '2026-05-14T17:40:17.586378', 'estacion_id': None}
+INFO:     181.42.209.113:2484 - "POST /api/comunicaciones/notificar-email HTTP/1.1" 200 OK
+14/05/2026 21:40:18 - [ INFO ] - routers.comunicaciones - 🔄 Reenviando notificación a Laravel (Background): http://localhost/api/notificaciones/email
+14/05/2026 21:40:18 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): localhost:80
+14/05/2026 21:40:18 - [ DEBUG ] - urllib3.connectionpool - http://localhost:80 "POST /api/notificaciones/email HTTP/1.1" 201 None
+14/05/2026 21:40:18 - [ INFO ] - routers.comunicaciones - ✅ Notificación reenviada con éxito a Laravel. Status: 201
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[74:93]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[95:120]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[122:134]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[136:161]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[163:188]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[190:196]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[200:1140]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1216:1228]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1230:1254]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[1256:1275]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[1277:1352]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:31924]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:8933]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[9009:9021]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[9023:9047]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[9049:9068]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[9070:9155]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[9159:18044]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:15268]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:8328]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2844]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1320]
+14/05/2026 21:44:26 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:33524]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:5552]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:23296]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[23372:23384]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[23386:23410]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[23412:23431]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[23433:23512]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[23516:37476]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:19500]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2776]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2748]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:4164]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2524]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:1388]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:14841]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_begin with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[14917:14929]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[14931:14955]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_field with data[14957:14976]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_value with data[14978:15046]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_header_end with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_headers_finished with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[15050:15268]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_data with data[0:2731]
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_part_end with no data
+14/05/2026 21:44:27 - [ DEBUG ] - python_multipart.multipart - Calling on_end with no data
+14/05/2026 21:44:27 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - 🔄 Iniciando sincronización de registros para el dispositivo: [ MOBILE-DATA ]
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - ✍️ Recibida firma del operador: firma_1778795055410.png
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - 📸 Recibida foto multipart [ general ]: EVIDENCIA_TECNICA_1778794956217.jpg
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - 📸 Recibida foto multipart [ nivel_freatico ]: EVIDENCIA_TECNICA_1778795028654.jpg
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - 📸 Recibida foto multipart [ muestreo ]: EVIDENCIA_TECNICA_1778795036164.jpg
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - 📍 Procesando registro móvil [ ID Local: 15 ]...
+14/05/2026 21:44:27 - [ DEBUG ] - routers.sync - 🔍 [DEBUG SYNC] Datos recibidos para ID Local 15: {'id': None, 'id_local': 15, 'device_id': 'MOBILE-DATA', 'programa_id': 19, 'estacion_id': 160, 'fecha_hora': '2026-05-14 17:50:00', 'monitoreo_fallido': 0, 'observacion': '', 'matriz_id': 1, 'equipo_multi_id': 8, 'turbidimetro_id': None, 'metodo_id': 3, 'hidroquimico': 1, 'isotopico': 1, 'cod_laboratorio': 'hdhjdjs6577', 'usuario_id': 9, 'is_draft': 0, 'equipo_nivel_id': 12, 'tipo_pozo': 'Pozo de Producción', 'tipo_nivel': 'Estático', 'fecha_hora_nivel': '2026-05-14 17:42:00', 'equipo_caudal': None, 'nivel_caudal': None, 'fecha_hora_caudal': None, 'turbiedad': None, 'profundidad': 50.0, 'nivel': 80.0, 'latitud': -33.4230993, 'longitud': -70.6100836, 'fecha_hora_muestreo': '2026-05-14 17:50:00', 'detalles_json': [], 'multiparametros_json': [{'parametro': 'ph', 'valor': 6.0, 'unidad': 'u.pH'}, {'parametro': 'temperatura', 'valor': 50.0, 'unidad': '°C'}, {'parametro': 'conductividad', 'valor': 2.0, 'unidad': 'µS/cm'}], 'detalles': []}
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - ✨ Registro [ ID Local: 15 ] - Creando registro independiente en BD...
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - ✍️ Procesando firma multipart para el lote...
+14/05/2026 21:44:27 - [ DEBUG ] - boto3.s3.transfer - Opting out of CRT Transfer Manager. Preferred client: auto, CRT available: False, Instance Optimized: False
+14/05/2026 21:44:27 - [ DEBUG ] - boto3.s3.transfer - Using default client. pid: 41302, thread: 133615931797632
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db588080>}) about to wait for the following futures []
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db588080>}) done waiting for dependent futures
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db588080>}) with kwargs {'client': <botocore.client.S3 object at 0x7985dc4c3920>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7985dbf538c0>, 'osutil': <s3transfer.utils.OSUtils object at 0x7985dbf53bc0>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7985dbf53cb0>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db588080>}
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.futures - Submitting task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/firma_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7985dbf53cb0> for transfer request: 0.
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/firma_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) about to wait for the following futures []
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/firma_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) done waiting for dependent futures
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - Executing task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/firma_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) with kwargs {'client': <botocore.client.S3 object at 0x7985dc4c3920>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7985df15bef0>, 'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/firma_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7985dde759e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7985dde74cc0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7985dde763e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7985dde74c20>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7985dde77060>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7985dc7ccdd0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7985dde74a40>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7985dde777e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7985dde77240>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Calling endpoint provider with parameters: {'Bucket': 'app-collector-storage', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'monitoreos/2026/05/14/8/160/firma_214427.jpg', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True, 'DisableS3ExpressSessionAuth': False}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Endpoint provider result: https://app-collector-storage.s3.amazonaws.com
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7985dde74fe0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.handlers - Adding expect 100 continue header to request.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7985dc51dfa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7985dde5f6a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7985dde76520>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.endpoint - Making request for OperationModel(name=PutObject) with params: {'url_path': '/monitoreos/2026/05/14/8/160/firma_214427.jpg', 'query_string': {}, 'method': 'PUT', 'headers': {'Content-Type': 'application/octet-stream', 'x-amz-sdk-checksum-algorithm': 'CRC32', 'User-Agent': 'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/e,G,b,Z,D cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': '100-continue', 'Transfer-Encoding': 'chunked', 'Content-Encoding': 'aws-chunked', 'X-Amz-Trailer': 'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': '2949'}, 'body': <botocore.httpchecksum.AwsChunkedWrapper object at 0x7985db589220>, 'auth_path': '/app-collector-storage/monitoreos/2026/05/14/8/160/firma_214427.jpg', 'url': 'https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/14/8/160/firma_214427.jpg', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7985dd5ff8c0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'app-collector-storage', 'params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/14/8/160/firma_214427.jpg', 'Body': <s3transfer.utils.ReadFileChunk object at 0x7985df15bef0>, 'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}, 'input_params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/14/8/160/firma_214427.jpg'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm': {'algorithm': 'crc32', 'in': 'trailer', 'name': 'x-amz-checksum-crc32'}}}}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7985de2f18a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7985de0f0aa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7985dc7ccdd0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7985dde74720>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7985dde771a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7985dde77880>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7985dc51dfa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - Calculating signature using v4 auth.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - CanonicalRequest:
+PUT
+/monitoreos/2026/05/14/8/160/firma_214427.jpg
+
+content-encoding:aws-chunked
+content-type:application/octet-stream
+host:app-collector-storage.s3.amazonaws.com
+x-amz-content-sha256:STREAMING-UNSIGNED-PAYLOAD-TRAILER
+x-amz-date:20260514T214427Z
+x-amz-decoded-content-length:2949
+x-amz-sdk-checksum-algorithm:CRC32
+x-amz-trailer:x-amz-checksum-crc32
+
+content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer
+STREAMING-UNSIGNED-PAYLOAD-TRAILER
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - StringToSign:
+AWS4-HMAC-SHA256
+20260514T214427Z
+20260514/us-east-1/s3/aws4_request
+808ed672a2992b9ba78dd7f84ee9b8253caca2409c831a4e0cb90594274cd6a5
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - Signature:
+f72c3a089bd725e826c4f3ddb5901f23ebaabd0081b8e849aece942f9b0b119d
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7985dc51d130>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7985de05a980>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7985dde76fc0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.endpoint - Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/14/8/160/firma_214427.jpg, headers={'Content-Type': b'application/octet-stream', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'User-Agent': b'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/e,G,b,U,Z,D cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': b'100-continue', 'Transfer-Encoding': b'chunked', 'Content-Encoding': b'aws-chunked', 'X-Amz-Trailer': b'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': b'2949', 'X-Amz-Date': b'20260514T214427Z', 'X-Amz-Content-SHA256': b'STREAMING-UNSIGNED-PAYLOAD-TRAILER', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAZAI4GTCDHMMHAEKW/20260514/us-east-1/s3/aws4_request, SignedHeaders=content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer, Signature=f72c3a089bd725e826c4f3ddb5901f23ebaabd0081b8e849aece942f9b0b119d', 'amz-sdk-invocation-id': b'fd663213-249f-4975-9f94-3ee4b08c6847', 'amz-sdk-request': b'attempt=1'}>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.httpsession - Certificate path: /home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/certifi/cacert.pem
+14/05/2026 21:44:27 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTPS connection (1): app-collector-storage.s3.amazonaws.com:443
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.awsrequest - Waiting for 100 Continue response.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.awsrequest - 100 Continue response seen, now sending request body.
+14/05/2026 21:44:27 - [ DEBUG ] - urllib3.connectionpool - https://app-collector-storage.s3.amazonaws.com:443 "PUT /monitoreos/2026/05/14/8/160/firma_214427.jpg HTTP/1.1" 200 0
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7985dde77560>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7985dde77380>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.parsers - Response headers: {'x-amz-id-2': 'nR9kui/6h4ipLGg3g6/acNQSho8bdMGXMiYsMQzc9OSYkb6PggqPd7x+Rtq7Ue6sy0+m0mXSLmE=', 'x-amz-request-id': 'G133C3J88KCW1XT2', 'Date': 'Thu, 14 May 2026 21:44:28 GMT', 'x-amz-server-side-encryption': 'AES256', 'ETag': '"fa730dc0c0c952195bebfca729b3b8e3"', 'x-amz-checksum-crc32': 'WLU+og==', 'x-amz-checksum-type': 'FULL_OBJECT', 'Content-Length': '0', 'Server': 'AmazonS3'}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.parsers - Response body:
+b''
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7985dde77740>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7985dc51df10>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.retryhandler - No retry needed.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+14/05/2026 21:44:27 - [ INFO ] - utils - 🚀 Foto subida a S3 [firma]: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/14/8/160/firma_214427.jpg
+14/05/2026 21:44:27 - [ DEBUG ] - boto3.s3.transfer - Opting out of CRT Transfer Manager. Preferred client: auto, CRT available: False, Instance Optimized: False
+14/05/2026 21:44:27 - [ DEBUG ] - boto3.s3.transfer - Using default client. pid: 41302, thread: 133615931797632
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985dc316f60>}) about to wait for the following futures []
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985dc316f60>}) done waiting for dependent futures
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985dc316f60>}) with kwargs {'client': <botocore.client.S3 object at 0x7985dc4c3920>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7985dbf52fc0>, 'osutil': <s3transfer.utils.OSUtils object at 0x7985dbf510a0>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7985dbf53f20>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985dc316f60>}
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.futures - Submitting task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/general_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7985dbf53f20> for transfer request: 0.
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/general_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) about to wait for the following futures []
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/general_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) done waiting for dependent futures
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - Executing task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/general_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) with kwargs {'client': <botocore.client.S3 object at 0x7985dc4c3920>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7985db588590>, 'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/general_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7985dde759e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7985dde74cc0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7985dde763e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7985dde74c20>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7985dde77060>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7985dc7ccdd0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7985dde74a40>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7985dde777e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7985dde77240>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Calling endpoint provider with parameters: {'Bucket': 'app-collector-storage', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'monitoreos/2026/05/14/8/160/general_214427.jpg', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True, 'DisableS3ExpressSessionAuth': False}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Endpoint provider result: https://app-collector-storage.s3.amazonaws.com
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7985dde74fe0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.handlers - Adding expect 100 continue header to request.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7985dc51dfa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7985dde5f6a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7985dde76520>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.endpoint - Making request for OperationModel(name=PutObject) with params: {'url_path': '/monitoreos/2026/05/14/8/160/general_214427.jpg', 'query_string': {}, 'method': 'PUT', 'headers': {'Content-Type': 'application/octet-stream', 'x-amz-sdk-checksum-algorithm': 'CRC32', 'User-Agent': 'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/e,G,b,Z,D cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': '100-continue', 'Transfer-Encoding': 'chunked', 'Content-Encoding': 'aws-chunked', 'X-Amz-Trailer': 'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': '118585'}, 'body': <botocore.httpchecksum.AwsChunkedWrapper object at 0x7985db588200>, 'auth_path': '/app-collector-storage/monitoreos/2026/05/14/8/160/general_214427.jpg', 'url': 'https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/14/8/160/general_214427.jpg', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7985dd5ff8c0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'app-collector-storage', 'params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/14/8/160/general_214427.jpg', 'Body': <s3transfer.utils.ReadFileChunk object at 0x7985db588590>, 'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}, 'input_params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/14/8/160/general_214427.jpg'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm': {'algorithm': 'crc32', 'in': 'trailer', 'name': 'x-amz-checksum-crc32'}}}}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7985de2f18a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7985de0f0aa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7985dc7ccdd0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7985dde74720>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7985dde771a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7985dde77880>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7985dc51dfa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - Calculating signature using v4 auth.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - CanonicalRequest:
+PUT
+/monitoreos/2026/05/14/8/160/general_214427.jpg
+
+content-encoding:aws-chunked
+content-type:application/octet-stream
+host:app-collector-storage.s3.amazonaws.com
+x-amz-content-sha256:STREAMING-UNSIGNED-PAYLOAD-TRAILER
+x-amz-date:20260514T214427Z
+x-amz-decoded-content-length:118585
+x-amz-sdk-checksum-algorithm:CRC32
+x-amz-trailer:x-amz-checksum-crc32
+
+content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer
+STREAMING-UNSIGNED-PAYLOAD-TRAILER
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - StringToSign:
+AWS4-HMAC-SHA256
+20260514T214427Z
+20260514/us-east-1/s3/aws4_request
+bdd60414cc97e371e96cf3cf9b3b59878af771352cf8c2d9f6270471a68ef0ae
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - Signature:
+12040b9570846996e59c94c803663c53bf30b9c3cba0dfc8a1d85e3e528c4a66
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7985dc51d130>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7985de05a980>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7985dde76fc0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.endpoint - Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/14/8/160/general_214427.jpg, headers={'Content-Type': b'application/octet-stream', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'User-Agent': b'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/e,G,b,U,Z,D cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': b'100-continue', 'Transfer-Encoding': b'chunked', 'Content-Encoding': b'aws-chunked', 'X-Amz-Trailer': b'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': b'118585', 'X-Amz-Date': b'20260514T214427Z', 'X-Amz-Content-SHA256': b'STREAMING-UNSIGNED-PAYLOAD-TRAILER', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAZAI4GTCDHMMHAEKW/20260514/us-east-1/s3/aws4_request, SignedHeaders=content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer, Signature=12040b9570846996e59c94c803663c53bf30b9c3cba0dfc8a1d85e3e528c4a66', 'amz-sdk-invocation-id': b'63c3207b-fccd-458b-98b1-abc12b7ab5a3', 'amz-sdk-request': b'attempt=1'}>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.httpsession - Certificate path: /home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/certifi/cacert.pem
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.awsrequest - Waiting for 100 Continue response.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.awsrequest - 100 Continue response seen, now sending request body.
+14/05/2026 21:44:27 - [ DEBUG ] - urllib3.connectionpool - https://app-collector-storage.s3.amazonaws.com:443 "PUT /monitoreos/2026/05/14/8/160/general_214427.jpg HTTP/1.1" 200 0
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7985dde77560>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7985dde77380>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.parsers - Response headers: {'x-amz-id-2': 'TGIjHJO7YFXg+Zij43ja5Q7DgT4EsJHmK5gkfdAhRO/d/uLKw0DX1Wrptm8kriMNH7CuRqyUFlg=', 'x-amz-request-id': 'G133PD5ABGPF5DWF', 'Date': 'Thu, 14 May 2026 21:44:28 GMT', 'x-amz-server-side-encryption': 'AES256', 'ETag': '"526f75ddbb9b530f269ff2cfee8bc9f7"', 'x-amz-checksum-crc32': 'qV4V8w==', 'x-amz-checksum-type': 'FULL_OBJECT', 'Content-Length': '0', 'Server': 'AmazonS3'}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.parsers - Response body:
+b''
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7985dde77740>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7985dc51df10>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.retryhandler - No retry needed.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+14/05/2026 21:44:27 - [ INFO ] - utils - 🚀 Foto subida a S3 [general]: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/14/8/160/general_214427.jpg
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - ✅ Foto/Firma subida: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/14/8/160/general_214427.jpg [Tipo: general]
+14/05/2026 21:44:27 - [ DEBUG ] - boto3.s3.transfer - Opting out of CRT Transfer Manager. Preferred client: auto, CRT available: False, Instance Optimized: False
+14/05/2026 21:44:27 - [ DEBUG ] - boto3.s3.transfer - Using default client. pid: 41302, thread: 133615931797632
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db58a750>}) about to wait for the following futures []
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db58a750>}) done waiting for dependent futures
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db58a750>}) with kwargs {'client': <botocore.client.S3 object at 0x7985dc4c3920>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7985db589d00>, 'osutil': <s3transfer.utils.OSUtils object at 0x7985db589010>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7985db588050>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db58a750>}
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.futures - Submitting task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7985db588050> for transfer request: 0.
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) about to wait for the following futures []
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) done waiting for dependent futures
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - Executing task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) with kwargs {'client': <botocore.client.S3 object at 0x7985dc4c3920>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7985db58aba0>, 'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7985dde759e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7985dde74cc0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7985dde763e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7985dde74c20>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7985dde77060>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7985dc7ccdd0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7985dde74a40>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7985dde777e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7985dde77240>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Calling endpoint provider with parameters: {'Bucket': 'app-collector-storage', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True, 'DisableS3ExpressSessionAuth': False}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Endpoint provider result: https://app-collector-storage.s3.amazonaws.com
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7985dde74fe0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.handlers - Adding expect 100 continue header to request.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7985dc51dfa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7985dde5f6a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7985dde76520>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.endpoint - Making request for OperationModel(name=PutObject) with params: {'url_path': '/monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'query_string': {}, 'method': 'PUT', 'headers': {'Content-Type': 'application/octet-stream', 'x-amz-sdk-checksum-algorithm': 'CRC32', 'User-Agent': 'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/e,G,b,Z,D cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': '100-continue', 'Transfer-Encoding': 'chunked', 'Content-Encoding': 'aws-chunked', 'X-Amz-Trailer': 'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': '139269'}, 'body': <botocore.httpchecksum.AwsChunkedWrapper object at 0x7985db58ab10>, 'auth_path': '/app-collector-storage/monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'url': 'https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7985dd5ff8c0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'app-collector-storage', 'params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg', 'Body': <s3transfer.utils.ReadFileChunk object at 0x7985db58aba0>, 'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}, 'input_params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm': {'algorithm': 'crc32', 'in': 'trailer', 'name': 'x-amz-checksum-crc32'}}}}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7985de2f18a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7985de0f0aa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7985dc7ccdd0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7985dde74720>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7985dde771a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7985dde77880>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7985dc51dfa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - Calculating signature using v4 auth.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - CanonicalRequest:
+PUT
+/monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg
+
+content-encoding:aws-chunked
+content-type:application/octet-stream
+host:app-collector-storage.s3.amazonaws.com
+x-amz-content-sha256:STREAMING-UNSIGNED-PAYLOAD-TRAILER
+x-amz-date:20260514T214427Z
+x-amz-decoded-content-length:139269
+x-amz-sdk-checksum-algorithm:CRC32
+x-amz-trailer:x-amz-checksum-crc32
+
+content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer
+STREAMING-UNSIGNED-PAYLOAD-TRAILER
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - StringToSign:
+AWS4-HMAC-SHA256
+20260514T214427Z
+20260514/us-east-1/s3/aws4_request
+7852308a12226b841172e929af844556cd2fb84044276d6b5c08ff0ab1e0e786
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - Signature:
+499fdd4432172d92a9a5c4b8b9fbf9c9294367fd827a65d8ff265956f2b38dbf
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7985dc51d130>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7985de05a980>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7985dde76fc0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.endpoint - Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg, headers={'Content-Type': b'application/octet-stream', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'User-Agent': b'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/e,G,b,U,Z,D cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': b'100-continue', 'Transfer-Encoding': b'chunked', 'Content-Encoding': b'aws-chunked', 'X-Amz-Trailer': b'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': b'139269', 'X-Amz-Date': b'20260514T214427Z', 'X-Amz-Content-SHA256': b'STREAMING-UNSIGNED-PAYLOAD-TRAILER', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAZAI4GTCDHMMHAEKW/20260514/us-east-1/s3/aws4_request, SignedHeaders=content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer, Signature=499fdd4432172d92a9a5c4b8b9fbf9c9294367fd827a65d8ff265956f2b38dbf', 'amz-sdk-invocation-id': b'f3159620-4427-49ad-972f-bb79f34ce752', 'amz-sdk-request': b'attempt=1'}>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.httpsession - Certificate path: /home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/certifi/cacert.pem
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.awsrequest - Waiting for 100 Continue response.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.awsrequest - 100 Continue response seen, now sending request body.
+14/05/2026 21:44:27 - [ DEBUG ] - urllib3.connectionpool - https://app-collector-storage.s3.amazonaws.com:443 "PUT /monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg HTTP/1.1" 200 0
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7985dde77560>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7985dde77380>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.parsers - Response headers: {'x-amz-id-2': 'pcuZmOgqyB2jnbD9fHpifpEZqyTFT9ZP9DkoOHvITfLVbZoN+za0j1CnpuiG8LtJSMt4RzHC7gM=', 'x-amz-request-id': 'G133WFHA265RRD3E', 'Date': 'Thu, 14 May 2026 21:44:28 GMT', 'x-amz-server-side-encryption': 'AES256', 'ETag': '"9aa6f4450ae27952b3cdc7564fe1d747"', 'x-amz-checksum-crc32': 'cBlhCg==', 'x-amz-checksum-type': 'FULL_OBJECT', 'Content-Length': '0', 'Server': 'AmazonS3'}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.parsers - Response body:
+b''
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7985dde77740>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7985dc51df10>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.retryhandler - No retry needed.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+14/05/2026 21:44:27 - [ INFO ] - utils - 🚀 Foto subida a S3 [nivel_freatico]: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - ✅ Foto/Firma subida: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/14/8/160/nivel_freatico_214427.jpg [Tipo: nivel_freatico]
+14/05/2026 21:44:27 - [ DEBUG ] - boto3.s3.transfer - Opting out of CRT Transfer Manager. Preferred client: auto, CRT available: False, Instance Optimized: False
+14/05/2026 21:44:27 - [ DEBUG ] - boto3.s3.transfer - Using default client. pid: 41302, thread: 133615931797632
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db5897f0>}) about to wait for the following futures []
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db5897f0>}) done waiting for dependent futures
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db5897f0>}) with kwargs {'client': <botocore.client.S3 object at 0x7985dc4c3920>, 'config': <boto3.s3.transfer.TransferConfig object at 0x7985db58a870>, 'osutil': <s3transfer.utils.OSUtils object at 0x7985db589790>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x7985db589a60>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x7985db5897f0>}
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.futures - Submitting task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) to executor <s3transfer.futures.BoundedExecutor object at 0x7985db589a60> for transfer request: 0.
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Acquiring 0
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) about to wait for the following futures []
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) done waiting for dependent futures
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.tasks - Executing task PutObjectTask(transfer_id=0, {'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}) with kwargs {'client': <botocore.client.S3 object at 0x7985dc4c3920>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x7985db58ab70>, 'bucket': 'app-collector-storage', 'key': 'monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'extra_args': {'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7985dde759e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7985dde74cc0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7985dde763e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7985dde74c20>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7985dde77060>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7985dc7ccdd0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7985dde74a40>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7985dde777e0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7985dde77240>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Calling endpoint provider with parameters: {'Bucket': 'app-collector-storage', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True, 'DisableS3ExpressSessionAuth': False}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Endpoint provider result: https://app-collector-storage.s3.amazonaws.com
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.regions - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7985dde74fe0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.handlers - Adding expect 100 continue header to request.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7985dc51dfa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7985dde5f6a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7985dde76520>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.endpoint - Making request for OperationModel(name=PutObject) with params: {'url_path': '/monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'query_string': {}, 'method': 'PUT', 'headers': {'Content-Type': 'application/octet-stream', 'x-amz-sdk-checksum-algorithm': 'CRC32', 'User-Agent': 'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/e,G,b,Z,D cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': '100-continue', 'Transfer-Encoding': 'chunked', 'Content-Encoding': 'aws-chunked', 'X-Amz-Trailer': 'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': '73005'}, 'body': <botocore.httpchecksum.AwsChunkedWrapper object at 0x7985db58a5d0>, 'auth_path': '/app-collector-storage/monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'url': 'https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7985dd5ff8c0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'app-collector-storage', 'params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/14/8/160/muestreo_214427.jpg', 'Body': <s3transfer.utils.ReadFileChunk object at 0x7985db58ab70>, 'ContentType': 'application/octet-stream', 'ChecksumAlgorithm': 'CRC32'}}, 'input_params': {'Bucket': 'app-collector-storage', 'Key': 'monitoreos/2026/05/14/8/160/muestreo_214427.jpg'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm': {'algorithm': 'crc32', 'in': 'trailer', 'name': 'x-amz-checksum-crc32'}}}}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x7985de2f18a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7985de0f0aa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7985dc7ccdd0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7985dde74720>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7985dde771a0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7985dde77880>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7985dc51dfa0>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - Calculating signature using v4 auth.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - CanonicalRequest:
+PUT
+/monitoreos/2026/05/14/8/160/muestreo_214427.jpg
+
+content-encoding:aws-chunked
+content-type:application/octet-stream
+host:app-collector-storage.s3.amazonaws.com
+x-amz-content-sha256:STREAMING-UNSIGNED-PAYLOAD-TRAILER
+x-amz-date:20260514T214427Z
+x-amz-decoded-content-length:73005
+x-amz-sdk-checksum-algorithm:CRC32
+x-amz-trailer:x-amz-checksum-crc32
+
+content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer
+STREAMING-UNSIGNED-PAYLOAD-TRAILER
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - StringToSign:
+AWS4-HMAC-SHA256
+20260514T214427Z
+20260514/us-east-1/s3/aws4_request
+65dc53e90aed1b0624993a05a5f33d72dfffc332d7ef4b4279143bb1303165bc
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.auth - Signature:
+4c86e99265b0dc8e5903e96aa089a8e4984aad69c1503b8c157bdf892c4ca374
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7985dc51d130>>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x7985de05a980>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7985dde76fc0>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.endpoint - Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://app-collector-storage.s3.amazonaws.com/monitoreos/2026/05/14/8/160/muestreo_214427.jpg, headers={'Content-Type': b'application/octet-stream', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'User-Agent': b'Boto3/1.43.5 md/Botocore#1.43.5 ua/2.1 os/linux#6.17.0-1013-aws md/arch#x86_64 lang/python#3.12.3 md/pyimpl#CPython m/e,G,b,U,Z,D cfg/retry-mode#legacy Botocore/1.43.5', 'Expect': b'100-continue', 'Transfer-Encoding': b'chunked', 'Content-Encoding': b'aws-chunked', 'X-Amz-Trailer': b'x-amz-checksum-crc32', 'X-Amz-Decoded-Content-Length': b'73005', 'X-Amz-Date': b'20260514T214427Z', 'X-Amz-Content-SHA256': b'STREAMING-UNSIGNED-PAYLOAD-TRAILER', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAZAI4GTCDHMMHAEKW/20260514/us-east-1/s3/aws4_request, SignedHeaders=content-encoding;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-sdk-checksum-algorithm;x-amz-trailer, Signature=4c86e99265b0dc8e5903e96aa089a8e4984aad69c1503b8c157bdf892c4ca374', 'amz-sdk-invocation-id': b'e5f8c736-150e-444f-b5c2-c2cc0bb5705b', 'amz-sdk-request': b'attempt=1'}>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.httpsession - Certificate path: /home/ubuntu/FastAPICollector/venv/lib/python3.12/site-packages/certifi/cacert.pem
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.awsrequest - Waiting for 100 Continue response.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.awsrequest - 100 Continue response seen, now sending request body.
+14/05/2026 21:44:27 - [ DEBUG ] - urllib3.connectionpool - https://app-collector-storage.s3.amazonaws.com:443 "PUT /monitoreos/2026/05/14/8/160/muestreo_214427.jpg HTTP/1.1" 200 0
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7985dde77560>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7985dde77380>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.parsers - Response headers: {'x-amz-id-2': 'CwoBvVflsAiW1+zyeK1e3OV0OD9D9kKD0xVgcDPGAbx9LdlLWtHtIkR1byEVpARxCFfBLH7Hut0=', 'x-amz-request-id': 'G131JVDDSFPNDM9S', 'Date': 'Thu, 14 May 2026 21:44:28 GMT', 'x-amz-server-side-encryption': 'AES256', 'ETag': '"672ba97a464f37f5272c473dc91e621d"', 'x-amz-checksum-crc32': 'TAK1QA==', 'x-amz-checksum-type': 'FULL_OBJECT', 'Content-Length': '0', 'Server': 'AmazonS3'}
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.parsers - Response body:
+b''
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7985dde77740>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7985dc51df10>
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.retryhandler - No retry needed.
+14/05/2026 21:44:27 - [ DEBUG ] - botocore.hooks - Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7985dc7ce330>>
+14/05/2026 21:44:27 - [ DEBUG ] - s3transfer.utils - Releasing acquire 0/None
+14/05/2026 21:44:27 - [ INFO ] - utils - 🚀 Foto subida a S3 [muestreo]: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/14/8/160/muestreo_214427.jpg
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - ✅ Foto/Firma subida: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/14/8/160/muestreo_214427.jpg [Tipo: muestreo]
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - ✅ Foto/Firma subida: https://app-collector-storage.s3.us-east-1.amazonaws.com/monitoreos/2026/05/14/8/160/firma_214427.jpg [Tipo: firma]
+14/05/2026 21:44:27 - [ INFO ] - routers.sync - 🚀 Sincronización Finalizada de forma exitosa. Se detectaron 1 nuevos registros.
+14/05/2026 21:44:27 - [ ERROR ] - routers.sync - ⚠️ No se pudo registrar auditoría de sync: (pymysql.err.OperationalError) (1054, "Unknown column 'detalles' in 'field list'")
+[SQL: INSERT INTO audit_logs (usuario_id, accion, tabla, registro_id, detalles, fecha_hora) VALUES (%(usuario_id)s, %(accion)s, %(tabla)s, %(registro_id)s, %(detalles)s, now())]
+[parameters: {'usuario_id': 9, 'accion': 'BULK_SYNC', 'tabla': 'monitoreos', 'registro_id': None, 'detalles': '{"dispositivo": "MOBILE-DATA", "nuevos": 1, "editados": 0, "total": 1}'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:     181.42.209.113:2433 - "POST /api/sync/monitoreos HTTP/1.1" 200 OK
+14/05/2026 21:46:27 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+INFO:     181.42.209.113:2469 - "POST /api/sync/monitoreos HTTP/1.1" 422 Unprocessable Entity
+14/05/2026 21:46:53 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+14/05/2026 21:46:53 - [ INFO ] - routers.email - 📩 Recibida solicitud de correo para: [ecea@gpconsultores.cl,dacuna@gpconsultores.cl]
+14/05/2026 21:46:53 - [ INFO ] - routers.email - 📋 Asunto: brw1 | Longitud del cuerpo: 34 caracteres
+14/05/2026 21:46:53 - [ INFO ] - routers.email - 🔄 Conectando al servidor SMTP: email-smtp.us-east-1.amazonaws.com:587...
+14/05/2026 21:46:53 - [ INFO ] - routers.email - 🔑 Autenticando como: AKIAZAI4GTCDFE4YHICY...
+14/05/2026 21:46:53 - [ INFO ] - routers.email - ✅ Correo enviado con éxito a ecea@gpconsultores.cl,dacuna@gpconsultores.cl
+14/05/2026 21:46:53 - [ ERROR ] - routers.email - ⚠️ No se pudo registrar auditoría de correo: (pymysql.err.OperationalError) (1054, "Unknown column 'detalles' in 'field list'")
+[SQL: INSERT INTO audit_logs (usuario_id, accion, tabla, registro_id, detalles, fecha_hora) VALUES (%(usuario_id)s, %(accion)s, %(tabla)s, %(registro_id)s, %(detalles)s, now())]
+[parameters: {'usuario_id': None, 'accion': 'EMAIL_SENT', 'tabla': 'correos', 'registro_id': None, 'detalles': '{"destinatario": "ecea@gpconsultores.cl,dacuna@gpconsultores.cl", "asunto": "brw1"}'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:     181.42.209.113:2456 - "POST /api/enviar-correo HTTP/1.1" 200 OK
+14/05/2026 21:46:54 - [ INFO ] - routers.comunicaciones - 📩 RAW Payload recibido: {'inspector': 'Esperanza Cea', 'asunto': 'brw1', 'mensaje': 'cambiar tipo de pozo a observación', 'fecha': '2026-05-14T17:46:53.196649', 'estacion_id': None}
+INFO:     181.42.209.113:2465 - "POST /api/comunicaciones/notificar-email HTTP/1.1" 200 OK
+14/05/2026 21:46:54 - [ INFO ] - routers.comunicaciones - 🔄 Reenviando notificación a Laravel (Background): http://localhost/api/notificaciones/email
+14/05/2026 21:46:54 - [ DEBUG ] - urllib3.connectionpool - Starting new HTTP connection (1): localhost:80
+14/05/2026 21:46:54 - [ DEBUG ] - urllib3.connectionpool - http://localhost:80 "POST /api/notificaciones/email HTTP/1.1" 201 None
+14/05/2026 21:46:54 - [ INFO ] - routers.comunicaciones - ✅ Notificación reenviada con éxito a Laravel. Status: 201
+15/05/2026 13:30:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+15/05/2026 13:30:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ CAMPANAS ] solicitada. (Incluyendo Estaciones)
+INFO:     186.67.203.130:64868 - "GET /api/campanas HTTP/1.1" 200 OK
+15/05/2026 13:30:44 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+15/05/2026 13:30:44 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ EQUIPOS ] solicitada.
+INFO:     186.67.203.130:60843 - "GET /api/equipos HTTP/1.1" 200 OK
+15/05/2026 13:30:45 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+15/05/2026 13:30:45 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ MATRIZ_AGUAS ] solicitada.
+INFO:     186.67.203.130:49319 - "GET /api/matriz_aguas HTTP/1.1" 200 OK
+15/05/2026 13:30:45 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+15/05/2026 13:30:45 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ METODOS ] solicitada.
+INFO:     186.67.203.130:49321 - "GET /api/metodos HTTP/1.1" 200 OK
+INFO:     186.67.203.130:49322 - "GET /api/observaciones_predefinidas HTTP/1.1" 404 Not Found
+15/05/2026 13:30:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+15/05/2026 13:30:46 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ OBSERVACIONES PREDEFINIDAS ] solicitada.
+INFO:     186.67.203.130:64609 - "GET /api/catalogos/observaciones HTTP/1.1" 200 OK
+15/05/2026 13:30:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+15/05/2026 13:30:46 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ PARAMETROS ] solicitada.
+INFO:     186.67.203.130:50511 - "GET /api/parametros HTTP/1.1" 200 OK
+15/05/2026 13:30:46 - [ INFO ] - auth - 🔑 Acceso concedido al usuario: [collector]
+15/05/2026 13:30:46 - [ INFO ] - routers.catalogs - 📋 Consulta de catálogo [ USUARIOS ] solicitada.
+15/05/2026 13:30:46 - [ DEBUG ] - routers.catalogs - DEBUG: Usuario Rodrigo tiene password: True
+INFO:     186.67.203.130:58917 - "GET /api/usuarios HTTP/1.1" 200 OK

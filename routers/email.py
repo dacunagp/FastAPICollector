@@ -53,14 +53,16 @@ def enviar_correo(
         msg = MIMEMultipart('related')
         msg['From'] = smtp_from
         msg['To'] = request.destinatario
-        msg['Subject'] = request.asunto
+        
+        asunto_con_prefijo = f"Notificación: {request.asunto}"
+        msg['Subject'] = asunto_con_prefijo
 
         # Crear alternativa para texto plano y HTML
         msg_alternative = MIMEMultipart('alternative')
         msg.attach(msg_alternative)
 
         # 1. Versión en texto plano (fallback)
-        text_plain = f"{request.asunto}\n\n{request.cuerpo}"
+        text_plain = f"{asunto_con_prefijo}\n\nDetalles técnicos:\n\n{request.cuerpo}"
         msg_alternative.attach(MIMEText(text_plain, 'plain'))
 
         # 2. Versión en HTML
@@ -130,6 +132,7 @@ def enviar_correo(
                 </table>
                 
                 <div class="body-content">
+                    <p style="margin-top: 0; margin-bottom: 10px; color: #555555;"><strong>Detalles técnicos:</strong></p>
                     {cuerpo_html}
                 </div>
                 
@@ -145,7 +148,7 @@ def enviar_correo(
         msg_alternative.attach(MIMEText(html_content, 'html'))
 
         # 3. Adjuntar la imagen del logo (CID)
-        logo_path = "static/assets/gp_icon_email.png"
+        logo_path = "static/gp_icon_email.png"
         try:
             with open(logo_path, "rb") as f:
                 img_data = f.read()
@@ -168,7 +171,7 @@ def enviar_correo(
         
         logger.info(f"✅ Correo enviado con éxito a {request.destinatario}")
         
-        # Auditoría (¡Corregida para que no envíe la columna 'tabla' fantasma!)
+        # Auditoría
         try:
             from models import UsuarioDB
             usuario = db.query(UsuarioDB).filter(UsuarioDB.nombre == username).first()
@@ -178,7 +181,7 @@ def enviar_correo(
                 db=db,
                 usuario_id=user_id,
                 accion="EMAIL_SENT",
-                # 🔥 ELIMINAMOS tabla="n/a" DE AQUÍ 🔥
+                tabla="correos",
                 detalles={
                     "destinatario": request.destinatario,
                     "asunto": request.asunto

@@ -294,24 +294,6 @@ async def sync_monitoreos(
         db.commit() 
         logger.info(f"🚀 Sincronización Finalizada de forma exitosa. Se detectaron {contador_nuevos} nuevos registros.")
         
-        # Auditoría: Registrar la sincronización masiva
-        try:
-            user_id = payload_obj.monitoreos[0].usuario_id if payload_obj.monitoreos else None
-            log_audit(
-                db=db,
-                usuario_id=user_id,
-                accion="BULK_SYNC",
-                tabla="monitoreos",
-                detalles={
-                    "dispositivo": dispositivo,
-                    "nuevos": contador_nuevos,
-                    "editados": contador_editados,
-                    "total": len(payload_obj.monitoreos)
-                }
-            )
-            db.commit() # Commit del log de auditoría
-        except Exception as audit_err:
-            logger.error(f"⚠️ No se pudo registrar auditoría de sync: {audit_err}")
 
         return {
             "status": "success",

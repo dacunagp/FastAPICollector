@@ -160,7 +160,7 @@ class AuditLogDB(Base):
     id = Column(Integer, primary_key=True, index=True)
     usuario_id = Column(Integer, ForeignKey("usuarios.id_usuario"), nullable=True)
     usuario_nombre = Column(String(255), nullable=True)
-    accion = Column(String(100))      # 'INSERT', 'UPDATE', 'DELETE', 'BULK_SYNC', 'update'
+    accion = Column(String(100))      # 'INSERT', 'UPDATE', 'DELETE', 'update'
     modulo = Column(String(100), nullable=True)  # 'web_admin', 'app_collector', etc.
     registro_id = Column(Integer, nullable=True)
     registro_ref = Column(String(255), nullable=True)
