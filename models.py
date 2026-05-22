@@ -166,6 +166,7 @@ class AuditLogDB(Base):
     registro_ref = Column(String(255), nullable=True)
     cambios = Column(Text, nullable=True)  # JSON con cambios o descripción
     ip_address = Column(String(45), nullable=True)
+    local_id = Column(String(255), nullable=True)  # ID local de la App para evitar duplicados
     created_at = Column(DateTime, default=get_chile_time)
 
     usuario = relationship("UsuarioDB")

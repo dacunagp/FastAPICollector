@@ -23,7 +23,8 @@ class AuditLogAppItem(BaseModel):
     usuario_nombre: Optional[str] = None
     accion: Optional[str] = "update"
     modulo: Optional[str] = "app_collector"
-    registro_id: Optional[int] = None
+    registro_id: Optional[int] = None    # ID del registro afectado (Legacy/General)
+    id_unica: Optional[int] = None       # ID del registro afectado (Nuevo estándar)
     registro_ref: Optional[str] = None
     cambios: Optional[str] = None
     created_at: Optional[str] = None
@@ -102,6 +103,17 @@ def sync_audit_from_app(payload: AuditSyncPayload, request: Request, db: Session
 
     for item in payload.logs:
         try:
+            # ✅ Evitar duplicados si ya existe un log con este local_id
+            if item.local_id:
+                existente = db.query(AuditLogDB).filter(AuditLogDB.local_id == str(item.local_id)).first()
+                if existente:
+                    saved.append({
+                        "local_id": item.local_id,
+                        "id_unica": existente.id,
+                        "status": "already_exists"
+                    })
+                    continue
+
             created = ahora
             if item.created_at:
                 try:
@@ -114,10 +126,11 @@ def sync_audit_from_app(payload: AuditSyncPayload, request: Request, db: Session
                 usuario_nombre=item.usuario_nombre or "App GPCollector",
                 accion=item.accion or "update",
                 modulo=item.modulo or "app_collector",
-                registro_id=item.registro_id,
+                registro_id=item.registro_id or item.id_unica, # ✅ Soporte para ambas nomenclaturas
                 registro_ref=item.registro_ref,
                 cambios=item.cambios,
                 ip_address=request.client.host if request.client else None,
+                local_id=str(item.local_id) if item.local_id else None,
                 created_at=created,
             )
             db.add(nuevo_log)
@@ -125,14 +138,15 @@ def sync_audit_from_app(payload: AuditSyncPayload, request: Request, db: Session
 
             saved.append({
                 "local_id": item.local_id,       # ID enviado por la app
-                "id_unica": nuevo_log.id          # ID asignado por el servidor
+                "id_unica": nuevo_log.id,         # ID asignado por el servidor
+                "status": "saved"
             })
             insertados += 1
         except Exception as e:
             logger.error(f"⚠️ Error insertando log de app: {str(e)}")
 
     db.commit()
-    logger.info(f"✅ [AUDIT SYNC] {insertados} logs recibidos desde la app GPCollector.")
+    logger.info(f"✅ [AUDIT SYNC] {insertados} nuevos logs recibidos desde la app GPCollector.")
     return {
         "status": "ok",
         "insertados": insertados,

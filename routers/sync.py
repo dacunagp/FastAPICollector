@@ -181,7 +181,7 @@ async def sync_monitoreos(
             # ✅ Almacenamos el mapeo de ID Local del móvil vs ID Real que le dio MySQL
             ids_registrados.append({
                 "id_local": item.id_local,
-                "id_servidor": db_monitoreo_id
+                "id_unica": db_monitoreo_id
             })
             fecha_base = fh if fh else get_chile_time()
 
