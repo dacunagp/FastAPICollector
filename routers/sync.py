@@ -169,7 +169,8 @@ async def sync_monitoreos(
                 foto_nivel_freatico=item.foto_nivel_freatico,
                 foto_muestreo=item.foto_muestreo,
                 fecha_hora_muestreo=fh_muestreo, # ✅ AHORA ES INDEPENDIENTE
-                firma_path=item.firma_path
+                firma_path=item.firma_path,
+                trazabilidad=json.dumps([t if isinstance(t, dict) else dict(t) for t in item.trazabilidad]) if getattr(item, "trazabilidad", None) else None
             )
             db.add(monitoreo_actual)
             contador_nuevos += 1
@@ -192,7 +193,7 @@ async def sync_monitoreos(
                             db=db, 
                             usuario_id=item.usuario_id, 
                             accion=log_local.get("accion", "CREADO_EN_APP"), 
-                            tabla="monitoreos", 
+                            tabla="app_collector", 
                             registro_id=db_monitoreo_id, 
                             detalles={"origen": "App Móvil", "fecha_accion_local": log_local.get("fecha"), "id_local_app": item.id_local}
                         )

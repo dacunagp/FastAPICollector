@@ -102,6 +102,9 @@ class MonitoreoDB(Base):
     # Estructura esperada (Fase 125): [{ parametro: "x", valor: "x", unidad: "x" }]
     multiparametros_json = Column(Text, nullable=True)
     
+    # Feature Trazabilidad Embed
+    trazabilidad = Column(Text, nullable=True)
+    
     # Sellos de tiempo de auditoría
     created_at = Column(DateTime, default=get_chile_time)
     updated_at = Column(DateTime, default=get_chile_time, onupdate=get_chile_time)

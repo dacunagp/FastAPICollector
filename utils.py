@@ -159,16 +159,15 @@ def log_audit(db: Session, usuario_id: Optional[int], accion: str, tabla: str, r
     """
     from models import AuditLogDB
     try:
-        if isinstance(detalles, dict):
-            detalles = json.dumps(detalles, ensure_ascii=False)
+        detalles_json = json.dumps(detalles) if detalles else None
         
         nuevo_log = AuditLogDB(
             usuario_id=usuario_id,
             usuario_nombre=usuario_nombre,
             accion=accion,
-            modulo='web_admin',      # Los logs internos del servidor son del módulo web
+            modulo=tabla,
             registro_id=registro_id,
-            cambios=detalles         # Ahora mapea correctamente al campo 'cambios'
+            cambios=detalles_json
         )
         db.add(nuevo_log)
         # Se asume que el commit lo hará la función llamadora
