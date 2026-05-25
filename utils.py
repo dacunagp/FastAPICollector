@@ -153,13 +153,14 @@ def save_dynamic_photo(
         logger.exception(f"🚨 Error subiendo archivo a S3 {tipo}: {e}")
         return None
 
-def log_audit(db: Session, usuario_id: Optional[int], accion: str, tabla: str, registro_id: Optional[int] = None, detalles: Optional[Union[dict, str]] = None, usuario_nombre: Optional[str] = None):
+def log_audit(db: Session, usuario_id: Optional[int], accion: str, tabla: str, registro_id: Optional[int] = None, detalles: Optional[Union[dict, str]] = None, usuario_nombre: Optional[str] = None, registro_ref: Optional[str] = None, created_at: Optional[datetime] = None):
     """
     Registra una acción en la tabla de auditoría para trazabilidad.
     """
     from models import AuditLogDB
     try:
-        detalles_json = json.dumps(detalles) if detalles else None
+        # Si detalles ya es una cadena (JSON de la App), la usamos tal cual
+        detalles_json = detalles if isinstance(detalles, str) else (json.dumps(detalles) if detalles else None)
         
         nuevo_log = AuditLogDB(
             usuario_id=usuario_id,
@@ -167,7 +168,9 @@ def log_audit(db: Session, usuario_id: Optional[int], accion: str, tabla: str, r
             accion=accion,
             modulo=tabla,
             registro_id=registro_id,
-            cambios=detalles_json
+            registro_ref=registro_ref,
+            cambios=detalles_json,
+            created_at=created_at or get_chile_time()
         )
         db.add(nuevo_log)
         # Se asume que el commit lo hará la función llamadora

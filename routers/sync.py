@@ -187,15 +187,32 @@ async def sync_monitoreos(
             fecha_base = fh if fh else get_chile_time()
 
             if getattr(item, "trazabilidad", None) and len(item.trazabilidad) > 0:
+                logger.info(f"💾 Procesando {len(item.trazabilidad)} logs de trazabilidad desde la App...")
                 for log_local in item.trazabilidad:
                     try:
+                        # Extraer datos reales del log (vienen de AuditoriaCambio.toMap() de Flutter)
+                        accion_local = log_local.get("accion", "update")
+                        cambios_data = log_local.get("cambios") # Es un JSON string
+                        ref_local = log_local.get("registro_ref")
+                        u_nombre = log_local.get("usuario_nombre")
+                        
+                        # Intentar parsear la fecha original de la acción en el móvil
+                        f_creado = None
+                        if log_local.get("created_at"):
+                            try:
+                                f_creado = datetime.fromisoformat(log_local.get("created_at").replace('Z', '+00:00'))
+                            except: pass
+
                         log_audit(
                             db=db, 
                             usuario_id=item.usuario_id, 
-                            accion=log_local.get("accion", "CREADO_EN_APP"), 
-                            tabla="app_collector", 
+                            usuario_nombre=u_nombre,
+                            accion=accion_local, 
+                            tabla="monitoreos", # ✅ 'monitoreos' para que Laravel lo asocie al historial del registro
                             registro_id=db_monitoreo_id, 
-                            detalles={"origen": "App Móvil", "fecha_accion_local": log_local.get("fecha"), "id_local_app": item.id_local}
+                            detalles=cambios_data,
+                            registro_ref=ref_local,
+                            created_at=f_creado
                         )
                     except Exception as e:
                         logger.error(f"Error guardando trazabilidad id_local {item.id_local}: {str(e)}")
