@@ -185,6 +185,20 @@ async def sync_monitoreos(
             })
             fecha_base = fh if fh else get_chile_time()
 
+            if getattr(item, "trazabilidad", None) and len(item.trazabilidad) > 0:
+                for log_local in item.trazabilidad:
+                    try:
+                        log_audit(
+                            db=db, 
+                            usuario_id=item.usuario_id, 
+                            accion=log_local.get("accion", "CREADO_EN_APP"), 
+                            tabla="monitoreos", 
+                            registro_id=db_monitoreo_id, 
+                            detalles={"origen": "App Móvil", "fecha_accion_local": log_local.get("fecha"), "id_local_app": item.id_local}
+                        )
+                    except Exception as e:
+                        logger.error(f"Error guardando trazabilidad id_local {item.id_local}: {str(e)}")
+
             station_name = "sin_estacion"
             if item.estacion_id:
                 estacion_obj = db.query(EstacionDB).filter(EstacionDB.id_estacion == item.estacion_id).first()

@@ -145,6 +145,7 @@ class MonitoreoItem(BaseModel):
     
     # Campo para parámetros dinámicos (Fase 86 - Legacy support)
     detalles: List['DetalleSync'] = []
+    trazabilidad: Optional[List[Any]] = []
 
     @model_validator(mode='after')
     def coerce_id_local(self) -> 'MonitoreoItem':
