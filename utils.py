@@ -67,6 +67,19 @@ PHOTO_FILENAME_MAP = {
     "firma": "firma",
 }
 
+# Mapeo de tipo de foto a sub-carpeta S3.
+# La estructura de ruta es: monitoreos/YYYY/MM/DD/<tipo_folder>/<station_slug>/<archivo>
+# Si el tipo no está en este mapa se usa 'foto_path' como fallback.
+TYPE_PATH_MAP = {
+    "firma": "firma",
+    "caudal": "caudal",
+    "nivel_freatico": "nivel_freatico",
+    "muestreo": "muestreo",
+    "multiparametro": "multiparametro",
+    "turbiedad": "turbiedad",
+    "general": "foto_path",
+}
+
 def slugify(text: str) -> str:
     """
     Convierte un nombre de estación en un slug URL-safe.
@@ -91,12 +104,17 @@ def save_dynamic_photo(
     tipo: str,
     station_name: str = "sin_estacion",
     id_equipo: str = "0",
-    id_punto: str = "0",
     content_type: str = "image/jpeg"
 ) -> Optional[str]:
     """
-    Sube una foto (en bytes o Base64) a Amazon S3 en la estructura profesional:
-      monitoreos/{year}/{month}/{day}/{id_equipo}/{id_punto}/{filename}
+    Sube una foto (en bytes o Base64) a Amazon S3 usando la estructura:
+      monitoreos/{year}/{month}/{day}/{tipo_folder}/{station_slug}/{filename}
+
+    Donde:
+      - tipo_folder : sub-carpeta según el tipo de foto (firma, caudal,
+                      nivel_freatico, muestreo, multiparametro, turbiedad, foto_path).
+      - station_slug: nombre de la estación convertido a slug URL-safe.
+      - filename    : {tipo_base}_{HHMMSS}.jpg
 
     Returns:
         URL pública de S3 para almacenar en la BD, o None si hubo error.
@@ -122,19 +140,23 @@ def save_dynamic_photo(
 
     # 2. Extraer componentes de la fecha
     fecha_ref = fecha if fecha else get_chile_time()
-    year = fecha_ref.strftime("%Y")
+    year  = fecha_ref.strftime("%Y")
     month = fecha_ref.strftime("%m")
-    day = fecha_ref.strftime("%d")
+    day   = fecha_ref.strftime("%d")
 
     # 3. Nombre de archivo estandarizado + timestamp para evitar colisiones
     base_name = PHOTO_FILENAME_MAP.get(tipo, tipo)
     timestamp = fecha_ref.strftime("%H%M%S")
     file_name = f"{base_name}_{timestamp}.jpg"
 
-    # 4. Construir S3 Key: monitoreos/YYYY/MM/DD/[id_equipo]/[id_punto]/[filename]
-    s3_key = f"monitoreos/{year}/{month}/{day}/{id_equipo}/{id_punto}/{file_name}"
+    # 4. Determinar sub-carpeta de tipo y slug de estación
+    type_folder   = TYPE_PATH_MAP.get(tipo, "foto_path")
+    station_slug  = slugify(station_name)
 
-    # 5. Subir a S3 usando upload_fileobj para streaming
+    # 5. Construir S3 Key: monitoreos/YYYY/MM/DD/<tipo_folder>/<station_slug>/<filename>
+    s3_key = f"monitoreos/{year}/{month}/{day}/{type_folder}/{station_slug}/{file_name}"
+
+    # 6. Subir a S3 usando upload_fileobj para streaming
     try:
         file_obj = io.BytesIO(img_bytes)
         s3_client.upload_fileobj(
@@ -143,10 +165,10 @@ def save_dynamic_photo(
             s3_key,
             ExtraArgs={"ContentType": content_type}
         )
-        
-        # 6. Construir URL pública
+
+        # 7. Construir URL pública
         public_url = f"https://{AWS_BUCKET}.s3.{AWS_DEFAULT_REGION}.amazonaws.com/{s3_key}"
-        logger.info(f"🚀 Foto subida a S3 [{tipo}]: {public_url}")
+        logger.info(f"🚀 Foto subida a S3 [{tipo_folder}/{station_slug}]: {public_url}")
         return public_url
 
     except Exception as e:

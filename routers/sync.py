@@ -281,7 +281,6 @@ async def sync_monitoreos(
                     "firma", 
                     station_name,
                     id_equipo=str(item.equipo_multi_id or 0),
-                    id_punto=str(item.estacion_id or 0),
                     content_type=firma_operador.content_type or "image/png"
                 )
                 if ruta_firma:
@@ -305,7 +304,6 @@ async def sync_monitoreos(
                             tipo, 
                             station_name,
                             id_equipo=str(item.equipo_multi_id or 0),
-                            id_punto=str(item.estacion_id or 0),
                             content_type=photo_info["content_type"]
                         )
                         if ruta_final:
@@ -321,7 +319,6 @@ async def sync_monitoreos(
                         tipo, 
                         station_name,
                         id_equipo=str(item.equipo_multi_id or 0),
-                        id_punto=str(item.estacion_id or 0),
                         content_type="image/jpeg"
                     )
 
