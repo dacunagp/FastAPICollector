@@ -188,34 +188,71 @@ async def sync_monitoreos(
 
             if getattr(item, "trazabilidad", None) and len(item.trazabilidad) > 0:
                 logger.info(f"💾 Procesando {len(item.trazabilidad)} logs de trazabilidad desde la App...")
+                
+                # --- Fase: Consolidación de Auditoría ---
+                # Agrupamos cambios por acción y referencia (ej: 'update' sobre la misma estación)
+                # para evitar que aparezcan filas separadas por cada campo modificado.
+                logs_agrupados = {}
+                
                 for log_local in item.trazabilidad:
                     try:
-                        # Extraer datos reales del log (vienen de AuditoriaCambio.toMap() de Flutter)
-                        accion_local = log_local.get("accion", "update")
-                        cambios_data = log_local.get("cambios") # Es un JSON string
-                        ref_local = log_local.get("registro_ref")
-                        u_nombre = log_local.get("usuario_nombre")
+                        accion_raw = log_local.get("accion", "update")
+                        ref_raw = log_local.get("registro_ref", "N/A")
+                        # Usamos una clave única por acción y referencia dentro de este monitoreo
+                        key = f"{accion_raw}_{ref_raw}"
                         
-                        # Intentar parsear la fecha original de la acción en el móvil
-                        f_creado = None
-                        if log_local.get("created_at"):
-                            try:
-                                f_creado = datetime.fromisoformat(log_local.get("created_at").replace('Z', '+00:00'))
-                            except: pass
+                        if key not in logs_agrupados:
+                            logs_agrupados[key] = {
+                                "accion": accion_raw,
+                                "registro_ref": ref_raw,
+                                "usuario_nombre": log_local.get("usuario_nombre"),
+                                "created_at": log_local.get("created_at"),
+                                "cambios_dict": {}
+                            }
+                        
+                        # Extraer y fusionar el contenido de 'cambios' (JSON o Dict)
+                        cambios_raw = log_local.get("cambios")
+                        if cambios_raw:
+                            if isinstance(cambios_raw, str):
+                                try:
+                                    # Si es una cadena JSON (común desde Flutter), la parseamos
+                                    data = json.loads(cambios_raw)
+                                    if isinstance(data, dict):
+                                        logs_agrupados[key]["cambios_dict"].update(data)
+                                    else:
+                                        # Fallback si no es un dict: guardarlo como nota
+                                        logs_agrupados[key]["cambios_dict"][f"nota_{len(logs_agrupados[key]['cambios_dict'])}"] = data
+                                except json.JSONDecodeError:
+                                    # Si no es JSON válido, guardar como texto plano
+                                    logs_agrupados[key]["cambios_dict"][f"info_{len(logs_agrupados[key]['cambios_dict'])}"] = cambios_raw
+                            elif isinstance(cambios_raw, dict):
+                                # Si ya viene como diccionario, fusionar directamente
+                                logs_agrupados[key]["cambios_dict"].update(cambios_raw)
 
-                        log_audit(
-                            db=db, 
-                            usuario_id=item.usuario_id, 
-                            usuario_nombre=u_nombre,
-                            accion=accion_local, 
-                            tabla="monitoreos", # ✅ 'monitoreos' para que Laravel lo asocie al historial del registro
-                            registro_id=db_monitoreo_id, 
-                            detalles=cambios_data,
-                            registro_ref=ref_local,
-                            created_at=f_creado
-                        )
                     except Exception as e:
-                        logger.error(f"Error guardando trazabilidad id_local {item.id_local}: {str(e)}")
+                        logger.error(f"⚠️ Error al agrupar log local en {item.id_local}: {str(e)}")
+
+                # Una vez agrupados, guardamos un solo registro por cada acción/referencia
+                for log in logs_agrupados.values():
+                    # Parsear la fecha original si existe
+                    f_creado = None
+                    if log["created_at"]:
+                        try:
+                            f_creado = datetime.fromisoformat(log["created_at"].replace('Z', '+00:00'))
+                        except: pass
+
+                    log_audit(
+                        db=db, 
+                        usuario_id=item.usuario_id, 
+                        usuario_nombre=log["usuario_nombre"],
+                        accion=log["accion"], 
+                        tabla="App_collector", 
+                        registro_id=db_monitoreo_id, 
+                        detalles=log["cambios_dict"], # log_audit se encarga de convertir el dict a JSON
+                        registro_ref=str(db_monitoreo_id),
+                        created_at=f_creado
+                    )
+
 
             station_name = "sin_estacion"
             if item.estacion_id:
