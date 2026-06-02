@@ -168,7 +168,7 @@ def save_dynamic_photo(
 
         # 7. Construir URL pública
         public_url = f"https://{AWS_BUCKET}.s3.{AWS_DEFAULT_REGION}.amazonaws.com/{s3_key}"
-        logger.info(f"🚀 Foto subida a S3 [{tipo_folder}/{station_slug}]: {public_url}")
+        logger.info(f"🚀 Foto subida a S3 [{type_folder}/{station_slug}]: {public_url}")
         return public_url
 
     except Exception as e:
